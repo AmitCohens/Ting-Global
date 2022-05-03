@@ -1,11 +1,11 @@
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import Header from '../Components/Header';
 const homePage = () => {
-  <View>
-    <View ID={"firstLine"}>
-
+  return (
+    <View>
+      <Header />
     </View>
-
-  </View>
+  );
 };
 export default homePage;

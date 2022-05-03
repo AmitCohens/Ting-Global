@@ -3,8 +3,9 @@ import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import TingSelect from '../Components/TingSelect';
 import AppButton from '../Components/AppButton';
-
-const Page = () => {
+// eslint-disable-next-line no-unused-vars
+import HomePage from '../Screens/HomePage';
+const Page = ({navigation}) => {
   return (
     <View style={styles.view}>
       <ScrollView
@@ -15,7 +16,7 @@ const Page = () => {
         <View style={styles.selectView}>
           <TingSelect />
           <View style={styles.buttonAndView}>
-            <AppButton title={'Login'} />
+            <AppButton title={'Login'} nav={navigation} dest={'HomePage'} />
             <Text>
               {'\n\t\t'}Don't have an account yet?{'\n'}
             </Text>

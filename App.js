@@ -14,6 +14,7 @@ import LoginPage from './Screens/LoginPage';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import 'react-native-gesture-handler';
+import HomePage from './Screens/HomePage';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ const App: () => Node = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="LoginPage">
         <Stack.Screen name="LoginPage" component={LoginPage} />
+        <Stack.Screen name="HomePage" component={HomePage} />
         {/*<StatusBar />*/}
         {/*<LoginPage />*/}
       </Stack.Navigator>
