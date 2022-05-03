@@ -21,7 +21,7 @@ const Header = () => {
       {/*  Welcome to Ting Global!*/}
       {/*</Text>*/}
       <Image
-        source={{uri: 'https://ting.global/_nuxt/img/new-logo.09e68c7.png'}}
+        source={require('../Images/new-logo.09e68c7.png')}
         style={{width: 300, height: 150, resizeMode: 'contain'}}
       />
     </View>

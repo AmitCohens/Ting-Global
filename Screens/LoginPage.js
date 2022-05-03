@@ -24,9 +24,7 @@ const page = () => {
         </View>
         <View>
           <Image
-            source={{
-              uri: 'https://ting.global/_nuxt/img/cropped-new-logo-with-300x122.5e3ee5e.png',
-            }}
+            source={require('../Images/cropped-new-logo-with-300x122.5e3ee5e.png')}
             style={styles.image}
           />
         </View>
