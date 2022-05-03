@@ -22,7 +22,7 @@ const Page = () => {
             <AppButton title={'Sign up'} />
           </View>
         </View>
-        <View>
+        <View style={styles.viewAndImage}>
           <Image
             source={require('../Images/cropped-new-logo-with-300x122.5e3ee5e.png')}
             style={styles.image}
@@ -35,8 +35,8 @@ const Page = () => {
 
 const styles = StyleSheet.create({
   image: {
-    width: 300,
-    height: 100,
+    width: 200,
+    height: 70,
     resizeMode: 'contain',
   },
   view: {
@@ -54,6 +54,9 @@ const styles = StyleSheet.create({
   },
   selectView: {
     padding: '5%',
+  },
+  viewAndImage: {
+    paddingLeft: '15%',
   },
 });
 
