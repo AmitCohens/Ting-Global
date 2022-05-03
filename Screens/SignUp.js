@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {Appbar, TextInput} from 'react-native-paper';
+import {TextInput} from 'react-native-paper';
 import AppButton from '../Components/AppButton';
 
 export const Signup = ({navigation}) => {
