@@ -8,42 +8,42 @@ import HomePage from '../Screens/HomePage';
 const Page = ({navigation}) => {
   return (
     <View style={styles.view}>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        // style={backgroundStyle}>
-      >
-        <Header />
-        <View style={styles.selectView}>
-          <TingSelect />
-          <View style={styles.buttonAndView}>
-            <AppButton title={'Login'} nav={navigation} dest={'HomePage'} />
-            <Text>
-              {'\n\t\t'}Don't have an account yet?{'\n'}
-            </Text>
-            <AppButton title={'Sign up'} />
-          </View>
+      {/*  contentInsetAdjustmentBehavior="automatic"*/}
+      {/*  // style={backgroundStyle}>*/}
+      {/*>*/}
+      <Header />
+      <View style={styles.selectView}>
+        <TingSelect />
+        <View style={styles.buttonAndView}>
+          <AppButton title={'Login'} nav={navigation} dest={'HomePage'} />
+          <Text>
+            {'\n\t\t'}Don't have an account yet?{'\n'}
+          </Text>
+          <AppButton title={'Sign up'} nav={navigation} dest={'SignUp'} />
         </View>
-        <View style={styles.viewAndImage}>
-          <Image
-            source={require('../Images/cropped-new-logo-with-300x122.5e3ee5e.png')}
-            style={styles.image}
-          />
-        </View>
-      </ScrollView>
+      </View>
+      <View style={styles.viewAndImage}>
+        <Image
+          source={require('../Images/cropped-new-logo-with-300x122.5e3ee5e.png')}
+          style={styles.image}
+        />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   image: {
-    width: 200,
-    height: 70,
+    width: 250,
+    height: 80,
     resizeMode: 'contain',
   },
   view: {
     display: 'flex',
+    flex: 1,
     flexDirection: 'column',
-    padding: '10%',
+    paddingLeft: '10%',
+    paddingTop: '10%',
     backgroundColor: 'white',
   },
   buttonAndView: {
