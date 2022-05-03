@@ -7,17 +7,25 @@
  */
 
 import React from 'react';
-import Header from './Components/Header';
+// import Header from './Components/Header';
 import type {Node} from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+// import {SafeAreaView, StatusBar} from 'react-native';
 import LoginPage from './Screens/LoginPage';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import 'react-native-gesture-handler';
+
+const Stack = createStackNavigator();
 
 const App: () => Node = () => {
   return (
-    <SafeAreaView>
-      <StatusBar />
-      <LoginPage />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="LoginPage">
+        <Stack.Screen name="LoginPage" component={LoginPage} />
+        {/*<StatusBar />*/}
+        {/*<LoginPage />*/}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

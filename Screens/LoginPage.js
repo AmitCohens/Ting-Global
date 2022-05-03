@@ -4,7 +4,7 @@ import React from 'react';
 import TingSelect from '../Components/TingSelect';
 import AppButton from '../Components/AppButton';
 
-const page = () => {
+const Page = () => {
   return (
     <View style={styles.view}>
       <ScrollView
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default page;
+export default Page;
