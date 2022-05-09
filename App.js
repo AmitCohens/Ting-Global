@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
 
-export default function App() {
+import React from 'react';
+// import Header from './Components/Header';
+//import type {Node} from 'react';
+// import {SafeAreaView, StatusBar} from 'react-native';
+import LoginPage from './Screens/LoginPage';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import 'react-native-gesture-handler';
+import HomePage from './Screens/HomePage';
+import SignUp from './Screens/SignUp';
+import CheckPage from './Screens/CheckPage';
+import Tabs from './Components/Tabs';
+
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="LoginPage"
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen name="LoginPage" component={LoginPage} />
+        <Stack.Screen name="HomePage" component={Tabs} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="CheckPage" component={CheckPage} />
+        {/*<StatusBar />*/}
+        {/*<LoginPage />*/}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
