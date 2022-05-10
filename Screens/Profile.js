@@ -4,9 +4,9 @@ const Page = () => {
     return (
         <View name={"body"} style={styleProfilePage.body}>
             <View name={"details"} style={styleProfilePage.details}>
-                <Image source={require('../Images/Sharon2.png')} style={styleProfilePage.image}/>
+                <Image source={require('../Images/Sharon4.png')} style={styleProfilePage.image}/>
+                <Text style={styleProfilePage.text}>{"Sharon Gal-Or"}</Text>
             </View>
-            <Text style={styleProfilePage.text}>{"This is the Profile page"}</Text>
         </View>
     );
 };
@@ -15,6 +15,10 @@ const styleProfilePage = StyleSheet.create({
         textAlign: 'center',
         fontSize: 30,
         justifyContent:'space-around',
+        borderTopWidth:4,
+        borderBottomWidth:4,
+        borderStyle:'solid',
+        borderColor: "black",
     },
     body:{
         backgroundColor:'rgb(255,255,255)',
@@ -22,18 +26,19 @@ const styleProfilePage = StyleSheet.create({
         width:'100%',
     },
     image:{
-        width: 200,
-        height: 200,
+        width: 180,
+        height: 180,
         borderRadius: 200,
         borderStyle:'solid',
-        borderWidth: 3,
-        borderColor: "black",
+        borderWidth: 5,
+        borderColor: "blue",
+        margin:10,
     },
     details:{
-        justifyContent:'center',
+        justifyContent:'space-between',
+        alignItems: 'center',
         paddingTop:30,
-        paddingLeft:'26%',
-        backgroundColor:'rgba(13,195,227,0.53)',
+        backgroundColor:'rgba(1,162,255,0.53)',
     },
 });
 export default Page;
