@@ -7,7 +7,8 @@ import 'react-native-gesture-handler';
 import SignUp from './Screens/SignUp';
 import Tabs from './Components/Tabs';
 import * as SplashScreen from 'expo-splash-screen';
-import Profile from "./Screens/Profile";
+import Profile from './Screens/Profile';
+import Chat from './Screens/Chat';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
         <Stack.Screen name="HomePage" component={Tabs} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Chat" component={Chat} />
         {/*<StatusBar />*/}
         {/*<LoginPage />*/}
       </Stack.Navigator>

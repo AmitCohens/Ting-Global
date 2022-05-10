@@ -19,6 +19,8 @@ const styleProfilePage = StyleSheet.create({
         borderBottomWidth:4,
         borderStyle:'solid',
         borderColor: "black",
+        fontWeight: 'bold',
+        fontFamily: 'sans-serif-medium',
     },
     body:{
         backgroundColor:'rgb(255,255,255)',
