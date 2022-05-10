@@ -1,12 +1,14 @@
 import { Image, StatusBar, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import PicButton from "../Components/PicButton";
 
-const Page = () => {
+const Page = ({navigation}) => {
 
     return (
         <View name={"body"} style={styleProfilePage.body}>
             <View name={"details"} style={styleProfilePage.AllDetails}>
-                <Image source={require('../Images/left-arrow.png')} style={styleProfilePage.arrow} />
+                {/*<Image source={require('../Images/left-arrow.png')} style={styleProfilePage.arrow} />*/}
+                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={'HomePage'} style={styleProfilePage.arrow} ></PicButton>
                 <View style={styleProfilePage.details}>
                 <Text style={styleProfilePage.text}>{"Sharon Gal-Or"}</Text>
                 <Image source={require('../Images/Sharon4.png')} style={styleProfilePage.image}/>
@@ -46,8 +48,8 @@ const styleProfilePage = StyleSheet.create({
         margin:10,
     },
     arrow:{
-        width: 30,
-        height: 30,
+        width: 20,
+        height: 20,
     },
     body:{
         backgroundColor:'rgb(255,255,255)',
