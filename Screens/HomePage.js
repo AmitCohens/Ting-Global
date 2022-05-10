@@ -1,25 +1,13 @@
 import {
   Image,
-  Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-//import NavbarStyle from 'react-native-navbar-style';
-//import {NavigationContainer} from '@react-navigation/native';
-// import LoginPage from './LoginPage';
-//
-// import CheckPage from './CheckPage';
 import SignUp from './SignUp';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import PicButton from '../Components/PicButton';
-// import title from "react-native-paper/src/components/Typography/Title";
-// import App from '../App';
-//import Ionicons from 'react-native-vector-icons/Ionicons';
-
 const TopTabs = createMaterialTopTabNavigator();
 const Page = ({navigation}) => {
   return (
