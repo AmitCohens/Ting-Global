@@ -6,15 +6,15 @@ import {
 } from 'react-native';
 import React from 'react';
 import SignUp from './SignUp';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import Profile from './Profile';
 import PicButton from '../Components/PicButton';
-const TopTabs = createMaterialTopTabNavigator();
+
 const Page = ({navigation}) => {
   return (
     <View name={'body'} style={styleHomePage.body}>
       <View name={'TopOfPage'} style={styleHomePage.top}>
 
-          <PicButton imgSrc={require('../Images/user1.png')} nav={navigation} dest={'SignUp'}></PicButton>
+          <PicButton imgSrc={require('../Images/user1.png')} nav={navigation} dest={'Profile'}></PicButton>
           <Image
             source={require('../Images/logo18.png')}
             style={styleHomePage.image}
