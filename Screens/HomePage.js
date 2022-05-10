@@ -55,6 +55,7 @@ const Page = ({navigation}) => {
     </View>
   );
 };
+
 const styleHomePage = StyleSheet.create({
   image: {
     justifyContent: 'flex-start',
