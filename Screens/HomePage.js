@@ -14,12 +14,12 @@ const Page = ({navigation}) => {
     <View name={'body'} style={styleHomePage.body}>
       <View name={'TopOfPage'} style={styleHomePage.top}>
 
-          <PicButton imgSrc={require('../Images/user1.png')} nav={navigation} dest={'Profile'} size={{width : 50,height:50}} ></PicButton>
+          <PicButton imgSrc={require('../Images/user1.png')} nav={navigation} dest={'Profile'} style={{width : 50,height:50}} ></PicButton>
           <Image
             source={require('../Images/logo18.png')}
             style={styleHomePage.image}
           />
-          <PicButton imgSrc={require('../Images/world1.png')} nav={navigation} dest={'SignUp'} size={{width : 50,height:50}}></PicButton>
+          <PicButton imgSrc={require('../Images/world1.png')} nav={navigation} dest={'SignUp'} style={{width : 50,height:50}}></PicButton>
 
       </View>
       <View name={'FirstTable'}>

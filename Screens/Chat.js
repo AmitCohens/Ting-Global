@@ -11,7 +11,17 @@ const ChatScreen = () => {
         setMessages([
             {
                 _id: 1,
-                text: 'Welcome Ting Global',
+                text: 'Welcome ',
+                createdAt: new Date(),
+                user: {
+                    _id: 2,
+                    name: 'React Native',
+                    avatar: '../Images/icon.png',
+                },
+            },
+            {
+                _id: 1,
+                text: 'Ting Global',
                 createdAt: new Date(),
                 user: {
                     _id: 2,

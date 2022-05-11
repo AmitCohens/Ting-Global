@@ -8,7 +8,7 @@ const app = props => {
                 onPress={() => props.nav.navigate(props.dest)}>
                 {/*navigation.navigate('the page')*/}
                 <Image source={props.imgSrc}
-                       style={props.size}/>
+                       style={props.style}/>
             </Pressable>
         </View>
     );

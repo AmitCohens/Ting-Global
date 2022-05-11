@@ -8,8 +8,7 @@ const Page = ({navigation}) => {
     return (
         <View name={"body"} style={styleProfilePage.body}>
             <View name={"details"} style={styleProfilePage.AllDetails}>
-                {/*<Image source={require('../Images/left-arrow.png')} style={styleProfilePage.arrow} />*/}
-                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={'HomePage'} size={{width : 25,height:25,margin:10}} ></PicButton>
+                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={'HomePage'} style={{width : 25,height:25,margin:10}} ></PicButton>
                 <View style={styleProfilePage.details}>
                 <Text style={styleProfilePage.text}>{"Sharon Gal-Or"}</Text>
                 <Image source={require('../Images/Sharon4.png')} style={styleProfilePage.image}/>
