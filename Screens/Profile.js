@@ -1,6 +1,7 @@
-import { Image, StatusBar, StyleSheet, Text, View} from 'react-native';
+import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native';
 import React from 'react';
 import PicButton from "../Components/PicButton";
+
 
 const Page = ({navigation}) => {
 
@@ -15,13 +16,13 @@ const Page = ({navigation}) => {
                 <Text style={styleProfilePage.score}>{"SCORE: 4300"}</Text>
                 </View>
             </View>
-            <View style={styleProfilePage.container}>
+            <ScrollView style={styleProfilePage.container}>
                 <Text style={styleProfilePage.item}>{"EXPRESSION"}</Text>
                 <Text style={styleProfilePage.item}>{"DILIGENCE"}</Text>
                 <Text style={styleProfilePage.item}>{"UNDERSTANDING"}</Text>
                 <Text style={styleProfilePage.item}>{"COURAGE"}</Text>
                 <Text style={styleProfilePage.item}>{"KNOWLEDGE"}</Text>
-            </View>
+            </ScrollView>
         </View>
     );
 };
@@ -63,7 +64,7 @@ const styleProfilePage = StyleSheet.create({
     },
     AllDetails:{
         justifyContent:'space-between',
-        paddingTop:23,
+        paddingTop:10,
         backgroundColor:'rgba(1,162,255,0.53)',
     },
     details:{
@@ -76,7 +77,7 @@ const styleProfilePage = StyleSheet.create({
     item: {
         backgroundColor: '#324bb2',
         padding: 10,
-        margin:2,
+        margin:1,
         marginVertical: 8,
         marginHorizontal: 16,
         fontSize: 16,
