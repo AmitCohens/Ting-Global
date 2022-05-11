@@ -8,7 +8,7 @@ const Page = ({navigation}) => {
         <View name={"body"} style={styleProfilePage.body}>
             <View name={"details"} style={styleProfilePage.AllDetails}>
                 {/*<Image source={require('../Images/left-arrow.png')} style={styleProfilePage.arrow} />*/}
-                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={'HomePage'} style={styleProfilePage.arrow} ></PicButton>
+                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={'HomePage'} size={{width : 25,height:25,margin:10}} ></PicButton>
                 <View style={styleProfilePage.details}>
                 <Text style={styleProfilePage.text}>{"Sharon Gal-Or"}</Text>
                 <Image source={require('../Images/Sharon4.png')} style={styleProfilePage.image}/>
@@ -46,10 +46,6 @@ const styleProfilePage = StyleSheet.create({
         fontWeight: 'bold',
         fontFamily: 'sans-serif-medium',
         margin:10,
-    },
-    arrow:{
-        width: 20,
-        height: 20,
     },
     body:{
         backgroundColor:'rgb(255,255,255)',
