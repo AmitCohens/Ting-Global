@@ -9,6 +9,7 @@ import Tabs from './Components/Tabs';
 import * as SplashScreen from 'expo-splash-screen';
 import Profile from './Screens/Profile';
 import Chat from './Screens/Chat';
+import AllChats from "./Screens/AllChats";
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Chat" component={Chat} />
+          <Stack.Screen name="AllChats" component={AllChats} />
         {/*<StatusBar />*/}
         {/*<LoginPage />*/}
       </Stack.Navigator>

@@ -3,7 +3,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomePage from '../Screens/HomePage';
 import {Image} from 'react-native';
-import Chat from '../Screens/Chat';
+import AllChats from "../Screens/AllChats";
 
 const Tab = createBottomTabNavigator();
 
@@ -20,8 +20,8 @@ const Tabs = () => {
         backgroundColor: '#ffffff',
     }}}>
       <Tab.Screen
-        name="Chat"
-        component={Chat}
+        name="Chats"
+        component={AllChats}
         options={{
           tabBarIcon: () => (
             <Image

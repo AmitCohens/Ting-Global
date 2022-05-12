@@ -11,35 +11,24 @@ const ChatScreen = () => {
         setMessages([
             {
                 _id: 1,
-                text: 'Welcome ',
+                text: 'Welcome to TingGlobal',
                 createdAt: new Date(),
                 user: {
                     _id: 2,
                     name: 'React Native',
-                    avatar: '../Images/icon.png',
+                    avatar: 'https://placeimg.com/140/140/any',
                 },
             },
             {
-                _id: 1,
-                text: 'Ting Global',
+                _id: 2,
+                text: 'Hello world',
                 createdAt: new Date(),
                 user: {
-                    _id: 2,
+                    _id: 1,
                     name: 'React Native',
-                    avatar: '../Images/icon.png',
+                    avatar: 'https://placeimg.com/140/140/any',
                 },
             },
-            // {
-            //     _id: 2,
-            //     text: 'Hello world',
-            //     createdAt: new Date(),
-            //     user: {
-            //         _id: 1,
-            //         name: 'React Native',
-            //         avatar: 'https://placeimg.com/140/140/any',
-            //     },
-            // },
-
         ]);
     }, []);
 
