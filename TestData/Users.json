@@ -1,0 +1,38 @@
+{
+  "Users":[ {
+    "id": "1",
+    "userName": "Gad",
+    "messageTime":"4 mins ago",
+    "messageText": "hi my name is Gad",
+    "userImg": "require('../Images/Gad.png')"
+  },
+  {
+    "id": "2",
+    "userName": "Amit",
+    "messageTime":"4 mins ago",
+    "messageText": "hi my name is Amit",
+    "userImg": "require('../Images/Amit.png')"
+  },
+  {
+    "id": "3",
+    "userName": "Idan",
+    "messageTime":"4 mins ago",
+    "messageText": "hi my name is Idan",
+    "userImg": "require('../Images/Idan.png')"
+  },
+  {
+    "id": "4",
+    "userName": "Bezalel",
+    "messageTime":"4 mins ago",
+    "messageText": "hi my name is Bezalel",
+    "userImg": "require('../Images/Bezalel.png')"
+  },
+  {
+    "id": "5",
+    "userName": "Miriam",
+    "messageTime":"4 mins ago",
+    "messageText": "hi my name is Miriam",
+    "userImg": "require('../Images/Miriam.png')"
+  }
+    ]
+}
