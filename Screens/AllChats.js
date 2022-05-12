@@ -18,8 +18,8 @@ const Mess =[
         id: '1',
         userName: 'Gad',
         messageTime:'4 mins ago',
-        messageText: 'hi my name is gad',
-        userImg: require('../assets/favicon.png'),
+        messageText: 'hi my name is Gad',
+        userImg: require('../Images/Gad.png'),
 
     },
     {
@@ -27,15 +27,29 @@ const Mess =[
         id: '2',
         userName: 'Amit',
         messageTime:'2 mins ago',
-        messageText: 'hi my name is amit',
-        userImg: require('../assets/icon.png'),
+        messageText: 'hi my name is Amit',
+        userImg: require('../Images/Amit.png'),
     },
     {
         id: '3',
         userName: 'Idan',
         messageTime:'40 mins ago',
-        messageText: 'hi my name is idan',
-        userImg: require('../assets/splash.png'),
+        messageText: 'hi my name is Idan',
+        userImg: require('../Images/Idan.png'),
+    },
+    {
+        id: '4',
+        userName: 'Bezalel',
+        messageTime:'40 mins ago',
+        messageText: 'hi my name is Bezalel',
+        userImg: require('../Images/Bezalel.png'),
+    },
+    {
+        id: '5',
+        userName: 'Miriam',
+        messageTime:'40 mins ago',
+        messageText: 'hi my name is Miriam',
+        userImg: require('../Images/Miriam.png'),
     },
 ];
 
