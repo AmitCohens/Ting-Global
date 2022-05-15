@@ -34,6 +34,7 @@ const ChatScreen = ({route, nav}) => {
         );
     };
 
+
     const renderBubble = (props) => {
         return (
             <Bubble
