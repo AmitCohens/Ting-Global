@@ -20,6 +20,7 @@ const Select = () => {
         layout="first"
         withShadow
         autoFocus
+        keyboardType="numeric"
         containerStyle={styleSheet.phoneNumberView}
         textContainerStyle={{paddingVertical: 0}}
         onChangeFormattedText={text => {
