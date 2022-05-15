@@ -20,7 +20,9 @@ const App = () => {
             await new Promise(resolve => setTimeout(resolve, 500));
             setAppIsReady(true);
         }
-        prepare().then(r => {});
+
+        prepare().then(r => {
+        });
     }, []);
 
     const onLayoutRootView = useCallback(async () => {
@@ -32,24 +34,24 @@ const App = () => {
     if (!appIsReady) {
         return null;
     }
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="LoginPage"
-        screenOptions={{
-          headerShown: false,
-        }}>
-        <Stack.Screen name="LoginPage" component={LoginPage} />
-        <Stack.Screen name="HomePage" component={Tabs} />
-        <Stack.Screen name="SignUp" component={SignUp} />
-        <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Chat" component={Chat} />
-          <Stack.Screen name="AllChats" component={AllChats} />
-        {/*<StatusBar />*/}
-        {/*<LoginPage />*/}
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName="LoginPage"
+                screenOptions={{
+                    headerShown: false,
+                }}>
+                <Stack.Screen name="LoginPage" component={LoginPage}/>
+                <Stack.Screen name="HomePage" component={Tabs}/>
+                <Stack.Screen name="SignUp" component={SignUp}/>
+                <Stack.Screen name="Profile" component={Profile}/>
+                <Stack.Screen name="Chat" component={Chat}/>
+                <Stack.Screen name="AllChats" component={AllChats}/>
+                {/*<StatusBar />*/}
+                {/*<LoginPage />*/}
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 };
 
 export default App;
