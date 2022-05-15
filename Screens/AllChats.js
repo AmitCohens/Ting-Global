@@ -7,6 +7,7 @@ const Messages = ({navigation}) => {
             <View style={styles.container}>
                 <FlatList
                     data={Data.Users}
+
                     keyExtractor={item => item.id}
                     renderItem={({item}) => (
                         <TouchableOpacity style={{width: '100%', margin: 10}}
