@@ -1,83 +1,33 @@
-import React from 'react';
+
 import {StyleSheet,Image, Text, View,FlatList} from 'react-native';
 import {TouchableOpacity} from "react-native-gesture-handler";
-// import {
-//     Container,
-//     Card,
-//     UserInfo,
-//     // UserImgWrapper,
-//     // UserImg,
-//     UserInfoText,
-//     UserName,
-//     PostTime,
-//     MessageText,
-//     TextSection,
-// } from './MessageStyles';
-const Mess =[
-    {
-        id: '1',
-        userName: 'Gad',
-        messageTime:'4 mins ago',
-        messageText: 'hi my name is Gad',
-        userImg: require('../Images/Gad.png'),
-
-    },
-    {
-
-        id: '2',
-        userName: 'Amit',
-        messageTime:'2 mins ago',
-        messageText: 'hi my name is Amit',
-        userImg: require('../Images/Amit.png'),
-    },
-    {
-        id: '3',
-        userName: 'Idan',
-        messageTime:'40 mins ago',
-        messageText: 'hi my name is Idan',
-        userImg: require('../Images/Idan.png'),
-    },
-    {
-        id: '4',
-        userName: 'Bezalel',
-        messageTime:'40 mins ago',
-        messageText: 'hi my name is Bezalel',
-        userImg: require('../Images/Bezalel.png'),
-    },
-    {
-        id: '5',
-        userName: 'Miriam',
-        messageTime:'40 mins ago',
-        messageText: 'hi my name is Miriam',
-        userImg: require('../Images/Miriam.png'),
-    },
-];
-
+import Data from '../TestData/Users.json'
 const Messages = ({navigation}) => {
-    return(
-        <View style={styles.container}>
-            <FlatList
-                data={Mess}
-                keyExtractor={item=>item.id}
-                renderItem={({item}) => (
-                    <TouchableOpacity style={{width: '100%',margin:10}} onPress={() => navigation.navigate('Chat', {userName: item.userName})}>
-                        <View style={styles.UserInfo}>
-                            <View style={styles.UserImgWrapper}>
-                                <Image style={styles.UserImg}  source={item.userImg} />
-                            </View>
-                            <View style={styles.TextSection}>
-                                <View style={styles.UserInfoText}>
-                                    <Text style={styles.UserName}>{item.userName}</Text>
-                                    <Text style={styles.PostTime}>{item.messageTime}</Text>
+        return (
+            <View style={styles.container}>
+                <FlatList
+                    data={Data.Users}
+                    keyExtractor={item => item.id}
+                    renderItem={({item}) => (
+                        <TouchableOpacity style={{width: '100%', margin: 10}}
+                            onPress={() => navigation.navigate('Chat', {userName: item.userName})}>
+                            <View style={styles.UserInfo}>
+                                <View style={styles.UserImgWrapper}>
+                                    <Image style={styles.UserImg} source={require('../Images/pro.png')}/>
                                 </View>
-                                <Text>{item.messageText}</Text>
+                                <View style={styles.TextSection}>
+                                    <View style={styles.UserInfoText}>
+                                        <Text style={styles.UserName}>{item.userName}</Text>
+                                        <Text style={styles.PostTime}>{item.messageTime}</Text>
+                                    </View>
+                                    <Text>{item.messageText}</Text>
+                                </View>
                             </View>
-                        </View>
-                    </TouchableOpacity>
-                )}
-            />
-        </View>
-    );
+                        </TouchableOpacity>
+                    )}
+                />
+            </View>
+        );
 };
 export default Messages;
 
