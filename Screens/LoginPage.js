@@ -15,7 +15,7 @@ const Page = ({navigation}) => {
       <View style={styles.selectView}>
         <TingSelect />
         <View style={styles.buttonAndView}>
-          <AppButton title={'Login'} nav={navigation} dest={'Validation'} />
+          <AppButton title={'Login'} nav={navigation} dest={'HomePage'} />
           <Text>
             {'\n\t\t'}Don't have an account yet?{'\n'}
           </Text>

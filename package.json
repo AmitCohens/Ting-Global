@@ -44,6 +44,7 @@
     "react-navigation-stack": "^2.10.4",
     "stream-chat": "^6.5.1",
     "stream-chat-react-native": "^4.3.1",
+    "styled-components": "^5.3.5",
     "yarn": "^1.22.18"
   },
   "devDependencies": {
