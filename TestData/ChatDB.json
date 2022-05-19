@@ -1,0 +1,19 @@
+{
+  "c1": {
+    "_id": "c1",
+    "picture": "chat picture",
+    "name": "group/challenge name",
+    "msg_history": [
+      {
+        "_id": "m1",
+        "text": "msg text",
+        "createdAt": "Date",
+        "user": {
+          "_id": "u1",
+          "name": "username",
+          "avatar": "user's picture"
+        }
+      }
+    ]
+  }
+}

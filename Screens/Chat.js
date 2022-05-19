@@ -3,39 +3,22 @@ import {View, ScrollView, Text, Button, StyleSheet} from 'react-native';
 import {Bubble, GiftedChat, Send} from 'react-native-gifted-chat';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MessageHistory from './AllChats';
 
-const ChatScreen = () => {
+const ChatScreen = ({route, nav}) => {
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
-        setMessages([
-            {
-                _id: 1,
-                text: 'Welcome to TingGlobal',
-                createdAt: new Date(),
-                user: {
-                    _id: 2,
-                    name: 'React Native',
-                    avatar: 'https://placeimg.com/140/140/any',
-                },
-            },
-            {
-                _id: 2,
-                text: 'Hello world',
-                createdAt: new Date(),
-                user: {
-                    _id: 1,
-                    name: 'React Native',
-                    avatar: 'https://placeimg.com/140/140/any',
-                },
-            },
-        ]);
+        setMessages(route.params.history)
     }, []);
 
     const onSend = useCallback((messages = []) => {
-        setMessages((previousMessages) =>
-            GiftedChat.append(previousMessages, messages),
-        );
+        setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
+        const { _id, createdAt, text, user,} = messages[0]
+        console.log(messages[0]);
+        console.log(MessageHistory);
+
+        // addDoc(collection(db, 'chats'), { _id, createdAt,  text, user });
     }, []);
 
     const renderSend = (props) => {
@@ -52,6 +35,7 @@ const ChatScreen = () => {
             </Send>
         );
     };
+
 
     const renderBubble = (props) => {
         return (
@@ -80,15 +64,21 @@ const ChatScreen = () => {
     return (
         <GiftedChat
             messages={messages}
-            onSend={(messages) => onSend(messages)}
+            showUserAvatar={true}
+            showAvatarForEveryMessage={true}
+            onSend={messages => onSend(messages)}
             user={{
                 _id: 1,
+                name: "Gad",
+                avatar: '../Images/Gad.png'
             }}
             renderBubble={renderBubble}
+            renderUsernameOnMessage={true}
             alwaysShowSend
             renderSend={renderSend}
             scrollToBottom
             scrollToBottomComponent={scrollToBottomComponent}
+
         />
     );
 };

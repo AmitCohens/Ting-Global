@@ -1,7 +1,8 @@
-import {View, Text, Alert, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, Alert, StyleSheet, TouchableOpacity, Keyboard} from 'react-native';
 import React from 'react';
 import PhoneInput from 'react-native-phone-number-input';
 import {useRef, useState} from 'react';
+import {TouchableWithoutFeedback} from "react-native-gesture-handler";
 
 const Select = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -13,6 +14,7 @@ const Select = () => {
   };
 
   return (
+
     <View style={styleSheet.MainContainer}>
       <PhoneInput
         ref={phoneInput}
@@ -20,13 +22,14 @@ const Select = () => {
         layout="first"
         withShadow
         autoFocus
+        showSoftInputOnFocus={false}
+        keyboardType="numeric"
         containerStyle={styleSheet.phoneNumberView}
         textContainerStyle={{paddingVertical: 0}}
         onChangeFormattedText={text => {
           setPhoneNumber(text);
         }}
       />
-
       {/*<TouchableOpacity*/}
       {/*  style={styleSheet.button}*/}
       {/*  onPress={() => getPhoneNumber()}>*/}
