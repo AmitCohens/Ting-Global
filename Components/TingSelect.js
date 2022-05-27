@@ -1,79 +1,86 @@
 import {View, Text, Alert, StyleSheet, TouchableOpacity, Keyboard} from 'react-native';
 import React from 'react';
 import PhoneInput from 'react-native-phone-number-input';
-import {useRef, useState} from 'react';
+import {useRef, useState, useContext} from 'react';
 import {TouchableWithoutFeedback} from "react-native-gesture-handler";
+import {userContext} from '../provider/UserProvider'
 
-const Select = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
+const Select = (props) => {
+    const [phoneNumber, setPhoneNumber] = useState('');
 
-  const phoneInput = useRef(null);
+    const phoneInput = useRef(null);
 
-  const getPhoneNumber = () => {
-    Alert.alert(phoneNumber);
-  };
+    const getPhoneNumber = () => {
+        Alert.alert(phoneNumber);
+    };
 
-  return (
+    const {userDict, setUserDict} = useContext(userContext)
 
-    <View style={styleSheet.MainContainer}>
-      <PhoneInput
-        ref={phoneInput}
-        defaultValue={phoneNumber}
-        layout="first"
-        withShadow
-        autoFocus
-        showSoftInputOnFocus={false}
-        keyboardType="numeric"
-        containerStyle={styleSheet.phoneNumberView}
-        textContainerStyle={{paddingVertical: 0}}
-        onChangeFormattedText={text => {
-          setPhoneNumber(text);
-        }}
-      />
-      {/*<TouchableOpacity*/}
-      {/*  style={styleSheet.button}*/}
-      {/*  onPress={() => getPhoneNumber()}>*/}
-      {/*  <Text style={styleSheet.buttonText}>Get Phone Number</Text>*/}
-      {/*</TouchableOpacity>*/}
-    </View>
-  );
+    return (
+
+        <View style={styleSheet.MainContainer}>
+            <PhoneInput
+                ref={phoneInput}
+                defaultValue={phoneNumber}
+                layout="first"
+                withShadow
+                autoFocus
+                showSoftInputOnFocus={false}
+                keyboardType="numeric"
+                containerStyle={styleSheet.phoneNumberView}
+                textContainerStyle={{paddingVertical: 0}}
+                onChangeFormattedText={phone => {
+                    // setPhoneNumber(phone);
+                    setUserDict(prev => ({
+                        ...prev,phone
+                    }))
+                    console.log(userDict)
+                }}
+            />
+            {/*<TouchableOpacity*/}
+            {/*  style={styleSheet.button}*/}
+            {/*  onPress={() => getPhoneNumber()}>*/}
+            {/*  <Text style={styleSheet.buttonText}>Get Phone Number</Text>*/}
+            {/*</TouchableOpacity>*/}
+        </View>
+    );
 };
 
 const styleSheet = StyleSheet.create({
-  MainContainer: {
-    flex: 1,
+    MainContainer: {
+        flex: 1,
 
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 
-  heading: {
-    fontSize: 24,
-    textAlign: 'center',
-    // paddingBottom: 20,
-    color: 'black',
-  },
+    heading: {
+        fontSize: 24,
+        textAlign: 'center',
+        // paddingBottom: 20,
+        color: 'black',
+    },
 
-  phoneNumberView: {
-    width: '100%',
-    height: 50,
-    backgroundColor: 'white',
-  },
+    phoneNumberView: {
+        width: '100%',
+        height: 50,
+        backgroundColor: 'white',
+    },
 
-  button: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 25,
-    width: '80%',
-    // padding: 8,
-    backgroundColor: '#00B8D4',
-  },
+    button: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 25,
+        width: '80%',
+        // padding: 8,
+        backgroundColor: '#00B8D4',
+    },
 
-  buttonText: {
-    fontSize: 20,
-    textAlign: 'center',
-    color: 'white',
-  },
+    buttonText: {
+        fontSize: 20,
+        textAlign: 'center',
+        color: 'white',
+    },
 });
 
 export default Select;

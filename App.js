@@ -1,4 +1,3 @@
-
 import React, {useCallback, useEffect, useState} from 'react';
 import LoginPage from './Screens/LoginPage';
 import {NavigationContainer} from '@react-navigation/native';
@@ -11,6 +10,8 @@ import Profile from './Screens/Profile';
 import Chat from './Screens/Chat';
 import AllChats from "./Screens/AllChats";
 // import Validation from "./Screens/Validation";
+import UserProvider from './provider/UserProvider'
+
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -21,7 +22,9 @@ const App = () => {
             await new Promise(resolve => setTimeout(resolve, 500));
             setAppIsReady(true);
         }
-        prepare().then(r => {});
+
+        prepare().then(r => {
+        });
     }, []);
 
     const onLayoutRootView = useCallback(async () => {
@@ -33,25 +36,27 @@ const App = () => {
     if (!appIsReady) {
         return null;
     }
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="LoginPage"
-        screenOptions={{
-          headerShown: false,
-        }}>
-        <Stack.Screen name="LoginPage" component={LoginPage} />
-        <Stack.Screen name="HomePage" component={Tabs} />
-        <Stack.Screen name="SignUp" component={SignUp} />
-        <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="Chat" component={Chat} />
-        <Stack.Screen name="AllChats" component={AllChats} />
-        {/*<Stack.Screen name="Validation" component={Validation} />*/}
-        {/*<StatusBar />*/}
-        {/*<LoginPage />*/}
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+    return (
+        <UserProvider>
+            <NavigationContainer>
+                <Stack.Navigator
+                    initialRouteName="LoginPage"
+                    screenOptions={{
+                        headerShown: false,
+                    }}>
+                    <Stack.Screen name="LoginPage" component={LoginPage}/>
+                    <Stack.Screen name="HomePage" component={Tabs}/>
+                    <Stack.Screen name="SignUp" component={SignUp}/>
+                    <Stack.Screen name="Profile" component={Profile}/>
+                    <Stack.Screen name="Chat" component={Chat}/>
+                    <Stack.Screen name="AllChats" component={AllChats}/>
+                    {/*<Stack.Screen name="Validation" component={Validation} />*/}
+                    {/*<StatusBar />*/}
+                    {/*<LoginPage />*/}
+                </Stack.Navigator>
+            </NavigationContainer>
+        </UserProvider>
+    );
 };
 
 export default App;
