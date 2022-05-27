@@ -1,37 +1,69 @@
 {
-  "Users":[ {
-    "id": "1",
-    "userName": "Gad",
-    "messageTime":"4 mins ago",
-    "messageText": "hi my name is Gad",
-    "userImg": "require('../Images/Gad.png')"
-  },
+  "Users":[
+    {
+      "_id": "1",
+      "userName": "Gad",
+      "messageTime": "4 mins ago",
+      "userImg": "require('../Images/Gad.png')",
+      "messages": [
+        {
+          "_id": 1,
+          "createdAt": "new Date()",
+          "text": "Hi, my name is Gad",
+          "user": {
+            "_id": 1,
+            "name": "Gad",
+            "avatar": "require('../Images/Gad.png')"
+          }
+        },
+        {
+          "_id": 2,
+          "createdAt": "new Date()",
+          "text": "Hi, my name is Idan",
+          "user": {
+            "_id": 2,
+            "name": "Idan",
+            "avatar": "require('../Images/Gad.png')"
+          }
+        },
+        {
+          "_id": 3,
+          "createdAt": "new Date()",
+          "text": "Hi, my name is Amit",
+          "user": {
+            "_id": 3,
+            "name": "Amit",
+            "avatar": "require('../Images/Gad.png')"
+          }
+        }
+      ]
+    },
   {
-    "id": "2",
+    "_id": "2",
     "userName": "Amit",
     "messageTime":"4 mins ago",
-    "messageText": "hi my name is Amit",
+    "messages": ["Hi, my name is Amit", "My last name is Cohen"],
     "userImg": "require('../Images/Amit.png')"
   },
   {
-    "id": "3",
+    "_id": "3",
     "userName": "Idan",
     "messageTime":"4 mins ago",
-    "messageText": "hi my name is Idan",
+    "messages": "hi my name is Idan",
     "userImg": "require('../Images/Idan.png')"
   },
   {
-    "id": "4",
+    "_id": "4",
     "userName": "Bezalel",
     "messageTime":"4 mins ago",
-    "messageText": "hi my name is Bezalel",
+    "messages": "hi my name is Bezalel",
     "userImg": "require('../Images/Bezalel.png')"
   },
   {
-    "id": "5",
+    "_id": "5",
     "userName": "Miriam",
     "messageTime":"4 mins ago",
-    "messageText": "hi my name is Miriam",
+    "messages": "hi my name is Miriam",
     "userImg": "require('../Images/Miriam.png')"
   }
     ]
