@@ -3,7 +3,7 @@
 // import {TouchableOpacity} from "react-native-gesture-handler";
 import data from '../TestData/ChatDB.json'
 import React from 'react';
-import { StyleSheet, FlatList } from 'react-native';
+import { StyleSheet, FlatList, View, Text } from 'react-native';
 import {
     Container,
     Card,
@@ -17,134 +17,12 @@ import {
     TextSection,
 } from '../styles/MessageStyles';
 
-// const Messages = ({navigation}) => {
-//         return (
-//             <View style={styles.container}>
-//                 <FlatList
-//                     data={Data.Users}
-//                     keyExtractor={item => item.id}
-//                     renderItem={({item}) => (
-//                         <TouchableOpacity style={{width: '100%', margin: 10}}
-//                             onPress={() => navigation.navigate('Chat', {user: item.userName, history: item.messages})}>
-//                             <View style={styles.UserInfo}>
-//                                 <View style={styles.UserImgWrapper}>
-//                                     <Image style={styles.UserImg} src={item.userImg}/>
-//                                 </View>
-//                                 <View style={styles.TextSection}>
-//                                     <View style={styles.UserInfoText}>
-//                                         <Text style={styles.UserName}>{item.userName}</Text>
-//                                         <Text style={styles.PostTime}>{item.messageTime}</Text>
-//                                     </View>
-//                                     <Text>{item.messageText}</Text>
-//                                 </View>
-//                             </View>
-//                         </TouchableOpacity>
-//                     )}
-//                 />
-//             </View>
-//         );
-// };
-// export default Messages;
-const Chats = [
-    {
-        id: '1',
-        userName: 'Gad Shrim',
-        userImg: require('../Images/Gad.png'),
-        messageTime: '4 mins ago',
-        messageText:
-            'Hey there, this is my test for a post of my social app in React Native.',
-    },
-    {
-        id: '2',
-        userName: 'Idan Mashriki',
-        userImg: require('../Images/Idan.png'),
-        messageTime: '2 hours ago',
-        messageText:
-            'Hey there, this is my test for a post of my social app in React Native.',
-    },
-    {
-        id: '3',
-        userName: 'Amit Cohen',
-        userImg: require('../Images/Amit.png'),
-        messageTime: '1 hours ago',
-        messageText:
-            'Hey there, this is my test for a post of my social app in React Native.',
-    },
-];
-export let MessageHistory = {
-    '1': [
-        {
-            "_id": 1,
-            "createdAt": new Date(),
-            "text": "Hi, my name is Gad and this is my group",
-            "user": {
-                "_id": 1,
-                "name": "Gad",
-                "avatar": "require('../Images/Gad.png')"
-            }
-        },
-        {
-            "_id": 2,
-            "createdAt": new Date(),
-            "text": "Hi, my name is Idan and this is Gad's group",
-            "user": {
-                "_id": 2,
-                "name": "Idan",
-                "avatar": "require('../Images/Gad.png')"
-            }
-        },
-        {
-            "_id": 3,
-            "createdAt": new Date(),
-            "text": "Hi, my name is Amit and this is Gad's group",
-            "user": {
-                "_id": 3,
-                "name": "Amit",
-                "avatar": "require('../Images/Gad.png')"
-            }
-        }
-    ],
-    '2': [
-        {
-            "_id": 1,
-            "createdAt": new Date(1992, 8, 23),
-            "text": "Hi, my name is Gad and this is Idan's group",
-            "user": {
-                "_id": 1,
-                "name": "Gad",
-                "avatar": "require('../Images/Gad.png')"
-            }
-        },
-        {
-            "_id": 2,
-            "createdAt": new Date(1996, 9, 30),
-            "text": "Hi, my name is Idan and this is my group",
-            "user": {
-                "_id": 2,
-                "name": "Idan",
-                "avatar": "require('../Images/Gad.png')"
-            }
-        },
-        {
-            "_id": 3,
-            "createdAt": new Date(1996, 3, 18),
-            "text": "Hi, my name is Amit and this is Idan's group",
-            "user": {
-                "_id": 3,
-                "name": "Amit",
-                "avatar": "require('../Images/Gad.png')"
-            }
-        }
-    ]
-}
-
-console.log(Object.entries(data)[0][1].picture);
-
-
-
 const MessagesScreen = ({navigation}) => {
     return (
-        <Container>
+        <Container style={styles.container}>
+            <View style={styles.header}>
+                <Text style={styles.text}>Challenges</Text>
+            </View>
             <FlatList
                 data={Object.entries(data)}
                 keyExtractor={item=>item[0]}
@@ -176,8 +54,25 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#F0F0F0'
     },
+    header: {
+        flex: 1,
+        paddingTop: '5%',
+        flexDirection: 'row',
+        justifyContent: "center",
+        alignItems: 'center',
+        // margin: 10,
+        backgroundColor: 'white',
+        maxHeight: '10%',
+        width: '200%',
+        // paddingLeft: 5,
+        // paddingRight: 5
+    },
+    text: {
+        fontSize: 20
+    }
 });
 
 // const styles = StyleSheet.create({
