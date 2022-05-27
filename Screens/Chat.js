@@ -3,20 +3,23 @@ import {View, ScrollView, Text, Button, StyleSheet} from 'react-native';
 import {Bubble, GiftedChat, Send} from 'react-native-gifted-chat';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import MessageHistory from './AllChats';
+// import MessageHistory from './AllChats';
 
 const ChatScreen = ({route, nav}) => {
     const [messages, setMessages] = useState([]);
-
+    // console.log(route.params.db);
     useEffect(() => {
-        setMessages(route.params.history)
+        setMessages(route.params.db.msg_history)
     }, []);
 
     const onSend = useCallback((messages = []) => {
         setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
         const { _id, createdAt, text, user,} = messages[0]
+
+
+
         console.log(messages[0]);
-        console.log(MessageHistory);
+        // console.log(MessageHistory);
 
         // addDoc(collection(db, 'chats'), { _id, createdAt,  text, user });
     }, []);
@@ -35,7 +38,6 @@ const ChatScreen = ({route, nav}) => {
             </Send>
         );
     };
-
 
     const renderBubble = (props) => {
         return (
@@ -67,10 +69,10 @@ const ChatScreen = ({route, nav}) => {
             showUserAvatar={true}
             showAvatarForEveryMessage={true}
             onSend={messages => onSend(messages)}
-            user={{
-                _id: 1,
+            user={{ //DB - Get signed in user's details
+                _id: "u1",
                 name: "Gad",
-                avatar: '../Images/Gad.png'
+                avatar: 'https://placeimg.com/140/140/any'
             }}
             renderBubble={renderBubble}
             renderUsernameOnMessage={true}
@@ -78,7 +80,6 @@ const ChatScreen = ({route, nav}) => {
             renderSend={renderSend}
             scrollToBottom
             scrollToBottomComponent={scrollToBottomComponent}
-
         />
     );
 };

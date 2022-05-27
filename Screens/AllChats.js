@@ -1,9 +1,9 @@
 
 // import {StyleSheet,Image, Text, View,FlatList} from 'react-native';
 // import {TouchableOpacity} from "react-native-gesture-handler";
-import Data from '../TestData/Users.json'
+import data from '../TestData/ChatDB.json'
 import React from 'react';
-import { View, Text, Button, StyleSheet, FlatList } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 import {
     Container,
     Card,
@@ -45,7 +45,6 @@ import {
 //         );
 // };
 // export default Messages;
-
 const Chats = [
     {
         id: '1',
@@ -72,7 +71,6 @@ const Chats = [
             'Hey there, this is my test for a post of my social app in React Native.',
     },
 ];
-
 export let MessageHistory = {
     '1': [
         {
@@ -140,24 +138,29 @@ export let MessageHistory = {
     ]
 }
 
+console.log(Object.entries(data)[0][1].picture);
+
+
+
 const MessagesScreen = ({navigation}) => {
     return (
         <Container>
             <FlatList
-                data={Chats}
-                keyExtractor={item=>item._id}
+                data={Object.entries(data)}
+                keyExtractor={item=>item[0]}
                 renderItem={({item}) => (
-                    <Card onPress={() => navigation.navigate('Chat', {userName: item.userName, history: MessageHistory[item.id]})}>
+                    <Card onPress={() => navigation.navigate('Chat', {db: item[1]})}>
                         <UserInfo>
                             <UserImgWrapper>
-                                <UserImg source={item.userImg} />
+                                <UserImg source={require("../Images/Gad.png")}/>
+                                {/*<UserImg source={require(item[1].picture)}/>*/}
                             </UserImgWrapper>
                             <TextSection>
                                 <UserInfoText>
-                                    <UserName>{item.userName}</UserName>
-                                    <PostTime>{item.messageTime}</PostTime>
+                                    <UserName>{item[1].name}</UserName>
+                                    <PostTime>{"4 min ago"}</PostTime>
                                 </UserInfoText>
-                                <MessageText>{item.messageText}</MessageText>
+                                <MessageText>{item[1].msg_history[0].text}</MessageText>
                             </TextSection>
                         </UserInfo>
                     </Card>
