@@ -1,13 +1,17 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {View, ScrollView, Text, Button, StyleSheet} from 'react-native';
+import {View, ScrollView, Text, Button, StyleSheet, Image, Pressable} from 'react-native';
 import {Bubble, GiftedChat, Send} from 'react-native-gifted-chat';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import PicButton from "../Components/PicButton";
+import { useNavigation } from '@react-navigation/native';
+// import {writeJsonFile} from 'write-json-file';
 // import MessageHistory from './AllChats';
 
 const ChatScreen = ({route, nav}) => {
     const [messages, setMessages] = useState([]);
     // console.log(route.params.db);
+    const navigation = useNavigation();
     useEffect(() => {
         setMessages(route.params.db.msg_history)
     }, []);
@@ -15,7 +19,7 @@ const ChatScreen = ({route, nav}) => {
     const onSend = useCallback((messages = []) => {
         setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
         const { _id, createdAt, text, user,} = messages[0]
-
+        // writeJsonFile()
 
 
         console.log(messages[0]);
@@ -64,32 +68,71 @@ const ChatScreen = ({route, nav}) => {
     }
 
     return (
-        <GiftedChat
-            messages={messages}
-            showUserAvatar={true}
-            showAvatarForEveryMessage={true}
-            onSend={messages => onSend(messages)}
-            user={{ //DB - Get signed in user's details
-                _id: "u1",
-                name: "Gad",
-                avatar: 'https://placeimg.com/140/140/any'
-            }}
-            renderBubble={renderBubble}
-            renderUsernameOnMessage={true}
-            alwaysShowSend
-            renderSend={renderSend}
-            scrollToBottom
-            scrollToBottomComponent={scrollToBottomComponent}
-        />
+        <View style={styles.body}>
+            <View style={styles.header}>
+                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={styles.pic} />
+                <Pressable
+                    onPress={() => alert("Challenge Details\nComing Soon!")}>
+                    <Text style={styles.text}>{route.params.db.name}</Text>
+                </Pressable>
+                <Pressable
+                    onPress={() => alert("Coming Soon!")}>
+                    <Image source={require('../Images/search_icon.png')}
+                           style={styles.pic}/>
+                </Pressable>
+            </View>
+            <View style={{flex: 1}}>
+                <GiftedChat
+                    messages={messages}
+                    showUserAvatar={true}
+                    showAvatarForEveryMessage={true}
+                    onSend={messages => onSend(messages)}
+                    user={{ //DB - Get signed in user's details
+                        _id: "u1",
+                        name: "Gad",
+                        avatar: 'https://placeimg.com/140/140/any'
+                    }}
+                    renderBubble={renderBubble}
+                    renderUsernameOnMessage={true}
+                    alwaysShowSend
+                    renderSend={renderSend}
+                    scrollToBottom
+                    scrollToBottomComponent={scrollToBottomComponent}
+                />
+            </View>
+        </View>
     );
 };
 
 export default ChatScreen;
 
 const styles = StyleSheet.create({
-    container: {
+    chat: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
+    header: {
+        flex: 1,
+        paddingTop: '5%',
+        flexDirection: 'row',
+        justifyContent: "space-between",
+        alignItems: 'center',
+        // margin: 10,
+        backgroundColor: 'white',
+        maxHeight: '10%',
+        width: '100%',
+        paddingLeft: 5,
+        paddingRight: 5
+    },
+    text: {
+        fontSize: 20
+    },
+    body: {
+        flex: 1,
+        justifyContent: 'space-between'
+    },
+    pic: {
+        width: 25,
+        height: 25,
+        // margin: 10,
+    }
 });
