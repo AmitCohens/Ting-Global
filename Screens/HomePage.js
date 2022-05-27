@@ -13,31 +13,31 @@ import SlidingWindow from "../Components/SlidingWindow";
 import LastMessages from "../Components/LastMessages";
 
 const Page = ({navigation}) => {
-  return (
-    <View name={'body'}>
-        <View name={'TopOfPage'} style={styleHomePage.top}>
-            <PicButton imgSrc={require('../Images/user1.png')} nav={navigation} dest={'Profile'} style={{width: 50, height: 50}} />
-            <Image
-                source={require('../Images/logo18.png')}
-                style={styleHomePage.image}
-            />
-            <PicButton imgSrc={require('../Images/world1.png')} nav={navigation} dest={1} style={{width: 50, height: 50}}/>
+    return (
+        <View name={'body'}>
+            <View name={'TopOfPage'} style={styleHomePage.top}>
+                <PicButton imgSrc={require('../Images/user1.png')} nav={navigation} dest={'Profile'}
+                           style={{width: 50, height: 50}}/>
+                <Image
+                    source={require('../Images/logo18.png')}
+                    style={styleHomePage.image}
+                />
+                <PicButton imgSrc={require('../Images/world1.png')} nav={navigation} dest={1}
+                           style={{width: 50, height: 50}}/>
+            </View>
+            <View name={'content'} style={styleHomePage.content}>
+                <View name={'FirstTable'}>
+                    <SlidingWindow/>
+                </View>
+                <View name={'Comments'} style={{margin: 10}}>
+                    <LastMessages/>
+                </View>
+                <View name={'Achievements'}>
+                    <Text style={styleHomePage.text}>- Achievements -</Text>
+                </View>
+            </View>
         </View>
-        <View name={'content'} style={styleHomePage.content}>
-            <View name={'FirstTable'}>
-                <SlidingWindow/>
-            </View>
-            <View name={'Comments'} style={{margin: 10}}>
-                <LastMessages/>
-            </View>
-            <View name={'Achievements'}>
-                <Text style={styleHomePage.text}>
-              Achievements
-            </Text>
-            </View>
-        </View>
-    </View>
-  );
+    );
 };
 
 /*contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-between' }*/
@@ -49,7 +49,7 @@ const styleHomePage = StyleSheet.create({
         height: 60,
     },
     top: {
-        backgroundColor: 'rgba(255,255,255,0.97)',
+        // backgroundColor: 'rgba(255,255,255,0.97)',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -63,11 +63,10 @@ const styleHomePage = StyleSheet.create({
         flexDirection: 'column',
         height: '85%',
         justifyContent: 'flex-start',
-
     },
     text: {
         textAlign: 'center',
-        fontSize: 20,
+        fontSize: 25,
     },
 });
 export default Page;

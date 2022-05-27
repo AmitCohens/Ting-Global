@@ -28,7 +28,7 @@ function App() {
     return (
         <View style={styles.body}>
             <View style={styles.viewBox}>
-                <Text style={styles.text}>Last Comments</Text>
+                <Text style={styles.text}>- Last Comments -</Text>
                 <FlatList
                     data={Object.entries(data).slice(0,2)}
                     keyExtractor={item=>item[0]}
@@ -64,13 +64,13 @@ const styles = StyleSheet.create({
         width: '95%',
         paddingTop: 10,
         alignItems: 'center',
-        height: 199,
+        height: 210,
         borderWidth: 1,
         borderColor: 'black',
         borderRadius: 10
     },
     text: {
-        fontSize: 20
+        fontSize: 25
     }
 });
 

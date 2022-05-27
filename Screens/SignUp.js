@@ -19,18 +19,19 @@ export default Signup;
 const styles = StyleSheet.create({
     view: {
         display: "flex",
-
-        // flex: 0.1,
+        flex: 1,
         flexDirection: "column",
-        justifyContent: "space-between",
+        // justifyContent: "space-between",
         // alignItems: "center",
+        // margin: 5,
         paddingRight: "10%",
         paddingLeft: "10%",
         paddingTop: "10%",
     },
     input: {
         // marginBottom: 10
-        // borderRadius: 20
+        margin: 10,
+
     },
     text: {
         textAlign: 'center',

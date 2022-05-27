@@ -1,6 +1,3 @@
-
-// import {StyleSheet,Image, Text, View,FlatList} from 'react-native';
-// import {TouchableOpacity} from "react-native-gesture-handler";
 import data from '../TestData/ChatDB.json'
 import React from 'react';
 import { StyleSheet, FlatList, View, Text } from 'react-native';
@@ -63,74 +60,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: "center",
         alignItems: 'center',
-        // margin: 10,
         backgroundColor: 'white',
         maxHeight: '10%',
         width: '200%',
-        // paddingLeft: 5,
-        // paddingRight: 5
     },
     text: {
         fontSize: 20
     }
 });
-
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'center'
-//     },
-// });
-//
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         paddingLeft: 20,
-//         paddingRight: 20,
-//         alignItems: 'center',
-//         backgroundColor: '#ffffff',
-//     },
-//     UserInfo:{
-//         flexDirection: 'row',
-//         justifyContent: 'space-between',
-//     },
-//     UserImgWrapper:{
-//         paddingTop: 15,
-//         paddingBottom: 15,
-//     },
-//     UserImg:{
-//         width: 50,
-//         height: 50,
-//         borderRadius: 25,
-//     },
-//     TextSection:{
-//         flexDirection: 'column',
-//         justifyContent: 'center',
-//         padding: 15,
-//         paddingLeft: 0,
-//         marginLeft: 10,
-//         width: 300,
-//         borderBottomWidth: 1,
-//         borderBottomColor: '#cccccc',
-//     },
-//     UserInfoText:{
-//         flexDirection: 'row',
-//         justifyContent: 'space-between',
-//         marginBottom: 5,
-//     },
-//     UserName:{
-//         fontSize: 14,
-//         fontWeight: 'bold',
-//         fontFamily: 'sans-serif-medium',
-//     },
-//     PostTime:{
-//         fontSize: 12,
-//         color: '#666',
-//         fontFamily: 'sans-serif-medium',
-//     },
-//     MessageText:{
-//         fontSize: 14,
-//         color: '#333333',
-//     }
-// });

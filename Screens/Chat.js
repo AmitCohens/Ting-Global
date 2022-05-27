@@ -6,12 +6,11 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import PicButton from "../Components/PicButton";
 import { useNavigation } from '@react-navigation/native';
 // import {writeJsonFile} from 'write-json-file';
-// import MessageHistory from './AllChats';
 
-const ChatScreen = ({route, nav}) => {
+const ChatScreen = ({route}) => {
     const [messages, setMessages] = useState([]);
-    // console.log(route.params.db);
     const navigation = useNavigation();
+
     useEffect(() => {
         setMessages(route.params.db.msg_history)
     }, []);
@@ -133,6 +132,5 @@ const styles = StyleSheet.create({
     pic: {
         width: 25,
         height: 25,
-        // margin: 10,
     }
 });
