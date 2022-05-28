@@ -5,11 +5,14 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import PicButton from "../Components/PicButton";
 import { useNavigation } from '@react-navigation/native';
-// import {writeJsonFile} from 'write-json-file';
+// import * as RNFS from 'react-native-fs';
+
+const dataPath = '../TestData/ChatDB.json'
 
 const ChatScreen = ({route}) => {
     const [messages, setMessages] = useState([]);
     const navigation = useNavigation();
+
 
     useEffect(() => {
         setMessages(route.params.db.msg_history)
@@ -17,11 +20,47 @@ const ChatScreen = ({route}) => {
 
     const onSend = useCallback((messages = []) => {
         setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
-        const { _id, createdAt, text, user,} = messages[0]
-        // writeJsonFile()
+
+        // const { _id, createdAt, text, user,} = messages[0]
+
+        route.params.db.msg_history.unshift(messages[0])
+
+        let temp = {
+            _id: route.params.db._id,
+            picture: route.params.db.picture,
+            name: route.params.db.name,
+            msg_history: route.params.db.msg_history
+        }
+
+        // fs.writeFile(dataPath, JSON.stringify({[route.params.db._id]: temp}), (err) => {
+        //     if (err) console.log('Error writing file:', err);
+        // })
+
+        console.log(temp)
+        console.log(route.params.db)
+
+        // fs.writeFile(dataPath, 'Lorem ipsum dolor sit amet', 'utf8')
+        //     .then((success) => {
+        //         console.log('FILE WRITTEN!');
+        //     })
+        //     .catch((err) => {
+        //         console.log(err.message);
+        //     });
+        //
+        // let temp = route.params.db;
+        // temp.msg_history.unshift({
+        //     "_id": _id,
+        //     "createdAt": createdAt,
+        //     "text": text,
+        //     "user": user
+        // })
+        //
+        // writeFile(JSON.stringify(data, null, 2), () => {
+        //     // res.status(200).send(`Movie id ${movieID} edited successfully`);
+        // });
 
 
-        console.log(messages[0]);
+        // console.log(messages[0]);
         // console.log(MessageHistory);
 
         // addDoc(collection(db, 'chats'), { _id, createdAt,  text, user });
@@ -87,9 +126,7 @@ const ChatScreen = ({route}) => {
                     showAvatarForEveryMessage={true}
                     onSend={messages => onSend(messages)}
                     user={{ //DB - Get signed in user's details
-                        _id: "u1",
-                        name: "Gad",
-                        avatar: 'https://placeimg.com/140/140/any'
+                        _id: "u3"
                     }}
                     renderBubble={renderBubble}
                     renderUsernameOnMessage={true}

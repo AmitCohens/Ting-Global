@@ -27,13 +27,12 @@ const MessagesScreen = ({navigation}) => {
                     <Card onPress={() => navigation.navigate('Chat', {db: item[1]})}>
                         <UserInfo>
                             <UserImgWrapper>
-                                <UserImg source={require("../Images/Gad.png")}/>
-                                {/*<UserImg source={require(item[1].picture)}/>*/}
+                                <UserImg source={{uri: item[1].picture}}/>
                             </UserImgWrapper>
                             <TextSection>
                                 <UserInfoText>
                                     <UserName>{item[1].name}</UserName>
-                                    <PostTime>{"4 min ago"}</PostTime>
+                                    <PostTime>{"Challenge Day " + item[1].day}</PostTime>
                                 </UserInfoText>
                                 <MessageText>{item[1].msg_history[0].text}</MessageText>
                             </TextSection>

@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomePage from '../Screens/HomePage';
 import {Image} from 'react-native';
 import AllChats from "../Screens/AllChats";
+import Accomplishment from "../Screens/Accomplishment";
 
 const Tab = createBottomTabNavigator();
 
@@ -70,7 +71,7 @@ const Tabs = () => {
             />
             <Tab.Screen
                 name="Accomplishments"
-                component={SignUp}
+                component={Accomplishment}
                 options={{
                     tabBarIcon: () => (
                         <Image

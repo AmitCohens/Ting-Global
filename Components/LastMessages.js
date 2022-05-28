@@ -36,7 +36,7 @@ function App() {
                         <Card onPress={() => navigation.navigate('Chat', {db: item[1]})}>
                             <UserInfo>
                                 <UserImgWrapper>
-                                    <UserImg source={require("../Images/Gad.png")}/>
+                                    <UserImg source={{uri: item[1].picture}}/>
                                 </UserImgWrapper>
                                 <TextSection>
                                     <UserInfoText>
