@@ -102,7 +102,7 @@ const styleProfilePage = StyleSheet.create({
         paddingTop: "10%",
         justifyContent: 'center',
         alignItems: 'center'
-    }
+    },
 });
 export default Page;
 
