@@ -1,6 +1,8 @@
 import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native';
 import React from 'react';
 import PicButton from "../Components/PicButton";
+import {TextInput} from "react-native-paper";
+import AppButton from "../Components/AppButton";
 
 
 const Page = ({navigation}) => {
@@ -9,29 +11,28 @@ const Page = ({navigation}) => {
         <View name={"body"} style={styleProfilePage.body}>
             <View name={"details"} style={styleProfilePage.AllDetails}>
                 <View name={"all icons"} style={styleProfilePage.icons}>
-                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
-                        width: 25,
-                        height: 25,
-                        margin: 10
-                    }} />
-                <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"} style={{
+                    <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
                         width: 25,
                         height: 25,
                         margin: 10
                     }} />
                 </View>
                 <View style={styleProfilePage.details}>
-                <Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
-                <Image source={require('../Images/Amit.png')} style={styleProfilePage.image}/>
-                <Text style={styleProfilePage.score}>{"SCORE: 5002"}</Text>
+                    <Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
+                    <Image source={require('../Images/Amit.png')} style={styleProfilePage.image}/>
+                    <Text style={styleProfilePage.score}>{"SCORE: 5002"}</Text>
                 </View>
             </View>
             <ScrollView style={styleProfilePage.container}>
-                <Text style={styleProfilePage.item}>{"EXPRESSION"}</Text>
-                <Text style={styleProfilePage.item}>{"DILIGENCE"}</Text>
-                <Text style={styleProfilePage.item}>{"UNDERSTANDING"}</Text>
-                <Text style={styleProfilePage.item}>{"COURAGE"}</Text>
-                <Text style={styleProfilePage.item}>{"KNOWLEDGE"}</Text>
+            <TextInput label="Username" style={styleProfilePage.input}/>
+            <TextInput label="Phone number" keyboardType="phone-pad" style={styleProfilePage.input}/>
+            <TextInput label="Full name" style={styleProfilePage.input}/>
+            <TextInput label="Country" style={styleProfilePage.input}/>
+            <TextInput label="Email address" keyboardType="email-address" style={styleProfilePage.input}/>
+            <TextInput label="Challenge language" style={styleProfilePage.input}/>
+            <View style={styleProfilePage.button}>
+                <AppButton title="Submit" type="submit" style={styleProfilePage.button}/>
+            </View>
             </ScrollView>
         </View>
     );
@@ -84,23 +85,24 @@ const styleProfilePage = StyleSheet.create({
         flex: 1,
         marginTop: StatusBar.currentHeight || 0,
     },
-    item: {
-        backgroundColor: '#ffffff',
-        padding: 10,
-        margin:1,
-        marginVertical: 8,
-        marginHorizontal: 16,
-        fontSize: 12,
-        borderRadius:25,
-        borderWidth:1,
-        borderColor:'rgba(0,0,0,0.2)',
-    },
+
     icons:{
         display: "flex",
         flexDirection: "row",
         justifyContent:'space-between',
-    }
+    },
+    input: {
+        // marginBottom: 10
+        margin: 5,
 
+    },
+    button:{
+        paddingRight: "10%",
+        paddingLeft: "10%",
+        paddingTop: "10%",
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
 });
 export default Page;
 

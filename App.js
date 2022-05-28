@@ -11,6 +11,7 @@ import Chat from './Screens/Chat';
 import AllChats from "./Screens/AllChats";
 // import Validation from "./Screens/Validation";
 import UserProvider from './provider/UserProvider'
+import EditProfile from "./Screens/EditProfile";
 
 const Stack = createStackNavigator();
 
@@ -50,6 +51,7 @@ const App = () => {
                     <Stack.Screen name="Profile" component={Profile}/>
                     <Stack.Screen name="Chat" component={Chat}/>
                     <Stack.Screen name="AllChats" component={AllChats}/>
+                    <Stack.Screen name="EditProfile" component={EditProfile}/>
                     {/*<Stack.Screen name="Validation" component={Validation} />*/}
                     {/*<StatusBar />*/}
                     {/*<LoginPage />*/}
