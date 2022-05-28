@@ -8,15 +8,22 @@ const Page = ({navigation}) => {
     return (
         <View name={"body"} style={styleProfilePage.body}>
             <View name={"details"} style={styleProfilePage.AllDetails}>
+                <View name={"all icons"} style={styleProfilePage.icons}>
                 <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
                         width: 25,
                         height: 25,
                         margin: 10
                     }} />
+                <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={0} style={{
+                        width: 25,
+                        height: 25,
+                        margin: 10
+                    }} />
+                </View>
                 <View style={styleProfilePage.details}>
-                <Text style={styleProfilePage.text}>{"Sharon Gal-Or"}</Text>
-                <Image source={require('../Images/Sharon4.png')} style={styleProfilePage.image}/>
-                <Text style={styleProfilePage.score}>{"SCORE: 4300"}</Text>
+                <Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
+                <Image source={require('../Images/Amit.png')} style={styleProfilePage.image}/>
+                <Text style={styleProfilePage.score}>{"SCORE: 5002"}</Text>
                 </View>
             </View>
             <ScrollView style={styleProfilePage.container}>
@@ -68,7 +75,7 @@ const styleProfilePage = StyleSheet.create({
     AllDetails:{
         justifyContent:'space-between',
         paddingTop:'5%',
-        backgroundColor:'rgba(1,162,255,0.53)',
+        backgroundColor:'rgba(28,139,203,0.53)',
     },
     details:{
         alignItems: 'center',
@@ -78,14 +85,21 @@ const styleProfilePage = StyleSheet.create({
         marginTop: StatusBar.currentHeight || 0,
     },
     item: {
-        backgroundColor: '#324bb2',
+        backgroundColor: '#ffffff',
         padding: 10,
         margin:1,
         marginVertical: 8,
         marginHorizontal: 16,
-        fontSize: 16,
+        fontSize: 12,
         borderRadius:25,
+        borderWidth:1,
+        borderColor:'rgba(0,0,0,0.2)',
     },
+    icons:{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent:'space-between',
+    }
 
 });
 export default Page;
