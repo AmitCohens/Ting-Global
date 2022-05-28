@@ -12,7 +12,13 @@ const app = props => {
             <Pressable
                 style={styleB.button}
                 onPress={() => {
+                    // console.log(userDict.phone)
                     console.log('----- press')
+
+                    ///////////////Bypass
+                    if(userDict.phone === "")
+                        props.nav.navigate('HomePage')
+
                     singIn(userDict.phone, res => {
                         props.nav.navigate('HomePage')
                         // if(res.)

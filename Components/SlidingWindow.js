@@ -63,7 +63,7 @@ function App() {
 
                 style={styles.slider}     //Main slider container style
                 height = {250}    //Height of your slider
-                slideCount = {5}    //How many views you are adding to slide
+                slideCount = {4}    //How many views you are adding to slide
                 dots = {false}     // Pagination dots visibility true for visibile
                 dotActiveColor = 'red'     //Pagination dot active color
                 dotInactiveColor = 'gray'    // Pagination do inactive color
