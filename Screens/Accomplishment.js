@@ -24,7 +24,9 @@ const Page = ({navigation}) => {
                     margin: 10
                 }}/>
                 <View style={styles.details}>
+                    <Text style={styles.text}>{dataUser.FullName}</Text>
                     <Image source={dataUser.picture} style={styles.image2}/>
+                    <Text style={styles.text}>Score: {dataUser.score}</Text>
                 </View>
             </View>
             <View style={styles.container}>
@@ -85,7 +87,6 @@ const styles = StyleSheet.create({
         borderColor: "black",
         fontWeight: 'bold',
         fontFamily: 'sans-serif-medium',
-        margin:5,
     },
     score:{
         textAlign: 'center',
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
     image:{
         width: 50,
         height: 50,
-        margin:10,
+        margin:5,
     },
     image2:{
         width: 150,
