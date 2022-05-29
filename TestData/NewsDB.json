@@ -1,0 +1,24 @@
+{
+  "news": [
+    {
+      "image": "../Images/slide0.jpeg",
+      "text": "Is Value-Based Hybrid Learning the Solution to Current Global Crisis?"
+    },
+    {
+      "image": "../Images/slide1.jpeg",
+      "text": "Challenge for change in Kenya"
+    },
+    {
+      "image": "../Images/slide2.png",
+      "text": "Solving Global Challenges"
+    },
+    {
+      "image": "../Images/slide3.jpeg",
+      "text": "BREAKING: Challenge 18"
+    },
+    {
+      "image": "../Images/slide4.jpeg",
+      "text": "The 17-Goals trails & Future of Humanity"
+    }
+  ]
+}
