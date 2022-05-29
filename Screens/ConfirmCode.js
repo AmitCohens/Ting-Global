@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView, Text, StyleSheet,View} from 'react-native';
+import {SafeAreaView, Text, StyleSheet, View, Image} from 'react-native';
 
 import {
     CodeField,
@@ -37,7 +37,10 @@ const styles = StyleSheet.create({
         paddingTop: "10%",
         justifyContent: 'center',
         alignItems: 'center'
-    }
+    },
+    viewAndImage: {
+        paddingLeft: '15%',
+    },
 });
 
 const CELL_COUNT = 6;
@@ -76,6 +79,12 @@ const App = ({navigation}) => {
             />
             <View style={styles.button}>
                 <AppButton title="Submit" type="submit" style={styles.button}  nav={navigation} dest={'HomePage'}/>
+            </View>
+            <View style={styles.viewAndImage}>
+                <Image
+                    source={require('../Images/cropped-new-logo-with-300x122.5e3ee5e.png')}
+                    style={styles.image}
+                />
             </View>
         </SafeAreaView>
     );
