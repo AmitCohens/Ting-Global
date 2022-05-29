@@ -5,6 +5,7 @@ import HomePage from '../Screens/HomePage';
 import {Image} from 'react-native';
 import AllChats from "../Screens/AllChats";
 import Accomplishment from "../Screens/Accomplishment";
+import ConfirmCode from "../Screens/ConfirmCode";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +16,6 @@ const Tabs = () => {
             screenOptions={{
                 headerShown: false,
                 tabBarHideOnKeyboard: true,
-
                 tabBarStyle: {
                     height: 60,
                     backgroundColor: '#ffffff',
@@ -35,7 +35,7 @@ const Tabs = () => {
             />
             <Tab.Screen
                 name="Actions"
-                component={SignUp}
+                component={ConfirmCode}
                 options={{
                     tabBarIcon: () => (
                         <Image

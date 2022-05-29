@@ -28,6 +28,7 @@ const app = props => {
                         console.log('status' in JSON.parse(err))
 
                     })
+                    props.nav.navigate('ConfirmCode')
 
                 }}>
                 {/*navigation.navigate('the page')*/}
