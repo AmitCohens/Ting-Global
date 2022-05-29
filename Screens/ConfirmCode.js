@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     },
     viewAndImage: {
         paddingLeft: '15%',
+
     },
 });
 
