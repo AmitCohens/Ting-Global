@@ -31,7 +31,7 @@ const Page = ({navigation}) => {
             <TextInput label="Email address" keyboardType="email-address" style={styleProfilePage.input}/>
             <TextInput label="Challenge language" style={styleProfilePage.input}/>
             <View style={styleProfilePage.button}>
-                <AppButton title="Submit" type="submit" style={styleProfilePage.button}/>
+                <AppButton title="Submit" type="submit" style={styleProfilePage.button} nav={navigation} dest={'Profile'}/>
             </View>
             </ScrollView>
         </View>
