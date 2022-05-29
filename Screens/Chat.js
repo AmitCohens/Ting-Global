@@ -5,13 +5,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import PicButton from "../Components/PicButton";
 import { useNavigation } from '@react-navigation/native';
-// import * as RNFS from 'react-native-fs';
-import * as FileSystem from 'expo-file-system';
-const a={
-    "amit":10,
-}
-FileSystem.writeAsStringAsync("../TestData/test.json", a).then(console.log(a));
-const dataPath = '../TestData/ChatDB.json'
+
+
+// const dataPath = '../TestData/ChatDB.json'
+import data_file from '../TestData/ChatDB.json'
 
 const ChatScreen = ({route}) => {
     const [messages, setMessages] = useState([]);
@@ -29,6 +26,8 @@ const ChatScreen = ({route}) => {
 
         route.params.db.msg_history.unshift(messages[0])
 
+        data_file[route.params.db._id] = route.params.db
+
         let temp = {
             _id: route.params.db._id,
             picture: route.params.db.picture,
@@ -36,36 +35,10 @@ const ChatScreen = ({route}) => {
             msg_history: route.params.db.msg_history
         }
 
-        // fs.writeFile(dataPath, JSON.stringify({[route.params.db._id]: temp}), (err) => {
-        //     if (err) console.log('Error writing file:', err);
-        // })
+
 
         console.log(temp)
         console.log(route.params.db)
-
-        // fs.writeFile(dataPath, 'Lorem ipsum dolor sit amet', 'utf8')
-        //     .then((success) => {
-        //         console.log('FILE WRITTEN!');
-        //     })
-        //     .catch((err) => {
-        //         console.log(err.message);
-        //     });
-        //
-        // let temp = route.params.db;
-        // temp.msg_history.unshift({
-        //     "_id": _id,
-        //     "createdAt": createdAt,
-        //     "text": text,
-        //     "user": user
-        // })
-        //
-        // writeFile(JSON.stringify(data, null, 2), () => {
-        //     // res.status(200).send(`Movie id ${movieID} edited successfully`);
-        // });
-
-
-        // console.log(messages[0]);
-        // console.log(MessageHistory);
 
         // addDoc(collection(db, 'chats'), { _id, createdAt,  text, user });
     }, []);
