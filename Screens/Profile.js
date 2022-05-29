@@ -1,6 +1,19 @@
 import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import PicButton from "../Components/PicButton";
+
+const dataUser={
+    Username:"AmitCohen123",
+    PhoneNumber:"+972527503742",
+    FullName:"Amit Cohen",
+    Country:"Israel",
+    EmailAddress:"cohen.amit.official@gmail.com",
+    ChallengeLanguage:"English",
+    MembershipPlan:"18 Days",
+    picture:require("../Images/Amit.png"),
+}
+
+
 
 
 const Page = ({navigation}) => {
@@ -13,25 +26,41 @@ const Page = ({navigation}) => {
                         width: 25,
                         height: 25,
                         margin: 10
-                    }} />
+                    }} /><Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
                 <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"} style={{
                         width: 25,
                         height: 25,
                         margin: 10
                     }} />
+
                 </View>
                 <View style={styleProfilePage.details}>
-                <Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
-                <Image source={require('../Images/Amit.png')} style={styleProfilePage.image}/>
-                <Text style={styleProfilePage.score}>{"SCORE: 5002"}</Text>
+                <Image source={dataUser.picture} style={styleProfilePage.image}/>
                 </View>
             </View>
             <ScrollView style={styleProfilePage.container}>
-                <Text style={styleProfilePage.item}>{"EXPRESSION"}</Text>
-                <Text style={styleProfilePage.item}>{"DILIGENCE"}</Text>
-                <Text style={styleProfilePage.item}>{"UNDERSTANDING"}</Text>
-                <Text style={styleProfilePage.item}>{"COURAGE"}</Text>
-                <Text style={styleProfilePage.item}>{"KNOWLEDGE"}</Text>
+                <Text style={styleProfilePage.item}>
+                    <Text style={{ fontWeight: 'bold'}}>Username: </Text>
+                    {dataUser.Username}
+                </Text>
+                <Text style={styleProfilePage.item}>
+                    <Text style={{ fontWeight: 'bold'}}>Phone number: </Text>
+                    {dataUser.PhoneNumber}</Text>
+                <Text style={styleProfilePage.item}>
+                    <Text style={{ fontWeight: 'bold'}}>Full name: </Text>
+                    {dataUser.FullName}</Text>
+                <Text style={styleProfilePage.item}>
+                    <Text style={{ fontWeight: 'bold'}}>Country: </Text>
+                    {dataUser.Country}</Text>
+                <Text style={styleProfilePage.item}>
+                    <Text style={{ fontWeight: 'bold'}}>Email address: </Text>
+                    {dataUser.EmailAddress}</Text>
+                <Text style={styleProfilePage.item}>
+                    <Text style={{ fontWeight: 'bold'}}>Language: </Text>
+                    {dataUser.ChallengeLanguage}</Text>
+                <Text style={styleProfilePage.item}>
+                    <Text style={{ fontWeight: 'bold'}}>Membership plan: </Text>
+                    {dataUser.MembershipPlan}</Text>
             </ScrollView>
         </View>
     );
@@ -39,9 +68,9 @@ const Page = ({navigation}) => {
 const styleProfilePage = StyleSheet.create({
     text:{
         textAlign: 'center',
-        fontSize: 30,
-        borderTopWidth:4,
-        borderBottomWidth:4,
+        fontSize: 25,
+        borderTopWidth:3,
+        borderBottomWidth:3,
         borderStyle:'solid',
         borderColor: "black",
         fontWeight: 'bold',
@@ -65,8 +94,8 @@ const styleProfilePage = StyleSheet.create({
         justifyContent:'space-between',
     },
     image:{
-        width: 180,
-        height: 180,
+        width: 150,
+        height: 150,
         borderRadius: 200,
         borderWidth: 5,
         borderColor: "blue",
@@ -76,6 +105,7 @@ const styleProfilePage = StyleSheet.create({
         justifyContent:'space-between',
         paddingTop:'5%',
         backgroundColor:'rgba(28,139,203,0.53)',
+        maxHeight:"35%",
     },
     details:{
         alignItems: 'center',
@@ -90,7 +120,7 @@ const styleProfilePage = StyleSheet.create({
         margin:1,
         marginVertical: 8,
         marginHorizontal: 16,
-        fontSize: 12,
+        fontSize: 15,
         borderRadius:25,
         borderWidth:1,
         borderColor:'rgba(0,0,0,0.2)',
