@@ -1,17 +1,21 @@
 import Header from '../Components/Header';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import TingSelect from '../Components/TingSelect';
 import AppButton from '../Components/AppButton';
 // eslint-disable-next-line no-unused-vars
 // import HomePage from '../Screens/HomePage';
 // import LoginCode from '../Screens/LoginCode';
 import LoginButton from '../Components/LoginButton'
+import {singIn} from "../utils/Connect";
+import {userContext} from '../provider/UserProvider'
 
 
 // const user = React.createContext(({phone: '+33', username: '', token: ''}))
 
 const Page = ({navigation}) => {
+    const {userDict, setUserDict} = useContext(userContext)
+
     return (
         <View style={styles.view}>
             {/*  contentInsetAdjustmentBehavior="automatic"*/}
@@ -21,7 +25,11 @@ const Page = ({navigation}) => {
             <View style={styles.selectView}>
                 <TingSelect />
                 <View style={styles.buttonAndView}>
-                    <LoginButton title={'Login'} nav={navigation} />
+                    <LoginButton title={'Login'} nav={navigation} signInFunc={singInLogin} params={{
+                        userDict,
+                        setUserDict,
+                        navigation,
+                    }}/>
                     <Text>
                         {'\n\t\t'}Don't have an account yet?{'\n'}
                     </Text>
@@ -66,5 +74,24 @@ const styles = StyleSheet.create({
         paddingLeft: '15%',
     },
 });
+const singInLogin = (props) => {
+        // console.log(userDict.phone)
+        console.log('----- press')
+    console.log(props.userDict)
 
+        ///////////////Bypass
+        if(props.userDict.phone === "")
+            props.navigation.navigate('HomePage')
+
+        singIn(props.userDict.phone, res => {
+            props.navigation.navigate('ConfirmCode')
+            // if(res.)
+
+        }, err => {
+            // console.log(Object.entries(err))
+            console.log('status' in JSON.parse(err))
+
+        })
+        props.navigation.navigate('ConfirmCode')
+}
 export default Page;

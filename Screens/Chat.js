@@ -6,7 +6,11 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import PicButton from "../Components/PicButton";
 import { useNavigation } from '@react-navigation/native';
 // import * as RNFS from 'react-native-fs';
-
+import * as FileSystem from 'expo-file-system';
+const a={
+    "amit":10,
+}
+FileSystem.writeAsStringAsync("../TestData/test.json", a).then(console.log(a));
 const dataPath = '../TestData/ChatDB.json'
 
 const ChatScreen = ({route}) => {
