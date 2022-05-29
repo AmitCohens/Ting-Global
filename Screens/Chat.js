@@ -5,7 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import PicButton from "../Components/PicButton";
 import { useNavigation } from '@react-navigation/native';
-// import * as RNFS from 'react-native-fs';
+
 
 // const dataPath = '../TestData/ChatDB.json'
 import data_file from '../TestData/ChatDB.json'

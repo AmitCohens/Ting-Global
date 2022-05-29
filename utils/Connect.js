@@ -31,24 +31,31 @@ function singIn(phone, successCallback = () => {
     }
 
     postTingGlobal(false, {signIn: {phone: phone}}, res => {
-        // console.log(`successCallback, json=\n${JSON.stringify(res)}`)
-        // successCallback(res)
+        successCallback(res)
     }, err => {
-        // console.log(`errorCallback, json=\n${JSON.stringify(err)}`)
-        // errorCallback(err)
+        errorCallback(err)
     }).then(() => {
         return true
     });
+    return true;
 
 }
 
-function register(username, phone, successCallback = () => {
+function register(registerData, successCallback = () => {
 }, errorCallback = () => {
 }) {
-    if (!isValidPhone(phone) || !isValidStr(username)) {
+    if (!registerData||typeof registerData !=='object'||!('phone' in registerData.register)||!isValidPhone(registerData.register.phone) ) {
         return false;
     }
-    postTingGlobal(false,{register: {username: username, phone: phone}}).then();
+
+    postTingGlobal(false,registerData,res => {
+        successCallback(res)
+    }, err => {
+        errorCallback(err)
+    }).then(() => {
+        return true
+    });
+    return true
 }
 
 export {singIn, register};

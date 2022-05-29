@@ -11,26 +11,7 @@ const app = props => {
         <View>
             <Pressable
                 style={styleB.button}
-                onPress={() => {
-                    // console.log(userDict.phone)
-                    console.log('----- press')
-
-                    ///////////////Bypass
-                    if(userDict.phone === "")
-                        props.nav.navigate('HomePage')
-
-                    singIn(userDict.phone, res => {
-                        props.nav.navigate('HomePage')
-                        // if(res.)
-
-                    }, err => {
-                        // console.log(Object.entries(err))
-                        console.log('status' in JSON.parse(err))
-
-                    })
-                    props.nav.navigate('ConfirmCode')
-
-                }}>
+                onPress={()=>props.signInFunc(props.params)}>
                 {/*navigation.navigate('the page')*/}
                 <Text style={styleB.text}>{props.title}</Text>
             </Pressable>

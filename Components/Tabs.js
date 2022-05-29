@@ -20,14 +20,15 @@ const Tabs = () => {
                     height: 60,
                     backgroundColor: '#ffffff',
                 }
+
             }}>
             <Tab.Screen
                 name="Chats"
                 component={AllChats}
                 options={{
-                    tabBarIcon: () => (
+                    tabBarIcon: ({focused}) => (
                         <Image
-                            source={require('../Images/speech-bubble.png')}
+                            source={focused ?require('../Images/speech-bubble2.png'):require('../Images/speech-bubble.png')}
                             style={{width: 35, height: 35}}
                         />
                     ),
@@ -37,9 +38,10 @@ const Tabs = () => {
                 name="Actions"
                 component={ConfirmCode}
                 options={{
-                    tabBarIcon: () => (
+                    tabBarIcon: ({focused}) => (
+
                         <Image
-                            source={require('../Images/call.png')}
+                            source={focused ?  require('../Images/call2.png'): require('../Images/call.png')}
                             style={{width: 35, height: 35}}
                         />
                     ),
@@ -49,9 +51,9 @@ const Tabs = () => {
                 name="Home"
                 component={HomePage}
                 options={{
-                    tabBarIcon: () => (
+                    tabBarIcon: ({focused}) => (
                         <Image
-                            source={require('../Images/home1.png')}
+                            source={focused?require('../Images/home2.png'):require('../Images/home1.png')}
                             style={{width: 35, height: 35}}
                         />
                     ),
@@ -61,9 +63,9 @@ const Tabs = () => {
                 name="International"
                 component={SignUp}
                 options={{
-                    tabBarIcon: () => (
+                    tabBarIcon: ({focused}) => (
                         <Image
-                            source={require('../Images/number-18.png')}
+                            source={focused?require('../Images/number-182.png'):require('../Images/number-18.png')}
                             style={{width: 35, height: 35}}
                         />
                     ),
@@ -73,9 +75,9 @@ const Tabs = () => {
                 name="Accomplishments"
                 component={Accomplishment}
                 options={{
-                    tabBarIcon: () => (
+                    tabBarIcon: ({focused}) => (
                         <Image
-                            source={require('../Images/love.png')}
+                            source={focused?require('../Images/love2.png'):require('../Images/love.png')}
                             style={{width: 35, height: 35}}
                         />
                     ),
