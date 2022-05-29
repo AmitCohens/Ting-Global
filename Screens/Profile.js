@@ -27,7 +27,7 @@ const Page = ({navigation}) => {
                         height: 25,
                         margin: 10
                     }} /><Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
-                <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"} style={{
+                <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"} props={dataUser} style={{
                         width: 25,
                         height: 25,
                         margin: 10
@@ -97,8 +97,6 @@ const styleProfilePage = StyleSheet.create({
         width: 150,
         height: 150,
         borderRadius: 200,
-        borderWidth: 5,
-        borderColor: "blue",
         margin:10,
     },
     AllDetails:{

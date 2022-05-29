@@ -2,39 +2,90 @@ import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native
 import React from 'react';
 import PicButton from "../Components/PicButton";
 
-
+const dataUser={
+    FullName:"Amit Cohen",
+    Country:"Israel",
+    MembershipPlan:"18 Days",
+    picture:require("../Images/Amit.png"),
+    Expression:2,
+    Dilegence:4,
+    understanding:5,
+    courage:1,
+    knowledge:5,
+    score:4300,
+}
 const Page = ({navigation}) => {
 
-    return (<View name={"body"} style={styleProfilePage.body}>
-            <View name={"details"} style={styleProfilePage.AllDetails}>
+    return (<View name={"body"} style={styles.body}>
+            <View name={"details"} style={styles.AllDetails}>
                 <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
                     width: 25,
                     height: 25,
                     margin: 10
                 }}/>
-                <View style={styleProfilePage.details}>
-                    <Text style={styleProfilePage.text}>{"My Accomplishments"}</Text>
-                    <Image source={require('../Images/Amit.png')} style={styleProfilePage.image}/>
-                    {/*<Text style={styleProfilePage.score}>{"SCORE: 4300"}</Text>*/}
+                <View style={styles.details}>
+                    <Image source={dataUser.picture} style={styles.image2}/>
                 </View>
             </View>
-            <ScrollView style={styleProfilePage.container}>
-                <Text style={styleProfilePage.item}>{"Number of challenges done: 2"}</Text>
-                <Text style={styleProfilePage.item}>{"Number of challenges successfully completed: 1"}</Text>
-                <Text style={styleProfilePage.item}>{"My best score: 5002"}</Text>
-            </ScrollView>
+            <View style={styles.container}>
+                <View style={styles.medalAndTitle}>
+                <Text style={styles.text}>Expression</Text>
+               <Image style={styles.image} source={dataUser.Expression === 1 ? require("../Images/number-one.png") :
+                            dataUser.Expression === 2 ? require("../Images/number-2.png"):
+                            dataUser.Expression === 3 ? require("../Images/number-3.png"):
+                            dataUser.Expression === 4 ? require("../Images/number-four.png"):
+                            require("../Images/number-5.png")
+               } />
+                </View>
+                <View style={styles.medalAndTitle}>
+                <Text style={styles.text}>Dilegence</Text>
+                <Image style={styles.image} source={dataUser.Dilegence === 1 ? require("../Images/number-one.png") :
+                    dataUser.Dilegence === 2 ? require("../Images/number-2.png"):
+                        dataUser.Dilegence === 3 ? require("../Images/number-3.png"):
+                            dataUser.Dilegence === 4 ? require("../Images/number-four.png"):
+                                require("../Images/number-5.png")
+                } />
+                </View>
+                <View style={styles.medalAndTitle}>
+                <Text style={styles.text}>understanding</Text>
+                <Image style={styles.image} source={dataUser.understanding === 1 ? require("../Images/number-one.png") :
+                    dataUser.understanding === 2 ? require("../Images/number-2.png"):
+                        dataUser.understanding === 3 ? require("../Images/number-3.png"):
+                            dataUser.understanding === 4 ? require("../Images/number-four.png"):
+                                require("../Images/number-5.png")
+                } />
+                </View>
+                <View style={styles.medalAndTitle}>
+                <Text style={styles.text}>courage</Text>
+                <Image style={styles.image} source={dataUser.courage === 1 ? require("../Images/number-one.png") :
+                    dataUser.courage === 2 ? require("../Images/number-2.png"):
+                        dataUser.courage === 3 ? require("../Images/number-3.png"):
+                            dataUser.courage === 4 ? require("../Images/number-four.png"):
+                                require("../Images/number-5.png")
+                } />
+                </View>
+                <View style={styles.medalAndTitle}>
+                <Text style={styles.text}>knowledge</Text>
+                <Image style={styles.image} source={dataUser.knowledge === 1 ? require("../Images/number-one.png") :
+                    dataUser.knowledge === 2 ? require("../Images/number-2.png"):
+                        dataUser.knowledge === 3 ? require("../Images/number-3.png"):
+                            dataUser.knowledge === 4 ? require("../Images/number-four.png"):
+                                require("../Images/number-5.png")
+                } />
+                </View>
+            </View>
         </View>
     );
 };
-const styleProfilePage = StyleSheet.create({
+const styles = StyleSheet.create({
     text:{
         textAlign: 'center',
-        fontSize: 30,
+        fontSize: 20,
         borderStyle:'solid',
         borderColor: "black",
         fontWeight: 'bold',
         fontFamily: 'sans-serif-medium',
-        margin:10,
+        margin:5,
     },
     score:{
         textAlign: 'center',
@@ -46,43 +97,38 @@ const styleProfilePage = StyleSheet.create({
         fontFamily: 'sans-serif-medium',
         margin:10,
     },
-    body:{
-        backgroundColor:'rgb(255,255,255)',
-        height:'100%',
-        width:'100%',
-        justifyContent:'space-between',
-    },
     image:{
-        width: 180,
-        height: 180,
-        borderRadius: 200,
-        borderWidth: 5,
-        borderColor: "grey",
+        width: 50,
+        height: 50,
         margin:10,
     },
-    AllDetails:{
-        justifyContent:'space-between',
-        paddingTop:'5%',
-        // backgroundColor:'rgba(1,162,255,0.53)',
+    image2:{
+        width: 150,
+        height: 150,
+        borderRadius: 200,
+        margin:10,
+        alignItems: 'center',
+    },
+    container: {
+        display: "flex",
+        flexDirection: "column",
+        marginTop: StatusBar.currentHeight || 0,
+    },
+    medalAndTitle:{
+        display: "flex",
+        flexDirection: "row",
+        textAlign: 'center',
+        paddingRight:"20%",
+        paddingLeft:"20%",
+        justifyContent:"space-between",
+        alignItems: 'center',
     },
     details:{
         alignItems: 'center',
     },
-    container: {
-        flex: 1,
-        marginTop: StatusBar.currentHeight || 0,
-    },
-    item: {
-        // backgroundColor: '#324bb2',
-        padding: 10,
-        margin:1,
-        marginVertical: 8,
-        marginHorizontal: 16,
-        fontSize: 16,
-        borderRadius:25,
-        fontWeight: 'bold',
-
-    },
-
+    body:{
+        backgroundColor:'rgba(142,201,250,0.53)',
+        flex:1,
+    }
 });
 export default Page;

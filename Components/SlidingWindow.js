@@ -68,7 +68,7 @@ function App() {
                 dotActiveColor = 'red'     //Pagination dot active color
                 dotInactiveColor = 'gray'    // Pagination do inactive color
                 dotsContainerStyle={styles.dotContainer}     // Container style of the pagination dots
-                autoSlide = {true}    //The views will slide automatically
+                autoSlide = {false}    //The views will slide automatically
                 slideInterval = {10000}    //In Miliseconds
             />
         </View>
