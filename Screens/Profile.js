@@ -1,119 +1,103 @@
-import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native';
-import React, {useContext} from 'react';
+import {Image, StatusBar, StyleSheet, Text, View, ScrollView} from 'react-native';
+import React, {useContext, useState} from 'react';
 import PicButton from "../Components/PicButton";
 import {userContext} from "../provider/UserProvider";
-
-const dataUser={
-    Username:"AmitCohen123",
-    PhoneNumber:"+972527503742",
-    FullName:"Amit Cohen",
-    Country:"Israel",
-    EmailAddress:"cohen.amit.official@gmail.com",
-    ChallengeLanguage:"English",
-    MembershipPlan:"18 Days",
-    picture:require("../Images/Amit.png"),
-    Expression:2,
-    Dilegence:4,
-    understanding:5,
-    courage:1,
-    knowledge:5,
-    score:4300,
-}
-
-
-
+import users from '../TestData/DB.json'
 
 const Page = ({navigation}) => {
-    const {userDict, setUserDict} = useContext(userContext)
+    const {userDict} = useContext(userContext)
+    const userDB = users[userDict.phone]
+    const [uri] = useState(userDB.picture);
 
     return (
         <View name={"body"} style={styleProfilePage.body}>
             <View name={"details"} style={styleProfilePage.AllDetails}>
                 <View name={"all icons"} style={styleProfilePage.icons}>
-                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
+                    <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
                         width: 25,
                         height: 25,
                         margin: 10
-                    }} /><Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
-                <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"} props={dataUser} style={{
+                    }}/><Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
+                    <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"}
+                               props={userDB} style={{
                         width: 25,
                         height: 25,
                         margin: 10
-                    }} />
+                    }}/>
 
                 </View>
                 <View style={styleProfilePage.details}>
-                <Image source={dataUser.picture} style={styleProfilePage.image}/>
+                    <Image source={{uri: uri}} style={styleProfilePage.image}/>
                 </View>
             </View>
             <ScrollView style={styleProfilePage.container}>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Username: </Text>
-                    {dataUser.Username}
+                    <Text style={{fontWeight: 'bold'}}>Username: </Text>
+                    {userDB.Username}
                 </Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Phone number: </Text>
-                    {dataUser.PhoneNumber}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Phone number: </Text>
+                    {userDB.PhoneNumber}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Full name: </Text>
-                    {dataUser.FullName}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Full name: </Text>
+                    {userDB.FullName}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Country: </Text>
-                    {dataUser.Country}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Country: </Text>
+                    {userDB.Country}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Email address: </Text>
-                    {dataUser.EmailAddress}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Email address: </Text>
+                    {userDB.EmailAddress}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Language: </Text>
-                    {dataUser.ChallengeLanguage}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Language: </Text>
+                    {userDB.ChallengeLanguage}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Membership plan: </Text>
-                    {dataUser.MembershipPlan}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Membership plan: </Text>
+                    {userDB.MembershipPlan}</Text>
             </ScrollView>
         </View>
     );
 };
 const styleProfilePage = StyleSheet.create({
-    text:{
+    text: {
         textAlign: 'center',
         fontSize: 25,
-        borderTopWidth:3,
-        borderBottomWidth:3,
-        borderStyle:'solid',
+        borderTopWidth: 3,
+        borderBottomWidth: 3,
+        borderStyle: 'solid',
         borderColor: "black",
         fontWeight: 'bold',
         fontFamily: 'sans-serif-medium',
-        margin:10,
+        margin: 10,
     },
-    score:{
+    score: {
         textAlign: 'center',
         fontSize: 25,
-        borderBottomWidth:4,
-        borderStyle:'solid',
+        borderBottomWidth: 4,
+        borderStyle: 'solid',
         borderColor: "black",
         fontWeight: 'bold',
         fontFamily: 'sans-serif-medium',
-        margin:10,
+        margin: 10,
     },
-    body:{
-        backgroundColor:'rgb(255,255,255)',
-        height:'100%',
-        width:'100%',
-        justifyContent:'space-between',
+    body: {
+        backgroundColor: 'rgb(255,255,255)',
+        height: '100%',
+        width: '100%',
+        justifyContent: 'space-between',
     },
-    image:{
+    image: {
         width: 150,
         height: 150,
         borderRadius: 200,
-        margin:10,
+        margin: 10,
     },
-    AllDetails:{
-        justifyContent:'space-between',
-        paddingTop:'5%',
-        backgroundColor:'rgba(28,139,203,0.53)',
-        maxHeight:"35%",
+    AllDetails: {
+        justifyContent: 'space-between',
+        paddingTop: '5%',
+        backgroundColor: 'rgba(28,139,203,0.53)',
+        maxHeight: "35%",
     },
-    details:{
+    details: {
         alignItems: 'center',
     },
     container: {
@@ -123,18 +107,18 @@ const styleProfilePage = StyleSheet.create({
     item: {
         backgroundColor: '#ffffff',
         padding: 10,
-        margin:1,
+        margin: 1,
         marginVertical: 8,
         marginHorizontal: 16,
         fontSize: 15,
-        borderRadius:25,
-        borderWidth:1,
-        borderColor:'rgba(0,0,0,0.2)',
+        borderRadius: 25,
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.2)',
     },
-    icons:{
+    icons: {
         display: "flex",
         flexDirection: "row",
-        justifyContent:'space-between',
+        justifyContent: 'space-between',
     }
 
 });
