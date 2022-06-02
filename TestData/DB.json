@@ -39,7 +39,7 @@
     "EmailAddress":"@gmail.com",
     "ChallengeLanguage":"English",
     "MembershipPlan":"18 Days",
-    "picture":"require(\"../Images/Bezalel.png\")",
+    "picture":"../Images/Bezalel.png",
     "Expression":2,
     "Dilegence":4,
     "understanding":5,
