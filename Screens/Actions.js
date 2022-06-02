@@ -6,6 +6,7 @@ import {userContext} from "../provider/UserProvider";
 
 
 const Actions = ({navigation}) => {
+
     const {userDict, setUserDict} = useContext(userContext);
     const name=userData[userDict.phone].FullName;
     return (
