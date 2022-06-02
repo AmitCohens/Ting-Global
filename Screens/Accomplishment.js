@@ -20,35 +20,30 @@ const Page = () => {
     const {userDict} = useContext(userContext);
     const userInfo = users[userDict.phone];
 
-    return (<View name={"body"} style={styles.body}>
-            <View name={"details"} style={styles.AllDetails}>
+    function achieveView(s) {
+        return (
+            <View style={styles.medalAndTitle}>
+                <Text style={styles.text}>{s}</Text>
+                {medalView(userInfo[s])}
+            </View>
+        )
+    }
+
+    return (
+        <View style={styles.body}>
+            <View style={styles.AllDetails}>
                 <View style={styles.details}>
                     <Text style={styles.title}>{userInfo.FullName}</Text>
                     <Image source={{uri: userInfo.picture}} style={styles.image2}/>
-                    <Text style={styles.score}>Score: {userInfo.score}</Text>
+                    <Text style={styles.score}>Score: {userInfo["Score"]}</Text>
                 </View>
             </View>
             <View style={styles.container}>
-                <View style={styles.medalAndTitle}>
-                    <Text style={styles.text}>Expression</Text>
-                    {medalView(userInfo.Expression)}
-                </View>
-                <View style={styles.medalAndTitle}>
-                    <Text style={styles.text}>Dilegence</Text>
-                    {medalView(userInfo.Dilegence)}
-                </View>
-                <View style={styles.medalAndTitle}>
-                    <Text style={styles.text}>Understanding</Text>
-                    {medalView(userInfo.understanding)}
-                </View>
-                <View style={styles.medalAndTitle}>
-                    <Text style={styles.text}>Courage</Text>
-                    {medalView(userInfo.courage)}
-                </View>
-                <View style={styles.medalAndTitle}>
-                    <Text style={styles.text}>Knowledge</Text>
-                    {medalView(userInfo.knowledge)}
-                </View>
+                {achieveView("Expression")}
+                {achieveView("Dilegence")}
+                {achieveView("Understanding")}
+                {achieveView("Courage")}
+                {achieveView("Knowledge")}
             </View>
         </View>
     );
@@ -64,7 +59,6 @@ const styles = StyleSheet.create({
     },
     medals: {
         flexDirection: 'row',
-        // display: 'flex',
         justifyContent: 'space-between',
     },
     title: {
