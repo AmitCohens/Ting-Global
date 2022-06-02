@@ -2,80 +2,52 @@ import { Image, StatusBar, StyleSheet, Text, View } from 'react-native';
 import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
 import {userContext} from "../provider/UserProvider";
+import users from "../TestData/DB.json";
 
-const dataUser={
-    FullName:"Amit Cohen",
-    Country:"Israel",
-    MembershipPlan:"18 Days",
-    picture:require("../Images/Amit.png"),
-    Expression:2,
-    Dilegence:4,
-    understanding:5,
-    courage:1,
-    knowledge:5,
-    score:4300,
+function medalView(num) {
+    return (
+    <View style={styles.medals}>
+        {num > 0 && <Image style={styles.image} source={require('../Images/medal.png')}/>}
+        {num > 1 && <Image style={styles.image} source={require('../Images/medal.png')}/>}
+        {num > 2 && <Image style={styles.image} source={require('../Images/medal.png')}/>}
+        {num > 3 && <Image style={styles.image} source={require('../Images/medal.png')}/>}
+        {num > 4 && <Image style={styles.image} source={require('../Images/medal.png')}/>}
+    </View>
+    )
 }
-const Page = ({navigation}) => {
-    const {userDict, setUserDict} = useContext(userContext);
+
+const Page = () => {
+    const {userDict} = useContext(userContext);
+    const userInfo = users[userDict.phone];
 
     return (<View name={"body"} style={styles.body}>
             <View name={"details"} style={styles.AllDetails}>
-                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
-                    width: 25,
-                    height: 25,
-                    margin: 10
-                }}/>
                 <View style={styles.details}>
-                    <Text style={styles.text}>{dataUser.FullName}</Text>
-                    <Image source={dataUser.picture} style={styles.image2}/>
-                    <Text style={styles.text}>Score: {dataUser.score}</Text>
+                    <Text style={styles.title}>{userInfo.FullName}</Text>
+                    <Image source={{uri: userInfo.picture}} style={styles.image2}/>
+                    <Text style={styles.score}>Score: {userInfo.score}</Text>
                 </View>
             </View>
             <View style={styles.container}>
                 <View style={styles.medalAndTitle}>
-                <Text style={styles.text}>Expression</Text>
-               <Image style={styles.image} source={dataUser.Expression === 1 ? require("../Images/number-one.png") :
-                            dataUser.Expression === 2 ? require("../Images/number-2.png"):
-                            dataUser.Expression === 3 ? require("../Images/number-3.png"):
-                            dataUser.Expression === 4 ? require("../Images/number-four.png"):
-                            require("../Images/number-5.png")
-               } />
+                    <Text style={styles.text}>Expression</Text>
+                    {medalView(userInfo.Expression)}
                 </View>
                 <View style={styles.medalAndTitle}>
-                <Text style={styles.text}>Dilegence</Text>
-                <Image style={styles.image} source={dataUser.Dilegence === 1 ? require("../Images/number-one.png") :
-                    dataUser.Dilegence === 2 ? require("../Images/number-2.png"):
-                        dataUser.Dilegence === 3 ? require("../Images/number-3.png"):
-                            dataUser.Dilegence === 4 ? require("../Images/number-four.png"):
-                                require("../Images/number-5.png")
-                } />
+                    <Text style={styles.text}>Dilegence</Text>
+                    {medalView(userInfo.Dilegence)}
                 </View>
                 <View style={styles.medalAndTitle}>
-                <Text style={styles.text}>understanding</Text>
-                <Image style={styles.image} source={dataUser.understanding === 1 ? require("../Images/number-one.png") :
-                    dataUser.understanding === 2 ? require("../Images/number-2.png"):
-                        dataUser.understanding === 3 ? require("../Images/number-3.png"):
-                            dataUser.understanding === 4 ? require("../Images/number-four.png"):
-                                require("../Images/number-5.png")
-                } />
+                    <Text style={styles.text}>Understanding</Text>
+                    {medalView(userInfo.understanding)}
                 </View>
                 <View style={styles.medalAndTitle}>
-                <Text style={styles.text}>courage</Text>
-                <Image style={styles.image} source={dataUser.courage === 1 ? require("../Images/number-one.png") :
-                    dataUser.courage === 2 ? require("../Images/number-2.png"):
-                        dataUser.courage === 3 ? require("../Images/number-3.png"):
-                            dataUser.courage === 4 ? require("../Images/number-four.png"):
-                                require("../Images/number-5.png")
-                } />
+                    <Text style={styles.text}>Courage</Text>
+                    {medalView(userInfo.courage)}
                 </View>
                 <View style={styles.medalAndTitle}>
-                <Text style={styles.text}>knowledge</Text>
-                <Image style={styles.image} source={dataUser.knowledge === 1 ? require("../Images/number-one.png") :
-                    dataUser.knowledge === 2 ? require("../Images/number-2.png"):
-                        dataUser.knowledge === 3 ? require("../Images/number-3.png"):
-                            dataUser.knowledge === 4 ? require("../Images/number-four.png"):
-                                require("../Images/number-5.png")
-                } />
+                    <Text style={styles.text}>Knowledge</Text>
+                    {medalView(userInfo.knowledge)}
                 </View>
             </View>
         </View>
@@ -90,19 +62,29 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontFamily: 'sans-serif-medium',
     },
-    score:{
+    medals: {
+        flexDirection: 'row',
+        // display: 'flex',
+        justifyContent: 'space-between',
+    },
+    title: {
         textAlign: 'center',
-        fontSize: 25,
-        borderBottomWidth:4,
+        fontSize: 30,
         borderStyle:'solid',
         borderColor: "black",
+        fontWeight: 'bold',
+        fontFamily: 'sans-serif-medium',
+    },
+    score:{
+        textAlign: 'center',
+        fontSize: 35,
         fontWeight: 'bold',
         fontFamily: 'sans-serif-medium',
         margin:10,
     },
     image:{
-        width: 50,
-        height: 50,
+        width: 35,
+        height: 35,
         margin:5,
     },
     image2:{
@@ -111,27 +93,33 @@ const styles = StyleSheet.create({
         borderRadius: 200,
         margin:10,
         alignItems: 'center',
+        borderColor: 'black',
+        borderWidth: 3
     },
     container: {
         display: "flex",
+        flex: 1,
         flexDirection: "column",
         marginTop: StatusBar.currentHeight || 0,
     },
-    medalAndTitle:{
+    medalAndTitle: {
+        flex: 1,
         display: "flex",
         flexDirection: "row",
         textAlign: 'center',
-        paddingRight:"20%",
-        paddingLeft:"20%",
-        justifyContent:"space-between",
+        paddingRight:"2%",
+        paddingLeft:"5%",
+        justifyContent: "space-between",
         alignItems: 'center',
     },
-    details:{
+    details: {
         alignItems: 'center',
     },
     body:{
+        justifyContent: 'center',
         backgroundColor:'rgba(142,201,250,0.53)',
         flex:1,
+        paddingTop: '10%'
     }
 });
 export default Page;
