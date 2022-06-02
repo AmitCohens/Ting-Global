@@ -4,10 +4,12 @@ import PicButton from "../Components/PicButton";
 import {TextInput} from "react-native-paper";
 import AppButton from "../Components/AppButton";
 import {userContext} from "../provider/UserProvider";
+import users from "../TestData/DB.json";
 
 
 const Page = ({navigation}) => {
     const {userDict, setUserDict} = useContext(userContext)
+    const userInfo = users[userDict.phone];
 
     return (
         <View name={"body"} style={styleProfilePage.body}>

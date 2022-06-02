@@ -10,6 +10,7 @@ import PicButton from '../Components/PicButton';
 import SlidingWindow from "../Components/SlidingWindow";
 import LastMessages from "../Components/LastMessages";
 import {userContext} from "../provider/UserProvider";
+import users from "../TestData/DB.json"
 
 const Page = ({navigation}) => {
     const {userDict, setUserDict} = useContext(userContext)
@@ -28,7 +29,7 @@ const Page = ({navigation}) => {
             </View>
             <View name={'content'} style={styleHomePage.content}>
                 <View name={'welcome'} style={{}}>
-                    <Text style={styleHomePage.text}>Welcome, Amit Cohen</Text>
+                    <Text style={styleHomePage.text}>Welcome, {users[userDict.phone].FullName}</Text>
                 </View>
                 <View name={'FirstTable'}>
                     <SlidingWindow/>

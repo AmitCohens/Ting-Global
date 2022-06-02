@@ -5,9 +5,8 @@ import {userContext} from "../provider/UserProvider";
 import users from '../TestData/DB.json'
 
 const Page = ({navigation}) => {
-    const {userDict} = useContext(userContext)
-    const userDB = users[userDict.phone]
-    const [uri] = useState(userDB.picture);
+    const {userDict, setUserDict} = useContext(userContext)
+    const userInfo = users[userDict.phone];
 
     return (
         <View name={"body"} style={styleProfilePage.body}>
@@ -17,9 +16,8 @@ const Page = ({navigation}) => {
                         width: 25,
                         height: 25,
                         margin: 10
-                    }}/><Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
-                    <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"}
-                               props={userDB} style={{
+                    }} /><Text style={styleProfilePage.text}>{userInfo.FullName}</Text>
+                <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"} props={dataUser} style={{
                         width: 25,
                         height: 25,
                         margin: 10
@@ -27,32 +25,31 @@ const Page = ({navigation}) => {
 
                 </View>
                 <View style={styleProfilePage.details}>
-                    <Image source={{uri: uri}} style={styleProfilePage.image}/>
+                <Image source={{uri: userInfo.picture}} style={styleProfilePage.image}/>
                 </View>
             </View>
             <ScrollView style={styleProfilePage.container}>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{fontWeight: 'bold'}}>Username: </Text>
-                    {userDB.Username}
-                </Text>
+                    <Text style={{ fontWeight: 'bold'}}>Username: </Text>
+                    {userInfo.Username}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{fontWeight: 'bold'}}>Phone number: </Text>
-                    {userDB.PhoneNumber}</Text>
+                    <Text style={{ fontWeight: 'bold'}}>Phone number: </Text>
+                    {userInfo.PhoneNumber}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{fontWeight: 'bold'}}>Full name: </Text>
-                    {userDB.FullName}</Text>
+                    <Text style={{ fontWeight: 'bold'}}>Full name: </Text>
+                    {userInfo.FullName}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{fontWeight: 'bold'}}>Country: </Text>
-                    {userDB.Country}</Text>
+                    <Text style={{ fontWeight: 'bold'}}>Country: </Text>
+                    {userInfo.Country}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{fontWeight: 'bold'}}>Email address: </Text>
-                    {userDB.EmailAddress}</Text>
+                    <Text style={{ fontWeight: 'bold'}}>Email address: </Text>
+                    {userInfo.EmailAddress}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{fontWeight: 'bold'}}>Language: </Text>
-                    {userDB.ChallengeLanguage}</Text>
+                    <Text style={{ fontWeight: 'bold'}}>Language: </Text>
+                    {userInfo.ChallengeLanguage}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{fontWeight: 'bold'}}>Membership plan: </Text>
-                    {userDB.MembershipPlan}</Text>
+                    <Text style={{ fontWeight: 'bold'}}>Membership plan: </Text>
+                    {userInfo.MembershipPlan}</Text>
             </ScrollView>
         </View>
     );

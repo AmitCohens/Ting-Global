@@ -10,12 +10,14 @@ import { useNavigation } from '@react-navigation/native';
 // const dataPath = '../TestData/ChatDB.json'
 import data_file from '../TestData/ChatDB.json'
 import {userContext} from "../provider/UserProvider";
+import users from "../TestData/DB.json";
 
 const ChatScreen = ({route}) => {
     const [messages, setMessages] = useState([]);
     const navigation = useNavigation();
-    const {userDict, setUserDict} = useContext(userContext)
-
+    const {userDict} = useContext(userContext);
+    // console.log(userDict.phone)
+    const userInfo = users[userDict.phone];
 
     useEffect(() => {
         setMessages(route.params.db.msg_history)
@@ -104,9 +106,9 @@ const ChatScreen = ({route}) => {
                     showUserAvatar={true}
                     showAvatarForEveryMessage={true}
                     onSend={messages => onSend(messages)}
-                    user={{ //DB - Get signed in user's details
-                        _id: "u3"
-                    }}
+                    user={{_id: userDict.phone,
+                            name: userInfo.FullName,
+                            avatar: userInfo.picture}} //DB - Get signed in user's details
                     renderBubble={renderBubble}
                     renderUsernameOnMessage={true}
                     alwaysShowSend
