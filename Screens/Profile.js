@@ -2,6 +2,7 @@ import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native
 import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
 import {userContext} from "../provider/UserProvider";
+import users from '../TestData/DB.json'
 
 const dataUser={
     Username:"AmitCohen123",
@@ -20,11 +21,9 @@ const dataUser={
     score:4300,
 }
 
-
-
-
 const Page = ({navigation}) => {
     const {userDict, setUserDict} = useContext(userContext)
+    const userInfo = users[userDict.phone];
 
     return (
         <View name={"body"} style={styleProfilePage.body}>
@@ -34,7 +33,7 @@ const Page = ({navigation}) => {
                         width: 25,
                         height: 25,
                         margin: 10
-                    }} /><Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
+                    }} /><Text style={styleProfilePage.text}>{userInfo.FullName}</Text>
                 <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"} props={dataUser} style={{
                         width: 25,
                         height: 25,
@@ -43,32 +42,31 @@ const Page = ({navigation}) => {
 
                 </View>
                 <View style={styleProfilePage.details}>
-                <Image source={dataUser.picture} style={styleProfilePage.image}/>
+                <Image source={{uri: userInfo.picture}} style={styleProfilePage.image}/>
                 </View>
             </View>
             <ScrollView style={styleProfilePage.container}>
                 <Text style={styleProfilePage.item}>
                     <Text style={{ fontWeight: 'bold'}}>Username: </Text>
-                    {dataUser.Username}
-                </Text>
+                    {userInfo.Username}</Text>
                 <Text style={styleProfilePage.item}>
                     <Text style={{ fontWeight: 'bold'}}>Phone number: </Text>
-                    {dataUser.PhoneNumber}</Text>
+                    {userInfo.PhoneNumber}</Text>
                 <Text style={styleProfilePage.item}>
                     <Text style={{ fontWeight: 'bold'}}>Full name: </Text>
-                    {dataUser.FullName}</Text>
+                    {userInfo.FullName}</Text>
                 <Text style={styleProfilePage.item}>
                     <Text style={{ fontWeight: 'bold'}}>Country: </Text>
-                    {dataUser.Country}</Text>
+                    {userInfo.Country}</Text>
                 <Text style={styleProfilePage.item}>
                     <Text style={{ fontWeight: 'bold'}}>Email address: </Text>
-                    {dataUser.EmailAddress}</Text>
+                    {userInfo.EmailAddress}</Text>
                 <Text style={styleProfilePage.item}>
                     <Text style={{ fontWeight: 'bold'}}>Language: </Text>
-                    {dataUser.ChallengeLanguage}</Text>
+                    {userInfo.ChallengeLanguage}</Text>
                 <Text style={styleProfilePage.item}>
                     <Text style={{ fontWeight: 'bold'}}>Membership plan: </Text>
-                    {dataUser.MembershipPlan}</Text>
+                    {userInfo.MembershipPlan}</Text>
             </ScrollView>
         </View>
     );
