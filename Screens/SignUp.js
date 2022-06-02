@@ -1,12 +1,8 @@
-import {Text, View, ScrollView, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import * as React from "react";
-import AppButton from '../Components/AppButton';
 import LoginButton from '../Components/LoginButton';
-import CountryPicker from 'react-native-country-picker-modal'
-import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 import {useContext, useState} from "react";
-import {register, singIn} from '../utils/Connect'
 import {userContext} from '../provider/UserProvider'
 
 const Signup = ({navigation}) => {

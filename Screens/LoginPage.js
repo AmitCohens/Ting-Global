@@ -1,11 +1,8 @@
 import Header from '../Components/Header';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import TingSelect from '../Components/TingSelect';
 import AppButton from '../Components/AppButton';
-// eslint-disable-next-line no-unused-vars
-// import HomePage from '../Screens/HomePage';
-// import LoginCode from '../Screens/LoginCode';
 import LoginButton from '../Components/LoginButton'
 import {singIn} from "../utils/Connect";
 import {userContext} from '../provider/UserProvider'
@@ -18,9 +15,6 @@ const Page = ({navigation}) => {
 
     return (
         <View style={styles.view}>
-            {/*  contentInsetAdjustmentBehavior="automatic"*/}
-            {/*  // style={backgroundStyle}>*/}
-            {/*>*/}
             <Header/>
             <View style={styles.selectView}>
                 <TingSelect />

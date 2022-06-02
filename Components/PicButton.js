@@ -1,9 +1,8 @@
 import React from 'react';
-import {View, StyleSheet, Pressable, Text, Image} from 'react-native';
-import {useNavigation, CommonActions } from "@react-navigation/native";
+import {View, Pressable, Image} from 'react-native';
+
 const app = props => {
 
-    const navigation = useNavigation();
     return (
         <View>
             <Pressable

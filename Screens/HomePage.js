@@ -2,17 +2,18 @@ import {
   Image,
   StyleSheet,
   Text,
-  View,
-    ScrollView
+  View
 } from 'react-native';
-import React from 'react';
-import SignUp from './SignUp';
+import React, {useContext} from 'react';
 import Profile from './Profile';
 import PicButton from '../Components/PicButton';
 import SlidingWindow from "../Components/SlidingWindow";
 import LastMessages from "../Components/LastMessages";
+import {userContext} from "../provider/UserProvider";
 
 const Page = ({navigation}) => {
+    const {userDict, setUserDict} = useContext(userContext)
+
     return (
         <View name={'body'}>
             <View name={'TopOfPage'} style={styleHomePage.top}>
@@ -26,21 +27,19 @@ const Page = ({navigation}) => {
                            style={{width: 50, height: 50}}/>
             </View>
             <View name={'content'} style={styleHomePage.content}>
+                <View name={'welcome'} style={{}}>
+                    <Text style={styleHomePage.text}>Welcome, Amit Cohen</Text>
+                </View>
                 <View name={'FirstTable'}>
                     <SlidingWindow/>
                 </View>
                 <View name={'Comments'} style={{margin: 10}}>
                     <LastMessages/>
                 </View>
-                <View name={'Achievements'}>
-                    <Text style={styleHomePage.text}>- Achievements -</Text>
-                </View>
             </View>
         </View>
     );
 };
-
-/*contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-between' }*/
 
 const styleHomePage = StyleSheet.create({
     image: {
@@ -62,11 +61,15 @@ const styleHomePage = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         height: '85%',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
     },
     text: {
         textAlign: 'center',
-        fontSize: 25,
+        fontSize: 30,
+        fontWeight: 'bold'
+        // textShadowColor: '#000000',
+        // textShadowOffset: { width: 1, height: 1 },
+        // textShadowRadius: 1,
     },
 });
 export default Page;

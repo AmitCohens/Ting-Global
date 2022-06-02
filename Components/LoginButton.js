@@ -1,18 +1,17 @@
 import React from 'react';
-import {userContext} from "../provider/UserProvider";
-import {useContext} from "react";
 import {View, StyleSheet, Pressable, Text} from 'react-native';
-import {singIn} from '../utils/Connect'
+// import {singIn} from '../utils/Connect'
+// import {userContext} from "../provider/UserProvider";
+// import {useContext} from "react";
 
 const app = props => {
-    const {userDict, setUserDict} = useContext(userContext)
+    // const {userDict, setUserDict} = useContext(userContext)
 
     return (
         <View>
             <Pressable
                 style={styleB.button}
                 onPress={()=>props.signInFunc(props.params)}>
-                {/*navigation.navigate('the page')*/}
                 <Text style={styleB.text}>{props.title}</Text>
             </Pressable>
         </View>

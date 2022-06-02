@@ -1,11 +1,13 @@
 import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
 import {TextInput} from "react-native-paper";
 import AppButton from "../Components/AppButton";
+import {userContext} from "../provider/UserProvider";
 
 
 const Page = ({navigation}) => {
+    const {userDict, setUserDict} = useContext(userContext)
 
     return (
         <View name={"body"} style={styleProfilePage.body}>

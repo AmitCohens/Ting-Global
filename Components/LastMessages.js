@@ -3,8 +3,7 @@ import {
     StyleSheet,
     View,
     Text,
-    Dimensions,
-    Image, FlatList
+    FlatList
 } from 'react-native';
 import data from '../TestData/ChatDB.json'
 import {
@@ -18,9 +17,6 @@ import {
     UserName
 } from "../styles/MessageStyles";
 import {useNavigation} from "@react-navigation/native";
-
-const { width, height } = Dimensions.get('window');
-
 
 function App() {
     const navigation = useNavigation();

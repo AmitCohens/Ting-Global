@@ -8,9 +8,7 @@ import {
 } from 'react-native';
 import View_Slider from 'react-native-view-slider'
 
-const { width, height } = Dimensions.get('window');
-
-
+const { width } = Dimensions.get('window');
 
 function App() {
 
@@ -69,12 +67,12 @@ function App() {
                 style={styles.slider}     //Main slider container style
                 height = {280}    //Height of your slider
                 slideCount = {data.length}    //How many views you are adding to slide
-                dots = {true}     // Pagination dots visibility true for visibile
+                dots = {true}     // Pagination dots visibility true for visible
                 dotActiveColor = 'blue'     //Pagination dot active color
                 dotInactiveColor = 'gray'    // Pagination do inactive color
                 dotsContainerStyle={styles.dotContainer}     // Container style of the pagination dots
                 autoSlide = {false}    //The views will slide automatically
-                slideInterval = {10000}    //In Miliseconds
+                slideInterval = {10000}    //In Milliseconds
             />
         </View>
     );

@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Pressable, Text} from 'react-native';
+
 const app = props => {
   return (
     <View>
       <Pressable
         style={styleB.button}
         onPress={() => props.nav.navigate(props.dest)}>
-        {/*navigation.navigate('the page')*/}
         <Text style={styleB.text}>{props.title}</Text>
       </Pressable>
     </View>
