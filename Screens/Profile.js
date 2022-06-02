@@ -122,5 +122,6 @@ const styleProfilePage = StyleSheet.create({
     }
 
 });
+
 export default Page;
 
