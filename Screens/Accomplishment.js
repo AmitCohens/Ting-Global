@@ -1,6 +1,7 @@
-import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native';
-import React from 'react';
+import { Image, StatusBar, StyleSheet, Text, View } from 'react-native';
+import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
+import {userContext} from "../provider/UserProvider";
 
 const dataUser={
     FullName:"Amit Cohen",
@@ -15,6 +16,7 @@ const dataUser={
     score:4300,
 }
 const Page = ({navigation}) => {
+    const {userDict, setUserDict} = useContext(userContext);
 
     return (<View name={"body"} style={styles.body}>
             <View name={"details"} style={styles.AllDetails}>

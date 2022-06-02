@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {View, ScrollView, Text, Button, StyleSheet, Image, Pressable} from 'react-native';
+import React, {useState, useEffect, useCallback, useContext} from 'react';
+import {View, Text, StyleSheet, Image, Pressable} from 'react-native';
 import {Bubble, GiftedChat, Send} from 'react-native-gifted-chat';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -9,10 +9,12 @@ import { useNavigation } from '@react-navigation/native';
 
 // const dataPath = '../TestData/ChatDB.json'
 import data_file from '../TestData/ChatDB.json'
+import {userContext} from "../provider/UserProvider";
 
 const ChatScreen = ({route}) => {
     const [messages, setMessages] = useState([]);
     const navigation = useNavigation();
+    const {userDict, setUserDict} = useContext(userContext)
 
 
     useEffect(() => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Image} from 'react-native';
 
 const Header = () => {
   return (
@@ -10,16 +10,6 @@ const Header = () => {
         paddingTop: 20,
         backgroundColor: 'white',
       }}>
-      {/*<Text*/}
-      {/*  // eslint-disable-next-line react-native/no-inline-styles*/}
-      {/*  style={{*/}
-      {/*    fontSize: 30,*/}
-      {/*    fontFamily: 'Arial',*/}
-      {/*    color: 'blue',*/}
-      {/*    textAlign: 'center',*/}
-      {/*  }}>*/}
-      {/*  Welcome to Ting Global!*/}
-      {/*</Text>*/}
       <Image
         source={require('../Images/new-logo.09e68c7.png')}
         style={{width: 300, height: 150, resizeMode: 'contain'}}

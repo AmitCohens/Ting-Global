@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {SafeAreaView, Text, StyleSheet, View, Image} from 'react-native';
 
 import {
@@ -8,6 +8,7 @@ import {
     useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
 import AppButton from "../Components/AppButton";
+import {userContext} from "../provider/UserProvider";
 
 
 const styles = StyleSheet.create({
@@ -53,6 +54,7 @@ const App = ({navigation}) => {
         value,
         setValue,
     });
+    const {userDict, setUserDict} = useContext(userContext);
 
     return (
         <SafeAreaView style={styles.root}>

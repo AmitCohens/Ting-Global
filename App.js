@@ -9,10 +9,10 @@ import * as SplashScreen from 'expo-splash-screen';
 import Profile from './Screens/Profile';
 import Chat from './Screens/Chat';
 import AllChats from "./Screens/AllChats";
-// import Validation from "./Screens/Validation";
-import UserProvider from './provider/UserProvider'
+import UserProvider from './provider/UserProvider';
 import EditProfile from "./Screens/EditProfile";
 import ConfirmCode from "./Screens/ConfirmCode";
+// import Validation from "./Screens/Validation";
 
 const Stack = createStackNavigator();
 
@@ -54,9 +54,6 @@ const App = () => {
                     <Stack.Screen name="AllChats" component={AllChats}/>
                     <Stack.Screen name="EditProfile" component={EditProfile}/>
                     <Stack.Screen name="ConfirmCode" component={ConfirmCode}/>
-                    {/*<Stack.Screen name="Validation" component={Validation} />*/}
-                    {/*<StatusBar />*/}
-                    {/*<LoginPage />*/}
                 </Stack.Navigator>
             </NavigationContainer>
         </UserProvider>

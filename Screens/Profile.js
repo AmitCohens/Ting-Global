@@ -1,6 +1,7 @@
 import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
+import {userContext} from "../provider/UserProvider";
 
 const dataUser={
     Username:"AmitCohen123",
@@ -23,6 +24,7 @@ const dataUser={
 
 
 const Page = ({navigation}) => {
+    const {userDict, setUserDict} = useContext(userContext)
 
     return (
         <View name={"body"} style={styleProfilePage.body}>

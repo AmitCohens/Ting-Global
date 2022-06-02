@@ -37,11 +37,7 @@ const Select = (props) => {
                     console.log(userDict)
                 }}
             />
-            {/*<TouchableOpacity*/}
-            {/*  style={styleSheet.button}*/}
-            {/*  onPress={() => getPhoneNumber()}>*/}
-            {/*  <Text style={styleSheet.buttonText}>Get Phone Number</Text>*/}
-            {/*</TouchableOpacity>*/}
+
         </View>
     );
 };
