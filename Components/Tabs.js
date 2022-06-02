@@ -6,6 +6,7 @@ import {Image} from 'react-native';
 import AllChats from "../Screens/AllChats";
 import Accomplishment from "../Screens/Accomplishment";
 import ConfirmCode from "../Screens/ConfirmCode";
+import Actions from "../Screens/Actions";
 
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +37,7 @@ const Tabs = () => {
             />
             <Tab.Screen
                 name="Actions"
-                component={ConfirmCode}
+                component={Actions}
                 options={{
                     tabBarIcon: ({focused}) => (
 

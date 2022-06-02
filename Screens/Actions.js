@@ -1,41 +1,20 @@
 import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import PicButton from "../Components/PicButton";
-
-const dataUser={
-    Username:"AmitCohen123",
-    PhoneNumber:"+972527503742",
-    FullName:"Amit Cohen",
-    Country:"Israel",
-    EmailAddress:"cohen.amit.official@gmail.com",
-    ChallengeLanguage:"English",
-    MembershipPlan:"18 Days",
-    picture:require("../Images/Amit.png"),
-    Expression:2,
-    Dilegence:4,
-    understanding:5,
-    courage:1,
-    knowledge:5,
-    score:4300,
-}
+import userData from "../TestData/DB.json"
+import {userContext} from "../provider/UserProvider";
 
 
-
-
-const Page = ({navigation}) => {
-
+const Actions = ({navigation}) => {
+    const {userDict, setUserDict} = useContext(userContext);
+    const name=userData[userDict.phone].FullName;
     return (
-        <View name={"body"} style={styleProfilePage.body}>
-            <View name={"details"} style={styleProfilePage.AllDetails}>
-                <View name={"all icons"} style={styleProfilePage.icons}>
-                    <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
+        <View name={"all icons"} style={styleProfilePage.icons}>
+            <PicButton imgSrc={userData[userDict.phone].picture} nav={navigation} dest={0} style={{
                         width: 25,
                         height: 25,
                         margin: 10
-                    }} /><Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
-                </View>
-            </View>
-
+            }} /><Text style={styleProfilePage.text}>{userData[userDict.phone].FullName}</Text>
         </View>
     );
 };
@@ -94,5 +73,5 @@ const styleProfilePage = StyleSheet.create({
     }
 
 });
-export default Page;
+export default Actions;
 
