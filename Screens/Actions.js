@@ -28,46 +28,14 @@ const Page = ({navigation}) => {
         <View name={"body"} style={styleProfilePage.body}>
             <View name={"details"} style={styleProfilePage.AllDetails}>
                 <View name={"all icons"} style={styleProfilePage.icons}>
-                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
+                    <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
                         width: 25,
                         height: 25,
                         margin: 10
                     }} /><Text style={styleProfilePage.text}>{"Amit Cohen"}</Text>
-                <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"} props={dataUser} style={{
-                        width: 25,
-                        height: 25,
-                        margin: 10
-                    }} />
-
-                </View>
-                <View style={styleProfilePage.details}>
-                <Image source={dataUser.picture} style={styleProfilePage.image}/>
                 </View>
             </View>
-            <ScrollView style={styleProfilePage.container}>
-                <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Username: </Text>
-                    {dataUser.Username}
-                </Text>
-                <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Phone number: </Text>
-                    {dataUser.PhoneNumber}</Text>
-                <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Full name: </Text>
-                    {dataUser.FullName}</Text>
-                <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Country: </Text>
-                    {dataUser.Country}</Text>
-                <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Email address: </Text>
-                    {dataUser.EmailAddress}</Text>
-                <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Language: </Text>
-                    {dataUser.ChallengeLanguage}</Text>
-                <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Membership plan: </Text>
-                    {dataUser.MembershipPlan}</Text>
-            </ScrollView>
+
         </View>
     );
 };
@@ -77,16 +45,6 @@ const styleProfilePage = StyleSheet.create({
         fontSize: 25,
         borderTopWidth:3,
         borderBottomWidth:3,
-        borderStyle:'solid',
-        borderColor: "black",
-        fontWeight: 'bold',
-        fontFamily: 'sans-serif-medium',
-        margin:10,
-    },
-    score:{
-        textAlign: 'center',
-        fontSize: 25,
-        borderBottomWidth:4,
         borderStyle:'solid',
         borderColor: "black",
         fontWeight: 'bold',

@@ -17,7 +17,7 @@ const Tabs = () => {
                 headerShown: false,
                 tabBarHideOnKeyboard: true,
                 tabBarStyle: {
-                    height: 60,
+                    height: "8%",
                     backgroundColor: '#ffffff',
                 }
 
