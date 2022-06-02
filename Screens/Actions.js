@@ -1,5 +1,5 @@
-import { Image, StatusBar, StyleSheet, Text, View,ScrollView} from 'react-native';
-import React, {useContext, useState} from 'react';
+import {StatusBar, StyleSheet, Text, View} from 'react-native';
+import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
 import userData from "../TestData/DB.json"
 import {userContext} from "../provider/UserProvider";
@@ -7,7 +7,7 @@ import {userContext} from "../provider/UserProvider";
 
 const Actions = ({navigation}) => {
 
-    const {userDict, setUserDict} = useContext(userContext);
+    const {userDict} = useContext(userContext);
     const name=userData[userDict.phone].FullName;
     return (
         <View name={"all icons"} style={styleProfilePage.icons}>

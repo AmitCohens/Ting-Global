@@ -13,7 +13,7 @@ import {userContext} from "../provider/UserProvider";
 import users from "../TestData/DB.json"
 
 const Page = ({navigation}) => {
-    const {userDict, setUserDict} = useContext(userContext)
+    const {userDict} = useContext(userContext)
 
     return (
         <View name={'body'}>
@@ -28,7 +28,7 @@ const Page = ({navigation}) => {
                            style={{width: 50, height: 50}}/>
             </View>
             <View name={'content'} style={styleHomePage.content}>
-                <View name={'welcome'} style={{}}>
+                <View name={'welcome'}>
                     <Text style={styleHomePage.text}>Welcome, {users[userDict.phone].FullName}</Text>
                 </View>
                 <View name={'FirstTable'}>
@@ -68,9 +68,6 @@ const styleHomePage = StyleSheet.create({
         textAlign: 'center',
         fontSize: 30,
         fontWeight: 'bold'
-        // textShadowColor: '#000000',
-        // textShadowOffset: { width: 1, height: 1 },
-        // textShadowRadius: 1,
     },
 });
 export default Page;
