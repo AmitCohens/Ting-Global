@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 
 
 // const dataPath = '../TestData/ChatDB.json'
-import data_file from '../TestData/ChatDB.json'
+import Chats from '../TestData/ChatDB.json'
 import {userContext} from "../provider/UserProvider";
 import users from "../TestData/DB.json";
 
@@ -27,22 +27,22 @@ const ChatScreen = ({route}) => {
         setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
 
         // const { _id, createdAt, text, user,} = messages[0]
-
+        // addMessage(route.params.db._id, messages[0])
         route.params.db.msg_history.unshift(messages[0])
 
-        data_file[route.params.db._id] = route.params.db
+        Chats[route.params.db._id] = route.params.db
 
-        let temp = {
-            _id: route.params.db._id,
-            picture: route.params.db.picture,
-            name: route.params.db.name,
-            msg_history: route.params.db.msg_history
-        }
+        // let temp = {
+        //     _id: route.params.db._id,
+        //     picture: route.params.db.picture,
+        //     name: route.params.db.name,
+        //     msg_history: route.params.db.msg_history
+        // }
 
 
 
-        console.log(temp)
-        console.log(route.params.db)
+        // console.log(temp)
+        // console.log(route.params.db)
 
         // addDoc(collection(db, 'chats'), { _id, createdAt,  text, user });
     }, []);
@@ -89,7 +89,7 @@ const ChatScreen = ({route}) => {
     return (
         <View style={styles.body}>
             <View style={styles.header}>
-                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={styles.pic} />
+                <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} styling={styles.pic} />
                 <Pressable
                     onPress={() => alert("Challenge Details\nComing Soon!")}>
                     <Text style={styles.text}>{route.params.db.name}</Text>

@@ -5,7 +5,7 @@ import {
     Text,
     FlatList
 } from 'react-native';
-import data from '../TestData/ChatDB.json'
+import Chats from '../TestData/ChatDB.json'
 import {
     Card, MessageText,
     PostTime,
@@ -26,7 +26,7 @@ function App() {
             <View style={styles.viewBox}>
                 <Text style={styles.text}>- Last Comments -</Text>
                 <FlatList
-                    data={Object.entries(data).slice(0,2)}
+                    data={Object.entries(Chats).slice(0,2)}
                     keyExtractor={item=>item[0]}
                     renderItem={({item}) => (
                         <Card onPress={() => navigation.navigate('Chat', {db: item[1]})}>

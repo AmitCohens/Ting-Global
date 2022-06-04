@@ -1,4 +1,4 @@
-import data from '../TestData/ChatDB.json'
+import Chats from '../TestData/ChatDB.json'
 import React from 'react';
 import { StyleSheet, FlatList, View, Text } from 'react-native';
 import {
@@ -21,7 +21,7 @@ const MessagesScreen = ({navigation}) => {
                 <Text style={styles.text}>Challenges</Text>
             </View>
             <FlatList
-                data={Object.entries(data)}
+                data={Object.entries(Chats)}
                 keyExtractor={item=>item[0]}
                 renderItem={({item}) => (
                     <Card onPress={() => navigation.navigate('Chat', {db: item[1]})}>

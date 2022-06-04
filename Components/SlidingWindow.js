@@ -4,17 +4,28 @@ import {
     View,
     Text,
     Dimensions,
-    Image
+    Image, Pressable, Linking
 } from 'react-native';
 import View_Slider from 'react-native-view-slider'
 import News from '../TestData/NewsDB'
 
 const { width } = Dimensions.get('window');
 
+const OpenWEB = (url) => {
+    Linking.openURL(url).catch(err => {
+        console.error("Failed opening page because: ", err)
+        alert('Failed to open page')
+    })
+};
+
 function getSlide(item) {
     return (
         <View style={styles.viewBox}>
-            <Image source={item.image} style={styles.img}/>
+            <Pressable
+                onPress={() => OpenWEB(item.link)}>
+                <Image source={item.image} style={styles.img}/>
+            </Pressable>
+
             <Text style={styles.text}>{item.text}</Text>
         </View>
     )

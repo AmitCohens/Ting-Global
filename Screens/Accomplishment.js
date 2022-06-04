@@ -1,8 +1,9 @@
-import { Image, StatusBar, StyleSheet, Text, View } from 'react-native';
+import {Dimensions, Image, StatusBar, StyleSheet, Text, View, ImageBackground} from 'react-native';
 import React, {useContext} from 'react';
-import PicButton from "../Components/PicButton";
 import {userContext} from "../provider/UserProvider";
 import users from "../TestData/DB.json";
+
+const { width, height } = Dimensions.get('window');
 
 function medalView(num) {
     return (
@@ -21,6 +22,7 @@ const Page = () => {
     const userInfo = users[userDict.phone];
 
     function achieveView(s) {
+        console.log(s)
         return (
             <View style={styles.medalAndTitle}>
                 <Text style={styles.text}>{s}</Text>
@@ -30,32 +32,39 @@ const Page = () => {
     }
 
     return (
-        <View style={styles.body}>
-            <View style={styles.AllDetails}>
+        <ImageBackground
+            source={{uri: 'https://raw.githubusercontent.com/wholesomegarden/Challenge18Site/master/ting-global-nuxt/assets/images/intro-bg.jpg'}}
+            style={styles.background}>
+            <View style={styles.body}>
                 <View style={styles.details}>
                     <Text style={styles.title}>{userInfo.FullName}</Text>
                     <Image source={{uri: userInfo.picture}} style={styles.image2}/>
                     <Text style={styles.score}>Score: {userInfo["Score"]}</Text>
                 </View>
+                <View style={styles.container}>
+                    {achieveView("Expression")}
+                    {achieveView("Dilegence")}
+                    {achieveView("Understanding")}
+                    {achieveView("Courage")}
+                    {achieveView("Knowledge")}
+                </View>
             </View>
-            <View style={styles.container}>
-                {achieveView("Expression")}
-                {achieveView("Dilegence")}
-                {achieveView("Understanding")}
-                {achieveView("Courage")}
-                {achieveView("Knowledge")}
-            </View>
-        </View>
+        </ImageBackground>
     );
 };
 const styles = StyleSheet.create({
+    background: {
+        width: width,
+        height: height,
+        // flex:1
+    },
     text:{
         textAlign: 'center',
         fontSize: 20,
-        borderStyle:'solid',
-        borderColor: "black",
+        // borderStyle:'solid',
+        // borderColor: "black",
         fontWeight: 'bold',
-        fontFamily: 'sans-serif-medium',
+        // fontFamily: 'sans-serif-medium',
     },
     medals: {
         flexDirection: 'row',
@@ -63,17 +72,17 @@ const styles = StyleSheet.create({
     },
     title: {
         textAlign: 'center',
-        fontSize: 30,
-        borderStyle:'solid',
-        borderColor: "black",
+        fontSize: 32,
+        // borderStyle:'solid',
+        // borderColor: "black",
         fontWeight: 'bold',
-        fontFamily: 'sans-serif-medium',
+        // fontFamily: 'sans-serif-medium',
     },
     score:{
         textAlign: 'center',
-        fontSize: 35,
+        fontSize: 30,
         fontWeight: 'bold',
-        fontFamily: 'sans-serif-medium',
+        // fontFamily: 'sans-serif-medium',
         margin:10,
     },
     image:{
@@ -105,13 +114,15 @@ const styles = StyleSheet.create({
         paddingLeft:"5%",
         justifyContent: "space-between",
         alignItems: 'center',
+        maxHeight: '16%'
     },
     details: {
         alignItems: 'center',
     },
     body:{
-        justifyContent: 'center',
-        backgroundColor:'rgba(142,201,250,0.53)',
+        // display: 'flex',
+        // justifyContent: 'space-between',
+        // backgroundColor:'rgba(142,201,250,0.53)',
         flex:1,
         paddingTop: '10%'
     }
