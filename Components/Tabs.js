@@ -1,12 +1,11 @@
-import SignUp from '../Screens/SignUp';
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomePage from '../Screens/HomePage';
 import {Image} from 'react-native';
 import AllChats from "../Screens/AllChats";
 import Accomplishment from "../Screens/Accomplishment";
-import ConfirmCode from "../Screens/ConfirmCode";
 import Actions from "../Screens/Actions";
+import International from "../Screens/International";
 
 const Tab = createBottomTabNavigator();
 
@@ -62,7 +61,7 @@ const Tabs = () => {
             />
             <Tab.Screen
                 name="International"
-                component={SignUp}
+                component={International}
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Image

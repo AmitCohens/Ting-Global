@@ -1,0 +1,82 @@
+import {StyleSheet, View, Image, Text, ImageBackground, Dimensions} from 'react-native';
+import React from 'react';
+
+const { width, height } = Dimensions.get('window');
+
+const Page = () => {
+
+    return (
+        <View style={{flex: 1}}>
+            <ImageBackground
+                source={{uri: 'https://raw.githubusercontent.com/wholesomegarden/Challenge18Site/master/ting-global-nuxt/assets/images/intro-bg.jpg'}}
+                style={styles.background}>
+                <View style={styles.body}>
+                    <Image
+                        source={require('../Images/logo18.png')}
+                        style={styles.logo}
+                    />
+                    <Text style={styles.title}>
+                        Challenge Yourself to the Top
+                    </Text>
+                    <Text style={styles.subtitle}>
+                        Easily build, run, and change the world with any challenge on one platform.
+                    </Text>
+                    <Image source={{uri: 'https://ting.global/_nuxt/img/challenge-intro.e70cc48.gif'}}
+                           style={styles.image}/>
+                    <Text style={styles.text}>
+                        <Text style={{fontWeight: 'bold'}}>Challenge 18</Text> is the most important sustainability and
+                        leadership games tournament in the world, in which clubs from all over
+                        the world collaborate in achieving the SDG’s. At the end of the
+                        tournament a trophy is awarded to the winning clubs.
+                    </Text>
+                </View>
+            </ImageBackground>
+        </View>
+    );
+};
+const styles = StyleSheet.create({
+    image:{
+        width: 200,
+        height: 200,
+        margin:10,
+    },
+    logo: {
+        justifyContent: 'flex-start',
+        width: 100,
+        height: 60,
+    },
+    body:{
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        margin: 10,
+        paddingBottom: '15%',
+        flex:1,
+        paddingTop: '6%',
+    },
+    background: {
+        width: width,
+        height: height
+    },
+    text: {
+        color: 'white',
+        paddingRight: '8%',
+        paddingLeft: '8%',
+        fontSize: 20,
+    },
+    title: {
+        color: 'white',
+        textAlign: 'center',
+        paddingRight: '8%',
+        paddingLeft: '8%',
+        fontSize: 28,
+        fontWeight: 'bold'
+    },
+    subtitle: {
+        color: 'white',
+        textAlign: 'center',
+        paddingRight: '8%',
+        paddingLeft: '8%',
+        fontSize: 25,
+    }
+});
+export default Page;

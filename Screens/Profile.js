@@ -1,55 +1,54 @@
 import {Image, StatusBar, StyleSheet, Text, View, ScrollView} from 'react-native';
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
 import {userContext} from "../provider/UserProvider";
 import users from '../TestData/DB.json'
 
 const Page = ({navigation}) => {
-    const {userDict, setUserDict} = useContext(userContext)
+    const {userDict} = useContext(userContext)
     const userInfo = users[userDict.phone];
 
     return (
         <View name={"body"} style={styleProfilePage.body}>
             <View name={"details"} style={styleProfilePage.AllDetails}>
                 <View name={"all icons"} style={styleProfilePage.icons}>
-                    <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} style={{
+                    <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} styling={{
                         width: 25,
                         height: 25,
                         margin: 10
-                    }} /><Text style={styleProfilePage.text}>{userInfo.FullName}</Text>
-                <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"} props={dataUser} style={{
+                    }}/><Text style={styleProfilePage.text}>{userInfo.FullName}</Text>
+                    <PicButton imgSrc={require('../Images/edit.png')} nav={navigation} dest={"EditProfile"} styling={{
                         width: 25,
                         height: 25,
                         margin: 10
                     }}/>
-
                 </View>
                 <View style={styleProfilePage.details}>
-                <Image source={{uri: userInfo.picture}} style={styleProfilePage.image}/>
+                    <Image source={{uri: userInfo.picture}} style={styleProfilePage.image}/>
                 </View>
             </View>
             <ScrollView style={styleProfilePage.container}>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Username: </Text>
-                    {userInfo.Username}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Username: </Text>
+                    {userInfo["Username"]}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Phone number: </Text>
-                    {userInfo.PhoneNumber}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Phone number: </Text>
+                    {userInfo["PhoneNumber"]}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Full name: </Text>
-                    {userInfo.FullName}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Full name: </Text>
+                    {userInfo["FullName"]}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Country: </Text>
-                    {userInfo.Country}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Country: </Text>
+                    {userInfo["Country"]}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Email address: </Text>
-                    {userInfo.EmailAddress}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Email address: </Text>
+                    {userInfo["EmailAddress"]}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Language: </Text>
-                    {userInfo.ChallengeLanguage}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Language: </Text>
+                    {userInfo["ChallengeLanguage"]}</Text>
                 <Text style={styleProfilePage.item}>
-                    <Text style={{ fontWeight: 'bold'}}>Membership plan: </Text>
-                    {userInfo.MembershipPlan}</Text>
+                    <Text style={{fontWeight: 'bold'}}>Membership plan: </Text>
+                    {userInfo["MembershipPlan"]}</Text>
             </ScrollView>
         </View>
     );
@@ -63,17 +62,6 @@ const styleProfilePage = StyleSheet.create({
         borderStyle: 'solid',
         borderColor: "black",
         fontWeight: 'bold',
-        fontFamily: 'sans-serif-medium',
-        margin: 10,
-    },
-    score: {
-        textAlign: 'center',
-        fontSize: 25,
-        borderBottomWidth: 4,
-        borderStyle: 'solid',
-        borderColor: "black",
-        fontWeight: 'bold',
-        fontFamily: 'sans-serif-medium',
         margin: 10,
     },
     body: {
@@ -90,7 +78,7 @@ const styleProfilePage = StyleSheet.create({
     },
     AllDetails: {
         justifyContent: 'space-between',
-        paddingTop: '5%',
+        paddingTop: '8%',
         backgroundColor: 'rgba(28,139,203,0.53)',
         maxHeight: "35%",
     },
