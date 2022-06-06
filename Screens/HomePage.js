@@ -2,7 +2,8 @@ import {
   Image,
   StyleSheet,
   Text,
-  View
+  View,
+    ScrollView,
 } from 'react-native';
 import React, {useContext} from 'react';
 import Profile from './Profile';
@@ -30,7 +31,9 @@ const Page = ({navigation}) => {
             <View style={styleHomePage.content}>
                 <Text style={styleHomePage.text}>Welcome, {users[userDict.phone].FullName}</Text>
                 <SlidingWindow/>
+                <ScrollView>
                 <LastMessages style={{margin: 10}}/>
+                </ScrollView>
             </View>
         </View>
     );

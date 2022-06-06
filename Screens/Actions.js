@@ -21,7 +21,7 @@ const Actions = ({navigation}) => {
                     <Image source={{uri: picture}} style={styleActionsPage.image}/>
                     <View style={styleActionsPage.allButtons}>
                     <AppButton title={'Create a challenge'} nav={navigation} dest={1}/>
-                    <AppButton title={'Join to challenge'} nav={navigation} dest={1}/>
+                    <AppButton title={'Available Challenges'} nav={navigation} dest={1}/>
                     </View>
                     <PicButton imgSrc={require('../Images/log-out.png')} nav={navigation} dest={"LoginPage"}
                                styling={{width: 50, height: 50}}/>

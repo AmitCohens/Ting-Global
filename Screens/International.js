@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
         paddingRight: '5%',
         paddingLeft: '5%',
         fontSize: 18,
-        backgroundColor:"rgba(0,0,0,0.3)"
+        backgroundColor:"rgba(0,0,0,0.3)",
+        borderRadius:20,
     },
     title: {
         color: 'white',
@@ -71,7 +72,8 @@ const styles = StyleSheet.create({
         paddingLeft: '8%',
         fontSize: 28,
         fontWeight: 'bold',
-        backgroundColor:"rgba(0,0,0,0.3)"
+        backgroundColor:"rgba(0,0,0,0.3)",
+        borderRadius:20,
     },
     subtitle: {
         color: 'white',
@@ -79,7 +81,8 @@ const styles = StyleSheet.create({
         paddingRight: '8%',
         paddingLeft: '8%',
         fontSize: 25,
-        backgroundColor:"rgba(0,0,0,0.3)"
+        backgroundColor:"rgba(0,0,0,0.3)",
+        borderRadius:20,
     }
 });
 export default Page;
