@@ -16,14 +16,19 @@ const Actions = ({navigation}) => {
     return (
         <View>
             <ImageBackground source={require("../Images/logoutPage.jpg")} style={styleActionsPage.background}>
+                <View style={styleActionsPage.allPage}>
                 <View style={styleActionsPage.body}>
                     <Image source={{uri: picture}} style={styleActionsPage.image}/>
                     <View style={styleActionsPage.allButtons}>
                     <AppButton title={'Create a challenge'} nav={navigation} dest={1}/>
-                    <AppButton title={'Join the challenge'} nav={navigation} dest={1}/>
+                    <AppButton title={'Join to challenge'} nav={navigation} dest={1}/>
                     </View>
                     <PicButton imgSrc={require('../Images/log-out.png')} nav={navigation} dest={"LoginPage"}
                                styling={{width: 50, height: 50}}/>
+                </View>
+                <View style={styleActionsPage.tt}>
+                    <Text style={styleActionsPage.text}>©Ting-Global, App by Amit Cohen, Idan Mashriki, Bezalel Cohen, Miriam Sirota, Gad Shrim</Text>
+                </View>
                 </View>
             </ImageBackground>
         </View>
@@ -58,6 +63,21 @@ const styleActionsPage = StyleSheet.create({
         display: "flex",
         justifyContent:"space-between",
         height:"40%",
+    },
+    text:{
+        backgroundColor:"rgba(0,0,0,0.53)",
+        color:"white",
+        fontSize:17,
+        textAlign:"center",
+        borderRadius:10,
+    },
+    allPage:{
+        display: "flex",
+        justifyContent:"flex-end",
+        margin:2,
+    },
+    tt:{
+        paddingTop:"16%",
     }
 });
 export default Actions;
