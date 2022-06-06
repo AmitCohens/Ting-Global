@@ -24,7 +24,7 @@ const styleB = StyleSheet.create({
     borderRadius: 20,
     elevation: 3,
     backgroundColor: 'black',
-    maxWidth: 300,
+    maxWidth: 200,
   },
   text: {
     fontSize: 16,
