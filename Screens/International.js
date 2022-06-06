@@ -8,7 +8,7 @@ const Page = () => {
     return (
         <View style={{flex: 1}}>
             <ImageBackground
-                source={{uri: 'https://raw.githubusercontent.com/wholesomegarden/Challenge18Site/master/ting-global-nuxt/assets/images/intro-bg.jpg'}}
+                source={require("../Images/videos-bg.jpg")}
                 style={styles.background}>
                 <View style={styles.body}>
                     <Image
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
         paddingRight: '8%',
         paddingLeft: '8%',
         fontSize: 20,
+        backgroundColor:"rgba(0,0,0,0.3)"
     },
     title: {
         color: 'white',
@@ -69,7 +70,8 @@ const styles = StyleSheet.create({
         paddingRight: '8%',
         paddingLeft: '8%',
         fontSize: 28,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        backgroundColor:"rgba(0,0,0,0.3)"
     },
     subtitle: {
         color: 'white',
@@ -77,6 +79,7 @@ const styles = StyleSheet.create({
         paddingRight: '8%',
         paddingLeft: '8%',
         fontSize: 25,
+        backgroundColor:"rgba(0,0,0,0.3)"
     }
 });
 export default Page;
