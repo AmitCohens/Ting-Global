@@ -6,7 +6,9 @@ const app = props => {
     <View>
       <Pressable
         style={styleB.button}
-        onPress={() => props.nav.navigate(props.dest)}>
+        onPress={() => props.dest === 0 ? props.nav.goBack()
+                : props.dest === 1 ? alert("Coming Soon!")
+                : props.nav.navigate(props.dest)}>
         <Text style={styleB.text}>{props.title}</Text>
       </Pressable>
     </View>
@@ -22,7 +24,7 @@ const styleB = StyleSheet.create({
     borderRadius: 20,
     elevation: 3,
     backgroundColor: 'black',
-    maxWidth: 200,
+    maxWidth: 300,
   },
   text: {
     fontSize: 16,

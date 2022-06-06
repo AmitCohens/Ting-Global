@@ -8,7 +8,7 @@ const Page = () => {
     return (
         <View style={{flex: 1}}>
             <ImageBackground
-                source={require("../Images/videos-bg.jpg")}
+                source={require("../Images/videos2.jpg")}
                 style={styles.background}>
                 <View style={styles.body}>
                     <Image
@@ -59,9 +59,9 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'white',
-        paddingRight: '8%',
-        paddingLeft: '8%',
-        fontSize: 20,
+        paddingRight: '5%',
+        paddingLeft: '5%',
+        fontSize: 18,
         backgroundColor:"rgba(0,0,0,0.3)"
     },
     title: {
