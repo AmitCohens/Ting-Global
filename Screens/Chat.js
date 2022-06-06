@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: 'center',
         // margin: 10,
-        backgroundColor: 'white',
+        backgroundColor:"rgb(227,234,250)",
         maxHeight: '10%',
         width: '100%',
         paddingLeft: 5,
@@ -145,7 +145,8 @@ const styles = StyleSheet.create({
     },
     body: {
         flex: 1,
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        backgroundColor:"rgb(255,255,255)",
     },
     pic: {
         width: 25,
