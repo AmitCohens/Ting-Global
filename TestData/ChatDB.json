@@ -180,5 +180,139 @@
         }
       }
     ]
+  },
+  "c0": {
+  "_id": "c0",
+  "picture": "https://ting.global/_nuxt/img/shakespeare-pen.bf2345f.jpeg",
+  "name": "Shakespeare's Pen",
+  "day": 9,
+  "msg_history":[
+    {
+      "_id": "m1",
+      "text": "Task 3\n\nTSL Capsule Time-Sustainability-Leadership - Write a letter requesting the universe, decorate it, write your name and date, and bury it in the ground in the capsule (small box, glass bottle and even in a flower pot). Remember: you plant hopes, expectations Dreams and the universe will grow them, define exactly what you want and when. Note: It is also possible to forward the letter to a close person, such as a teacher or friend, who will keep a letter and return it to you a year later. | ✨\n\nAfter completing this task, please send this emoji in the group: ✨",
+      "createdAt": "2022-05-22T18:37:35.673Z",
+      "user": {
+        "_id": "+972502440084",
+        "name": "Ting global-Shakespeare's Pen",
+        "avatar": "https://ting.global/_nuxt/img/shakespeare-pen.bf2345f.jpeg"
+      }
+    },
+    {
+      "_id": "m1",
+      "text": "Task 2\n\nPlant a tree or donate to a body that promotes tree planting in your area. Take a picture or film yourself and capture the magic. | \uD83C\uDF31\n\nAfter completing this task, please send this emoji in the group: \uD83C\uDF31",
+      "createdAt": "2022-05-21T18:37:35.673Z",
+      "user": {
+        "_id": "+972502440084",
+        "name": "Ting global-Shakespeare's Pen",
+        "avatar": "https://ting.global/_nuxt/img/shakespeare-pen.bf2345f.jpeg"
+      }
+    },
+    {
+      "_id": "m1",
+      "text": "Task 1\n\nWatch the TED talk - How trees talk to each other | Suzanne Simard | & reflect on what you saw and share in the discussion group something new that you learned. https://youtu.be/Un2yBgIAxYs | \uD83D\uDC2E\n\nAfter completing this task, please send this emoji in the group: \uD83D\uDC2E",
+      "createdAt": "2022-05-20T18:37:35.673Z",
+      "user": {
+        "_id": "+972502440084",
+        "name": "Ting global-Shakespeare's Pen",
+        "avatar": "https://ting.global/_nuxt/img/shakespeare-pen.bf2345f.jpeg"
+      }
+    }
+  ]
+},
+  "c6": {
+    "_id": "c6",
+    "picture": "https://ting.global/_nuxt/img/ted-countdown.3b928aa.jpeg",
+    "name": "Ted Countdown",
+    "day": 8,
+    "msg_history":[
+      {
+        "_id": "m1",
+        "text": "\uD83D\uDCA5\uD83D\uDCA5\uD83D\uDCA5 Bonus \uD83D\uDCA5\uD83D\uDCA5\uD83D\uDCA5\n\n   Players from the same team that will upload a shared video within the next 24 hours, on one of the goals you have been exposed to so far, will recieve bonus points.\n\n* It is possible that one will be in front of the camera and the other will write, produce and accompany.\n\nAfter completing this task, please send this emoji in the group: \uD83D\uDEA3\u200D♀",
+        "createdAt": "2022-05-27T18:37:35.673Z",
+        "user": {
+          "_id": "+972502440084",
+          "name": "Ting global-Ted Countdown",
+          "avatar": "https://ting.global/_nuxt/img/ted-countdown.3b928aa.jpeg"
+        }
+      },
+      {
+        "_id": "m1",
+        "text": "Task 3\n\nSharing is caring - Today's task and until the end of the challenge is to share the challenge with friends, even 3 people each day are enough, although the more you share with more people the more powerful the energy in my eyes. Remember to share, experiences, impressions, what you learned new and so on. The mark for sharing is emoji \uD83D\uDC1C \n\nAfter completing this task, please send this emoji in the group: \uD83D\uDC1C",
+        "createdAt": "2022-05-26T18:37:35.673Z",
+        "user": {
+          "_id": "+972502440084",
+          "name": "Ting global-Ted Countdown",
+          "avatar": "https://ting.global/_nuxt/img/ted-countdown.3b928aa.jpeg"
+        }
+      },
+      {
+        "_id": "m1",
+        "text": "Task 2\n\nWatch the TED talk - How empowering women and girls can help stop global warming | Katharine Wilkinson. A magical evening full of sustainability, leadership and passing on the good \uD83D\uDC63 https://www.youtube.com/watch?v=vXlJEcrinwg | Ages 8+\n\nAfter completing this task, please send this emoji in the group: \uD83D\uDC63",
+        "createdAt": "2022-05-24T18:37:35.673Z",
+        "user": {
+          "_id": "+972502440084",
+          "name": "Ting global-Ted Countdown",
+          "avatar": "https://ting.global/_nuxt/img/ted-countdown.3b928aa.jpeg"
+        }
+      },
+      {
+        "_id": "m1",
+        "text": "Task 1\n\nWatch the TED talk - How empowering women and girls can help stop global warming | Katharine Wilkinson. A magical evening full of sustainability, leadership and passing on the good  https://www.youtube.com/watch?v=vXlJEcrinwg and share in the discussion group something new that you learned | \uD83C\uDF0D\n\nAfter completing this task, please send this emoji in the group: \uD83C\uDF0D",
+        "createdAt": "2022-05-22T18:37:35.673Z",
+        "user": {
+          "_id": "+972502440084",
+          "name": "Ting global-Ted Countdown",
+          "avatar": "https://ting.global/_nuxt/img/ted-countdown.3b928aa.jpeg"
+        }
+      }
+    ]
+  },
+  "c7": {
+    "_id": "c7",
+    "picture": "https://ting.global/_nuxt/img/just-do-it-2.e55290e.jpeg",
+    "name": "Just Do It",
+    "day": 7,
+    "msg_history":[
+      {
+        "_id": "m1",
+        "text": "\uD83D\uDCA5\uD83D\uDCA5\uD83D\uDCA5 Bonus \uD83D\uDCA5\uD83D\uDCA5\uD83D\uDCA5\n\n   Players from the same team that will upload a shared video within the next 24 hours, on one of the goals you have been exposed to so far, will recieve bonus points.\n\n* It is possible that one will be in front of the camera and the other will write, produce and accompany.\n\nAfter completing this task, please send this emoji in the group: \uD83D\uDEA3\u200D♀",
+        "createdAt": "2022-05-27T18:37:35.673Z",
+        "user": {
+          "_id": "+972502440084",
+          "name": "Ting global-Just Do It",
+          "avatar": "https://ting.global/_nuxt/img/just-do-it-2.e55290e.jpeg"
+        }
+      },
+      {
+        "_id": "m1",
+        "text": "Task 3\n\nSharing is caring - Today's task and until the end of the challenge is to share the challenge with friends, even 3 people each day are enough, although the more you share with more people the more powerful the energy in my eyes. Remember to share, experiences, impressions, what you learned new and so on. The mark for sharing is emoji \uD83D\uDC1C \n\nAfter completing this task, please send this emoji in the group: \uD83D\uDC1C",
+        "createdAt": "2022-05-26T18:37:35.673Z",
+        "user": {
+          "_id": "+972502440084",
+          "name": "Ting global-Just Do It",
+          "avatar": "https://ting.global/_nuxt/img/just-do-it-2.e55290e.jpeg"
+        }
+      },
+      {
+        "_id": "m1",
+        "text": "Task 2\n\nWatch the TED talk - How empowering women and girls can help stop global warming | Katharine Wilkinson. A magical evening full of sustainability, leadership and passing on the good \uD83D\uDC63 https://www.youtube.com/watch?v=vXlJEcrinwg | Ages 8+\n\nAfter completing this task, please send this emoji in the group: \uD83D\uDC63",
+        "createdAt": "2022-05-24T18:37:35.673Z",
+        "user": {
+          "_id": "+972502440084",
+          "name": "Ting global-Just Do It",
+          "avatar": "https://ting.global/_nuxt/img/just-do-it-2.e55290e.jpeg"
+        }
+      },
+      {
+        "_id": "m1",
+        "text": "Task 1\n\nWatch the TED talk - How empowering women and girls can help stop global warming | Katharine Wilkinson. A magical evening full of sustainability, leadership and passing on the good  https://www.youtube.com/watch?v=vXlJEcrinwg and share in the discussion group something new that you learned | \uD83C\uDF0D\n\nAfter completing this task, please send this emoji in the group: \uD83C\uDF0D",
+        "createdAt": "2022-05-22T18:37:35.673Z",
+        "user": {
+          "_id": "+972502440084",
+          "name": "Ting global-Just Do It",
+          "avatar": "https://ting.global/_nuxt/img/just-do-it-2.e55290e.jpeg"
+        }
+      }
+    ]
   }
 }
