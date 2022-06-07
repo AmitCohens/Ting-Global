@@ -1,12 +1,12 @@
 import React, {useState, useEffect, useCallback, useContext} from 'react';
-import {View, Text, StyleSheet, Image, Pressable,ImageBackground} from 'react-native';
+import {View, Text, StyleSheet, Image, Pressable,ImageBackground,LogBox} from 'react-native';
 import {Bubble, GiftedChat, Send} from 'react-native-gifted-chat';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import PicButton from "../Components/PicButton";
 import { useNavigation } from '@react-navigation/native';
 
-
+LogBox.ignoreLogs(["EventEmitter.removeListener"]);
 // const dataPath = '../TestData/ChatDB.json'
 import Chats from '../TestData/ChatDB.json'
 import {userContext} from "../provider/UserProvider";
