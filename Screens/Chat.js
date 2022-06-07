@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback, useContext} from 'react';
-import {View, Text, StyleSheet, Image, Pressable} from 'react-native';
+import {View, Text, StyleSheet, Image, Pressable,ImageBackground} from 'react-native';
 import {Bubble, GiftedChat, Send} from 'react-native-gifted-chat';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -87,6 +87,7 @@ const ChatScreen = ({route}) => {
     }
 
     return (
+        <ImageBackground source={require("../Images/deltabackground.jpg")} style={styles.background}>
         <View style={styles.body}>
             <View style={styles.header}>
                 <PicButton imgSrc={require('../Images/left-arrow.png')} nav={navigation} dest={0} styling={styles.pic} />
@@ -118,6 +119,7 @@ const ChatScreen = ({route}) => {
                 />
             </View>
         </View>
+        </ImageBackground>
     );
 };
 
@@ -146,10 +148,14 @@ const styles = StyleSheet.create({
     body: {
         flex: 1,
         justifyContent: 'space-between',
-        backgroundColor:"rgb(255,255,255)",
     },
     pic: {
         width: 25,
         height: 25,
-    }
+    },
+    background: {
+        width: "100%",
+        height: "100%",
+        backgroundColor:"white",
+    },
 });
