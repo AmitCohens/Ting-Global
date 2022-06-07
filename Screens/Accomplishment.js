@@ -43,7 +43,7 @@ const Page = () => {
                 </View>
                 <View style={styles.container}>
                     {achieveView("Expression")}
-                    {achieveView("Dilegence")}
+                    {achieveView("Diligence")}
                     {achieveView("Understanding")}
                     {achieveView("Courage")}
                     {achieveView("Knowledge")}
