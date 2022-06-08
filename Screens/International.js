@@ -23,7 +23,7 @@ const Page = () => {
                     </Text>
                     <Image source={require('../Images/challenge-intro.e70cc48.gif')}
                            style={styles.image}/>
-                    <ScrollView style={styles.lastText}>
+                    <ScrollView>
                         <Text style={styles.text}>
                             <Text style={{fontWeight: 'bold'}}>Challenge 18</Text> is the most important sustainability
                             and
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin: 10,
         paddingBottom: '15%',
-        // paddingTop: '6%',
+        paddingTop: '6%',
 
     },
     background: {
@@ -92,9 +92,6 @@ const styles = StyleSheet.create({
         fontSize: 25,
         backgroundColor:"rgba(0,0,0,0.3)",
         borderRadius:20,
-    },
-    lastText:{
-        maxHeight:"20%",
     }
 });
 export default Page;
