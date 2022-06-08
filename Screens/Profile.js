@@ -2,7 +2,7 @@ import {Image, StatusBar, StyleSheet, Text, View, ScrollView} from 'react-native
 import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
 import {userContext} from "../provider/UserProvider";
-import users from '../TestData/DB.json'
+import users from '../TestData/DB.js'
 
 const Page = ({navigation}) => {
     const {userDict} = useContext(userContext)
@@ -23,7 +23,7 @@ const Page = ({navigation}) => {
                     }}/>
                 </View>
                 <View style={styleProfilePage.details}>
-                    <Image source={{uri: userInfo.picture}} style={styleProfilePage.image}/>
+                    <Image source={userInfo.Image} style={styleProfilePage.image}/>
                 </View>
             </View>
             <ScrollView style={styleProfilePage.container}>

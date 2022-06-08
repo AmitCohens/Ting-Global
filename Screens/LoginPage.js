@@ -6,7 +6,7 @@ import AppButton from '../Components/AppButton';
 import LoginButton from '../Components/LoginButton'
 import {singIn} from "../utils/Connect";
 import {userContext} from '../provider/UserProvider'
-import data from '../TestData/DB.json'
+import data from '../TestData/DB.js'
 
 // const user = React.createContext(({phone: '+33', username: '', token: ''}))
 

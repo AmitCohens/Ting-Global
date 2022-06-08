@@ -11,7 +11,7 @@ import PicButton from '../Components/PicButton';
 import SlidingWindow from "../Components/SlidingWindow";
 import LastMessages from "../Components/LastMessages";
 import {userContext} from "../provider/UserProvider";
-import users from "../TestData/DB.json"
+import users from "../TestData/DB.js"
 
 const Page = ({navigation}) => {
     const {userDict} = useContext(userContext)

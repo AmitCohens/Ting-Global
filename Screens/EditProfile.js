@@ -4,7 +4,7 @@ import PicButton from "../Components/PicButton";
 import {TextInput} from "react-native-paper";
 import AppButton from "../Components/AppButton";
 import {userContext} from "../provider/UserProvider";
-import users from "../TestData/DB.json";
+import users from "../TestData/DB.js";
 
 
 const Page = ({navigation}) => {
@@ -28,7 +28,7 @@ const Page = ({navigation}) => {
                     }}/>
                 </View>
                 <View style={styles.details}>
-                    <Image source={{uri: userInfo.picture}} style={styles.image}/>
+                    <Image source={userInfo.Image} style={styles.image}/>
                 </View>
             </View>
             <ScrollView style={styles.container}>

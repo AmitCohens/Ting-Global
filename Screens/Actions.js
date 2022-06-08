@@ -1,7 +1,7 @@
 import {Image, StyleSheet, Text,ImageBackground, View,Pressable} from 'react-native';
 import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
-import userData from "../TestData/DB.json"
+import userData from "../TestData/DB.js"
 import {userContext} from "../provider/UserProvider";
 import LoginPage from "./LoginPage";
 import AppButton from "../Components/AppButton";
@@ -11,14 +11,14 @@ import AppButton from "../Components/AppButton";
 const Actions = ({navigation}) => {
 
     const {userDict} = useContext(userContext);
-    const picture = userData[userDict.phone].picture;
+    const picture = userData[userDict.phone].Image;
     const admin = userData[userDict.phone].isAdmin;
     return (
         <View>
             <ImageBackground source={require("../Images/logoutPage.jpg")} style={styles.background}>
                 <View style={styles.body}>
                     <View>
-                        <Image source={{uri: picture}} style={styles.image}/>
+                        <Image source={picture} style={styles.image}/>
                     </View>
                     <View style={styles.allButtons}>
                         {admin && <AppButton title={'Create a Challenge'} nav={navigation} dest={1}/>}

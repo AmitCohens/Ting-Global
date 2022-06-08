@@ -1,4 +1,4 @@
-{
+const DB = {
   "+972527503742": {
     "Username":"AmitCohen123",
     "PhoneNumber":"+972527503742",
@@ -8,6 +8,7 @@
     "ChallengeLanguage":"English",
     "MembershipPlan":"18 Days",
     "picture": "https://lh3.googleusercontent.com/wu00sEz0H56bxX6EBLmCPSfHg7fMz4ET1K4Zq0vZeIad4olwakuZpGLF7jPPoB_CwegeLRaazd6p-zRl0HB842QW2NDZcgvUZOKsUNNA2MLUxpVI8_sOE7KJMX62TRJPMZG1AHcmrTFB194jfs4b1XWhs_IYuTNcgITuYnFfE4nEmtZXnAKSo9x9dh9nqDaYTCpRQiyRuJVkySa6I-fRMcWA4yqJ1uBjTWn7cWIA5qBNrte_WAXR0wJNwy1in_X0wAFZS4QHo1NT-vODXb0VQo4iD5mmIUPfKJN62rkKDTCcxyPgRQSeccLHFn38tJGiGc_tEC-NMwUNdplrLOPWylFBP2JURcX9o5HNpG3OJBDAl1n3L6c0yY4xu3GEvqJ_rZhm6YFos5P1V2OpYPqrZNK10WV2wEofwZMLJ7NO4MtS2EGlAfzaVIWz9n1dzL7w2pSi3c5Ht0bBQ1FVqbDF0w_Atch3b2Cdv3dMYi8XF3nFFFFVEIJBxBi-WC-GJoCb7aCWU3NBAxfxGqSyhJXdNqnwB4U1zWJGUGYbkH_SJ7Db_dAw6LYjtnD1mPOeE4FTD9kudlYFcqJlbENtH1ySs4KiqUOmoR1MfhSPRPoIheSXrKGrBbk36zlCjCfNsS7qa-2PUeIbcyaC0olGAZ4L2Q0ChaPiGFuR4TrO-2z3TQMNUD-YbkCXMSIgpmgvgAJzzaJkX21e4skgE5D4uO8pw4ekeZL8bAw0GBcG8Np0dQzUEr4Gu5IxQd3Zy-FZ71A=w870-h893-no?authuser=0",
+    "Image":require("../Images/amit.jpeg"),
     "Expression":3,
     "Diligence":4,
     "Understanding":5,
@@ -25,6 +26,7 @@
     "ChallengeLanguage":"English",
     "MembershipPlan":"18 Days",
     "picture":"https://lh3.googleusercontent.com/eGKsWYfpuSAF7XAmCBuB8vhbf_-uOVHylcL8MAS_rVwuqSAwlxpZ9rrJTtS6bpbLfPdZiMq6W3RngznbVP9T_Tnngp_4LOiC01lsWfzJRL2qfFBxKdzi38GQPx5_WT32fgBeIEdSQQMJHqIRhFxtL4wwCNM89vqkQ3rapkSIvBYXZ7bb_n5jGU04dsHm9HcnEA0VKPSp1ggGYN-Myiyq1OwQEtlGm5l9lLapktds34jtL0Jy0212KVG0-PRKW_9gwESn3ZyTYwpwaiFwKxDSqaid2JlFRM8JVkv4u14Gge9BhhLAe2KGpQ-huIDXSGlkwYfk-tTIW2HVvyLoqSToPISpbV8w-5MIOfwfWgHLPZWjebC0MaQk8Ohw5hgFzsucTOcgtUleYEyiIAQ4X26wBAtC92evQ9aoTVZGCQ3VuXS09Trajg3jN8SO_1AB6sBPFMJILAwqlYSY1-62VWFTRxPemQCQu7gZ2tmVnu6Zg4bHf43TYD9oScXfmojZp7R8vyS2pjU47YV1geyHX5TirAgGJN-dxyIF6DaDThRfWXIb_ToN2QmPJg70Xlk4ef-Lg_EnU_hu95KHHYqXs_tx9kk7Zd8J37yPEtOw54DwRDq2iEkQG9tsbeOLb_v7rk7U9DpenGl1VepDZ_IxPlbzX23AEZGcbnkgRO0ps0XrlLSSEiOaBUVTwuj1bGzWB1n68LhX3J2CpxED7gEgoQxX-HeWiiyOD1FjCQY17QmoiVSGQqWdgTfo291xPGe5UPQ=w768-h794-no?authuser=0",
+    "Image":require('../Images/sharon.jpeg'),
     "Expression":5,
     "Diligence":5,
     "Understanding":5,
@@ -42,6 +44,7 @@
     "ChallengeLanguage":"English",
     "MembershipPlan":"18 Days",
     "picture":"https://lh3.googleusercontent.com/1Kk4wPt70TTkIQFUh13iuYJ5LM8FxoGAP3I4XKJ5C7fWxehNvkwlmLU0bc_7PoCwur3Gr2Zgp_yr1giQig0AyHLfqls8xorFxO5Np7IYxsQyrdH7ohP7fSeaDMoZO8L-IfZdhl2_eFMp_2saIlcnNSPr-fdffTQ83bkoJMKnEL1OnDVvW5-wEXInFeTq-q0t0SeQMFv_NfDiSbV_5jRrufoZG516nkx4s7wCuKfIzNzQSK37STHnFGVGTLzlx5jbkCOrvqhwOYrZc86x5GuTGzqQ56cq9vq10AB9OkctfMJHzJEMfMkCZ1i98aTcqth453D4oMGZ86GTUx3EpswcxZ7ID8StIXtacZVPxOEgzVhL-gKIPLYesARRBFcdrdz_MADyJTGoGNbnD_lW52V1IlAcAuacoUxWTBrMWPkUr-CEn1gGZ89SFbks4gufZfFo5BWFpIjwJr9avdGukp2gSzqU8ZinmpZX85Ci-IYOgLDihcOpqrc7SiU4OOKx8x9c0hWIao6BwWI5XlAzgl5GDTRYzUy-cRmm33mlAwEJXlHOXyC0UdT0nPKZ2QUZhHXmCAW8kIzE3rmSDT-IXC8v8yLIinxAzsVu-_cD-knnasnWL8ERASKrTXXBoM_PA_aCO3RbMw7Q4O44yIlfwNvWi_nPv5p9j5zr_0YtyRUE0XrQ-TDxiEH4ngReZuFo2rdVezONaiSV023sImE2uP1JmOjbele30_g3LQn3HAuQbl92fK4QZfWCTT-EtHDjC20=w1340-h893-no?authuser=0",
+    "Image":require('../Images/idan.jpeg'),
     "Expression":5,
     "Diligence":4,
     "Understanding":3,
@@ -59,6 +62,7 @@
     "ChallengeLanguage":"English",
     "MembershipPlan":"18 Days",
     "picture":"https://lh3.googleusercontent.com/B_s912FfHjS77s715BOZgoQtVOpwyHV6aKs2uY4s77qJaMUNl_WE_N6epA_-QPmde56Jn_goMzyPRJEFsTTPnN3Jdb7ESzgfwzwBcYq7hicsjkBL2zJjbMH6gjrpt66d9rLPf_NMTHhEhfkj9lCAzoe2k1jAqhBCZSisHhSp-mgdyknUMDkhx0sAE7V74I2SSg_mbVL-x4z6V-POFwf4te_0IYbGq0YAsuMrBxpX2A1Lloa1_HoF9sKQiL_Gxcg5nWrG-qtT4bD-I5863S9va1aWvogSRqjAHJ-WNFRlkHY4Wyg4Op9OWQdEabCqHc2-M5Nkd3jF8XChCJ-7i8CnuNKkkhDQBZgdyGM78ylwfHcdzlevTWUfL3w6qcBfyFpe7nn_ziROEPaUhzj7YusDArTEHPKC4hXpO3WYM-6UTC2ZTVc3QuWUYKNs3HZxC2KsenYVSS3kWnutSFx5JA7evlWcFA5WKk_m0fYcTM4avZoL2F0B_GWM73io5_49aKaoZRXH7IOHaYXeRpOd4vFz3NyqQkM6vgo-1vhAUCaj_ryjmm2kIJbtlZF52xQ7iPLZPXdcnLoVkgKp-M2zR0-7WhQd3C-uc7DnOZ8uQFGatx_UP0NWuX9ToPRofnAEQabAAzIDBH4ErAiBDqXSd1DnSSsr9lA3qhTuwd7_5juqu3W6EcGK_8c1NznsBjQFiEVmfGNl6LkPfmG5My_5ZUdEjOxYrbR_4hA6PpmpqRsSCUdZRQpYRWq4KJFMKy1I-mM=s419-no?authuser=0",
+    "Image":require('../Images/bazi.jpeg'),
     "Expression":3,
     "Diligence":5,
     "Understanding":1,
@@ -76,6 +80,7 @@
     "ChallengeLanguage":"English",
     "MembershipPlan":"18 Days",
     "picture":"https://lh3.googleusercontent.com/8iispwQFMgVbklmwwvQt8mzDlKZCBWtvyHD2mvNjV_SoSJPn2pJARQJzbQvuGjoMrI8f_nM5wBKCl9yffbfoawGAuZz0Cru90FhQF9IaI4R6s6ymmKVojNQ6-4Hv3wHE4SpGmkbRRXKeZ1U2lse1ydpEsnJmwQG2hcl13vKeOlTDE_0_4mW2EY6Aid-V7J3ab1GcnYjyVI4cYpsyx1Jgk-HgI2YbUfvFKdiHpRuHnAqTrmeImYteEQeJ0lFsMZUo_uFR4mS4yiU5woNv_ryt2OOxRJdnXL70PDO3wR-FNVFbs5Cju0WmUvMXyKk3-2WvLE_aANhzfUmF82VPnlFODdbSiK7HUWB0--Lag3j799MlB5gkiGEnBIO0g7FTFNLyzL43Dw0Fhtooc76h_b3TkfJQaHkXlxnrrToaFIqIofXFpLQlvw5xVqKytoEBk57BRMrGy8DXjAzhVIJxFpfAotniPivuj83rG8iABd8OMESRVlcI7qB30fw4yKAhKSnWMGfBcMjtlwEohA0jw1-4g6qPrR_Mh1ZeZtqV-APZogNouO8sKjkq5eyMtBYpzv6Ya-7XhctGdFxQLwpekMU6P1OtemVj1_bjmBH-IqRjoPJ3IS8HKAnw4uyCwzhOFCL6WkIAXfyxRiy-FQvKXdolmItEvIYScUF48ttUWK08qlIs3qDiY2RD6mB-grEGHfjuyrn4rwYfzfFTVXv5RgfSO_7rJGxz0H7L2UimY8oj2vpmjUfEPUmRqNKZ-37d6wU=s800-no?authuser=0",
+    "Image":require('../Images/miriam.jpeg'),
     "Expression":4,
     "Diligence":3,
     "Understanding":2,
@@ -93,6 +98,7 @@
     "ChallengeLanguage":"English",
     "MembershipPlan":"18 Days",
     "picture":"https://lh3.googleusercontent.com/q9GSGI5s3rn2PlSB9VY33JQ8tJ0D3TKAJXccRGkKkgs6NVsAuGen-inG7bA0zKnSJN5-qj-KqjbgXFDBBgfiXQDXxk_xuDNPu1RjxbD2GGGwtW5mV9A_aQ1VCqtSXyphJnvN8MeiRdWKahdLJmfkjfBpugdkbnNwwl5BqO_2rFnfnXJHDhSbeUFM55TIsA7MOeWmTffA5zTi-vl9YrLklABjBgWubjP9rg9St_nEG5sDzGI3qc5XaK_p91jl2aaogO30QLKuzHHmu5YQAh1nnrO2bLPIcu8ACDafauNQVh0gVB_l_wg0LlC5Pnvp2kuaH9yKTclFJtaYKbQFpwpUMoW7QrjJaXqFj7BsRdO_-Kp6o8tRj0-FrGU4-MpYlQtYKnACihROX-MNBYQiqUaqWA-SoRNznOGaTotYIcDRa39PtGItzuCziQ0MCTsDsrPx08f1kXo64EsDcWztGn_yEg35oa3C92Y7WD2VJ9abGn1ROyIRWM_ZA2Y_guPB6kGe0liOnXJZMFNslLKxYw9l6FiH5GNPm5BGnyAhrNGB8AjIGwQPZtyu-uDwXc5H3ZrJD-sWwnbAplJFTUPjJqYwNmvWxIyLDb2GYu41KxzWZoVMMrEuLS4GXfvrfyYBKi6NcPxQhaovUtaatcXAy5wwMyE0bwV0VgBX7tKgwsANn2fgBK6C6UUOTzHcB73WBJdFoy1GfEETja2I5DPL8Fs2wmdWaW9xMCKjI2T4pDaUaJPCfENc_Jz5GcTzvKaWKkI=s893-no?authuser=0",
+    "Image":require('../Images/gad.jpeg'),
     "Expression":2,
     "Diligence":2,
     "Understanding":2,
@@ -102,3 +108,5 @@
     "isAdmin": false
   }
 }
+
+export default DB;

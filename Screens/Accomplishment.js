@@ -1,7 +1,7 @@
 import {Dimensions, Image, StatusBar, StyleSheet, Text, View, ImageBackground} from 'react-native';
 import React, {useContext} from 'react';
 import {userContext} from "../provider/UserProvider";
-import users from "../TestData/DB.json";
+import users from "../TestData/DB.js";
 
 const { width, height } = Dimensions.get('window');
 
@@ -37,7 +37,7 @@ const Page = () => {
             <View style={styles.body}>
                 <View style={styles.details}>
                     <Text style={styles.title}>{userInfo.FullName}</Text>
-                    <Image source={{uri: userInfo.picture}} style={styles.image2}/>
+                    <Image source={userInfo.Image} style={styles.image2}/>
                     <Text style={styles.score}>Score: {userInfo["Score"]}</Text>
                 </View>
                 <View style={styles.container}>

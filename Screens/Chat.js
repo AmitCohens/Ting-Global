@@ -10,7 +10,7 @@ LogBox.ignoreLogs(["EventEmitter.removeListener"]);
 // const dataPath = '../TestData/ChatDB.json'
 import Chats from '../TestData/ChatDB.json'
 import {userContext} from "../provider/UserProvider";
-import users from "../TestData/DB.json";
+import users from "../TestData/DB.js";
 
 const ChatScreen = ({route}) => {
     const [messages, setMessages] = useState([]);
@@ -107,7 +107,7 @@ const ChatScreen = ({route}) => {
                     onSend={messages => onSend(messages)}
                     user={{_id: userDict.phone,
                             name: userInfo.FullName,
-                            avatar: userInfo.picture}} //DB - Get signed in user's details
+                            avatar: userInfo.Image}} //DB - Get signed in user's details
                     renderBubble={renderBubble}
                     renderUsernameOnMessage={true}
                     alwaysShowSend
