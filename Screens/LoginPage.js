@@ -70,23 +70,19 @@ const styles = StyleSheet.create({
 });
 
 const singInLogin = (props) => {
-        // console.log(userDict.phone)
-        console.log('----- press')
+    // console.log(userDict.phone)
+    console.log('----- press')
     console.log(props.userDict)
-
-        ///////////////Bypass
-        if(props.userDict.phone === "")
-            props.navigation.navigate('HomePage')
-
-        singIn(props.userDict.phone, res => {
-            props.navigation.navigate('ConfirmCode')
-            // if(res.)
-
-        }, err => {
-            // console.log(Object.entries(err))
-            console.log('status' in JSON.parse(err))
-
-        })
+    if (props.userDict.phone.substring(0, 5) === '+9720') {
+        let temp = props.userDict
+        temp.phone.replace('+9720', '+972')
+        props.setUserDict(temp)
+    }
+    singIn(props.userDict.phone, res => {
         props.navigation.navigate('ConfirmCode')
+    }, err => {
+        console.log('status' in JSON.parse(err))
+    })
+    props.navigation.navigate('ConfirmCode')
 }
 export default Page;

@@ -34,7 +34,7 @@ const MessagesScreen = ({navigation}) => {
                                     <UserName>{item[1].name}</UserName>
                                     <PostTime>{"Challenge Day " + item[1].day}</PostTime>
                                 </UserInfoText>
-                                <MessageText>{item[1].msg_history[0].user.name}</MessageText>
+                                <MessageText>{item[1].msg_history[0].user.name} Sent a message</MessageText>
                             </TextSection>
                         </UserInfo>
                     </Card>
