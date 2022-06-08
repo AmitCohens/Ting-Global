@@ -8,7 +8,7 @@ function isValidPhone(phone) {
     return validator.isMobilePhone(phone);
 }
 
-function postTingGlobal(xApi = false, dataJson, token, successCallback = () => {
+function postTingGlobal(xApi = false, dataJson, token, successCallback = (res) => {console.log(res)
 }, errorCallback = () => {
 }) {
     return fetch(`https://c18.freemyip.com/${xApi ? 'x' : ''}api`, {
@@ -44,11 +44,11 @@ function singIn(phone, successCallback = () => {
 function register(registerData, successCallback = () => {
 }, errorCallback = () => {
 }) {
-    if (!registerData||typeof registerData !=='object'||!('phone' in registerData.register)||!isValidPhone(registerData.register.phone) ) {
+    if (!registerData || typeof registerData !== 'object' || !('phone' in registerData.register) || !isValidPhone(registerData.register.phone)) {
         return false;
     }
 
-    postTingGlobal(false,registerData,res => {
+    postTingGlobal(false, registerData, res => {
         successCallback(res)
     }, err => {
         errorCallback(err)

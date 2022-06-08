@@ -68,15 +68,20 @@ const styles = StyleSheet.create({
         paddingLeft: '15%',
     },
 });
+
 const singInLogin = (props) => {
     // console.log(userDict.phone)
     console.log('----- press')
     console.log(props.userDict)
     if (props.userDict.phone.substring(0, 5) === '+9720') {
-        let temp = props.userDict
-        temp.phone.replace('+9720', '+972')
-        props.setUserDict(temp)
+        let temp = props.userDict.phone
+        temp = temp.replace('+9720', '+972')
+        props.setUserDict({
+            phone: temp, token: props.userDict.token
+        })
     }
+
+
     singIn(props.userDict.phone, res => {
         props.navigation.navigate('ConfirmCode')
     }, err => {
