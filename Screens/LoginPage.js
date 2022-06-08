@@ -70,7 +70,6 @@ const styles = StyleSheet.create({
 });
 
 const singInLogin = (props) => {
-    // console.log(userDict.phone)
     console.log('----- press')
     console.log(props.userDict)
     if (props.userDict.phone.substring(0, 5) === '+9720') {

@@ -1,6 +1,6 @@
 import Chats from '../TestData/ChatDB.json'
 import React from 'react';
-import { StyleSheet, FlatList, View, Text } from 'react-native';
+import { StyleSheet, FlatList, View, Text ,ScrollView} from 'react-native';
 import {
     Container,
     Card,
