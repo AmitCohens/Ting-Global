@@ -42,7 +42,8 @@ const Page = ({navigation}) => {
 const styleHomePage = StyleSheet.create({
     body: {
         paddingTop:'8%',
-        backgroundColor:"rgb(227,234,250)"
+        backgroundColor:"rgb(227,234,250)",
+        flex:1,
     },
     image: {
         justifyContent: 'flex-start',
