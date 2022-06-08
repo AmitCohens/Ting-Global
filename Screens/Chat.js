@@ -95,11 +95,9 @@ const ChatScreen = ({route}) => {
                     onPress={() => alert("Challenge Details\nComing Soon!")}>
                     <Text style={styles.text}>{route.params.db.name}</Text>
                 </Pressable>
-                <Pressable
-                    onPress={() => alert("Coming Soon!")}>
-                    <Image source={require('../Images/search_icon.png')}
-                           style={styles.pic}/>
-                </Pressable>
+                <View style={styles.chatPic}>
+                    <Image source={{uri: route.params.db.picture}} style={styles.chatPic}/>
+                </View>
             </View>
             <View style={{flex: 1}}>
                 <GiftedChat
@@ -129,6 +127,11 @@ const styles = StyleSheet.create({
     chat: {
         flex: 1,
     },
+    chatPic: {
+        width: 35,
+        height: 35,
+        borderRadius: 20
+    },
     header: {
         flex: 1,
         paddingTop: '5%',
@@ -140,7 +143,7 @@ const styles = StyleSheet.create({
         maxHeight: '10%',
         width: '100%',
         paddingLeft: 5,
-        paddingRight: 5
+        paddingRight: 10
     },
     text: {
         fontSize: 20

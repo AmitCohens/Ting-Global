@@ -13,7 +13,25 @@
     "Understanding":5,
     "Courage":2,
     "Knowledge":4,
-    "Score":5300
+    "Score":5300,
+    "isAdmin": false
+  },
+  "+972559721123": {
+    "Username":"Sharon",
+    "PhoneNumber":"+972559721123",
+    "FullName":"Sharon Gal-Or",
+    "Country":"Israel",
+    "EmailAddress":"sharon@gmail.com",
+    "ChallengeLanguage":"English",
+    "MembershipPlan":"18 Days",
+    "picture":"https://scontent.fhfa2-2.fna.fbcdn.net/v/t39.30808-6/268961672_10227411912147637_3629263270586921811_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=e3f864&_nc_ohc=qh2721iFTssAX_q2huC&_nc_ht=scontent.fhfa2-2.fna&oh=00_AT9Tuv2QJayKaqhnFHU43yyJWPO3PsFIpFFZXJ2w5jYJZA&oe=629CD1C8",
+    "Expression":5,
+    "Diligence":5,
+    "Understanding":5,
+    "Courage":5,
+    "Knowledge":5,
+    "Score":9999,
+    "isAdmin": true
   },
   "+972502440084": {
     "Username":"Mashriki",
@@ -29,7 +47,8 @@
     "Understanding":3,
     "Courage":1,
     "Knowledge":3,
-    "Score":4280
+    "Score":4280,
+    "isAdmin": true
   },
   "+972522987192": {
     "Username":"Bazi",
@@ -45,7 +64,8 @@
     "Understanding":1,
     "Courage":2,
     "Knowledge":4,
-    "Score":3900
+    "Score":3900,
+    "isAdmin": false
   },
   "+972545499141": {
     "Username":"Sirota",
@@ -61,7 +81,8 @@
     "Understanding":2,
     "Courage":4,
     "Knowledge":5,
-    "Score":4300
+    "Score":4300,
+    "isAdmin": false
   },
   "+972526577695": {
     "Username":"Mr. Shrim",
@@ -77,6 +98,7 @@
     "Understanding":2,
     "Courage":1,
     "Knowledge":1,
-    "Score":1280
+    "Score":1280,
+    "isAdmin": false
   }
 }
