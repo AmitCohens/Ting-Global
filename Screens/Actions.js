@@ -1,4 +1,4 @@
-import {Image, StatusBar, StyleSheet, Text,ImageBackground, View,Pressable} from 'react-native';
+import {Image, StyleSheet, Text,ImageBackground, View,Pressable} from 'react-native';
 import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
 import userData from "../TestData/DB.json"
@@ -11,8 +11,8 @@ import AppButton from "../Components/AppButton";
 const Actions = ({navigation}) => {
 
     const {userDict} = useContext(userContext);
-    const name = userData[userDict.phone].FullName;
     const picture = userData[userDict.phone].picture;
+    const admin = userData[userDict.phone].isAdmin;
     return (
         <View>
             <ImageBackground source={require("../Images/logoutPage.jpg")} style={styles.background}>
@@ -21,7 +21,7 @@ const Actions = ({navigation}) => {
                         <Image source={{uri: picture}} style={styles.image}/>
                     </View>
                     <View style={styles.allButtons}>
-                        <AppButton title={'Create a Challenge'} nav={navigation} dest={1}/>
+                        {admin && <AppButton title={'Create a Challenge'} nav={navigation} dest={1}/>}
                         <AppButton title={'Available Challenges'} nav={navigation} dest={1}/>
                     </View>
                     <Pressable style={styles.logout} onPress={() =>navigation.navigate("LoginPage")}>
