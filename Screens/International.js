@@ -52,9 +52,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         margin: 10,
-        paddingBottom: '15%',
+        paddingBottom: '6%',
         paddingTop: '6%',
-
     },
     background: {
         width: width,
