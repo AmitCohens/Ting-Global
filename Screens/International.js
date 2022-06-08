@@ -21,7 +21,7 @@ const Page = () => {
                     <Text style={styles.subtitle}>
                         Easily build, run, and change the world with any challenge on one platform.
                     </Text>
-                    <Image source={{uri: 'https://ting.global/_nuxt/img/challenge-intro.e70cc48.gif'}}
+                    <Image source={require('../Images/challenge-intro.e70cc48.gif')}
                            style={styles.image}/>
                     <Text style={styles.text}>
                         <Text style={{fontWeight: 'bold'}}>Challenge 18</Text> is the most important sustainability and

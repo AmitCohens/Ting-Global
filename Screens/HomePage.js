@@ -15,7 +15,6 @@ import users from "../TestData/DB.json"
 
 const Page = ({navigation}) => {
     const {userDict} = useContext(userContext)
-
     return (
         <View style={styleHomePage.body}>
             <View style={styleHomePage.top}>
@@ -28,13 +27,11 @@ const Page = ({navigation}) => {
                 <PicButton imgSrc={require('../Images/world1.png')} nav={navigation} dest={1}
                            styling={{width: 50, height: 50}}/>
             </View>
-            <View style={styleHomePage.content}>
-                <Text style={styleHomePage.text}>Welcome, {users[userDict.phone].FullName}</Text>
+            <Text style={styleHomePage.text}>Welcome, {users[userDict.phone].FullName}</Text>
+            <ScrollView style={styleHomePage.content}>
                 <SlidingWindow/>
-                <ScrollView>
                 <LastMessages style={{margin: 10}}/>
-                </ScrollView>
-            </View>
+            </ScrollView>
         </View>
     );
 };
@@ -63,7 +60,8 @@ const styleHomePage = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         height: '85%',
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
+        paddingBottom:"12%",
     },
     text: {
         textAlign: 'center',

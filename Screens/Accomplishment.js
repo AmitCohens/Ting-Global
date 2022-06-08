@@ -30,10 +30,9 @@ const Page = () => {
             </View>
         )
     }
-
     return (
         <ImageBackground
-            source={{uri: 'https://raw.githubusercontent.com/wholesomegarden/Challenge18Site/master/ting-global-nuxt/assets/images/intro-bg.jpg'}}
+            source={require('../Images/intro-bg.jpg')}
             style={styles.background}>
             <View style={styles.body}>
                 <View style={styles.details}>

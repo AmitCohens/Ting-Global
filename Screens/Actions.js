@@ -1,4 +1,4 @@
-import {Image, StatusBar, StyleSheet, Text,ImageBackground, View} from 'react-native';
+import {Image, StatusBar, StyleSheet, Text,ImageBackground, View,Pressable} from 'react-native';
 import React, {useContext} from 'react';
 import PicButton from "../Components/PicButton";
 import userData from "../TestData/DB.json"
@@ -11,30 +11,31 @@ import AppButton from "../Components/AppButton";
 const Actions = ({navigation}) => {
 
     const {userDict} = useContext(userContext);
-    const name=userData[userDict.phone].FullName;
-    const picture=userData[userDict.phone].picture;
+    const name = userData[userDict.phone].FullName;
+    const picture = userData[userDict.phone].picture;
     return (
         <View>
-            <ImageBackground source={require("../Images/logoutPage.jpg")} style={styleActionsPage.background}>
-                <View style={styleActionsPage.allPage}>
-                <View style={styleActionsPage.body}>
-                    <Image source={{uri: picture}} style={styleActionsPage.image}/>
-                    <View style={styleActionsPage.allButtons}>
-                    <AppButton title={'Create a Challenge'} nav={navigation} dest={1}/>
-                    <AppButton title={'Available Challenges'} nav={navigation} dest={1}/>
+            <ImageBackground source={require("../Images/logoutPage.jpg")} style={styles.background}>
+                <View style={styles.body}>
+                    <View>
+                        <Image source={{uri: picture}} style={styles.image}/>
                     </View>
-                    <PicButton imgSrc={require('../Images/log-out.png')} nav={navigation} dest={"LoginPage"}
-                               styling={{width: 50, height: 50}}/>
+                    <View style={styles.allButtons}>
+                        <AppButton title={'Create a Challenge'} nav={navigation} dest={1}/>
+                        <AppButton title={'Available Challenges'} nav={navigation} dest={1}/>
+                    </View>
+                    <Pressable style={styles.logout} onPress={() =>navigation.navigate("LoginPage")}>
+                        <Text style={styles.text}>Logout</Text>
+                        <PicButton imgSrc={require('../Images/log-out.png')} nav={navigation} dest={"LoginPage"}
+                                   styling={{width: 60, height: 60}}/>
+                    </Pressable>
                 </View>
-                <View style={styleActionsPage.tt}>
-                    <Text style={styleActionsPage.text}>©Ting-Global, App by Amit Cohen, Idan Mashriki, Bezalel Cohen, Miriam Sirota, Gad Shrim</Text>
-                </View>
-                </View>
+
             </ImageBackground>
         </View>
     );
 };
-const styleActionsPage = StyleSheet.create({
+const styles = StyleSheet.create({
     image: {
         width: 150,
         height: 150,
@@ -50,35 +51,43 @@ const styleActionsPage = StyleSheet.create({
         backgroundColor:"white",
     },
     body:{
+        flex: 1,
         display: "flex",
         flexDirection: "column",
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems:"center",
         paddingTop:"10%",
+        paddingBottom: '5%',
         margin:5,
     },
     allButtons:{
-        margin:5,
-        padding:10,
+        // margin:20,
+        // padding:10,
         display: "flex",
         justifyContent:"space-between",
-        height:"40%",
-    },
-    text:{
-        backgroundColor:"rgba(0,0,0,0.53)",
-        color:"white",
-        fontSize:17,
-        textAlign:"center",
-        borderRadius:10,
+        height:"30%",
+        // maxHeight: '40%'
     },
     allPage:{
         display: "flex",
         justifyContent:"flex-end",
         margin:2,
     },
-    tt:{
-        paddingTop:"16%",
-    }
+   logout:{
+       display: "flex",
+       flexDirection: "row",
+       alignItems:"center",
+       backgroundColor:"rgb(253,90,84)",
+       borderRadius:10,
+       paddingLeft:"5%",
+
+   },
+    text: {
+        textAlign: 'center',
+        fontSize: 22,
+        fontWeight: 'bold',
+        color:"white",
+    },
 });
 export default Actions;
 
