@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
         paddingLeft: '15%',
     },
 });
+
 const singInLogin = (props) => {
         // console.log(userDict.phone)
         console.log('----- press')
