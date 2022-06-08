@@ -31,10 +31,13 @@ const Select = (props) => {
                 textContainerStyle={{paddingVertical: 0}}
                 onChangeFormattedText={phone => {
                     // setPhoneNumber(phone);
-                    setUserDict(prev => ({
-                        ...prev,phone
-                    }))
-                    console.log(userDict)
+                    if (phone.substring(0,5) === '+9720') {
+                        phone = phone.replace('+9720', '+972')
+                    }
+                        setUserDict(prev => ({
+                            ...prev, phone
+                        }))
+                        console.log(userDict)
                 }}
             />
 

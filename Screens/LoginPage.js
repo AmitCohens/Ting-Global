@@ -19,7 +19,8 @@ const Page = ({navigation}) => {
             <View style={styles.selectView}>
                 <TingSelect />
                 <View style={styles.buttonAndView}>
-                    <LoginButton title={'Login'} nav={navigation} signInFunc={singInLogin} params={{
+
+                    <LoginButton title={'Login'} nav={navigation}  signInFunc={singInLogin} params={{
                         userDict,
                         setUserDict,
                         navigation,
@@ -70,25 +71,20 @@ const styles = StyleSheet.create({
 });
 
 const singInLogin = (props) => {
-    console.log('----- press')
-    console.log(props.userDict)
-    if (props.userDict.phone.substring(0, 5) === '+9720') {
-        let temp = props.userDict.phone
-        temp = temp.replace('+9720', '+972')
-        props.setUserDict({
-            phone: temp, token: props.userDict.token
-        })
-    }
-
+    // console.log('----- press')
+    // console.log(props.userDict)
+    console.log(props.userDict.phone);
     if(!data[props.userDict.phone]){
         alert("User not found!\nEnter valid phone number")
         return;
     }
-    singIn(props.userDict.phone, res => {
+    if(props.navigation) {
+        singIn(props.userDict.phone, res => {
+            props.navigation.navigate('ConfirmCode')
+        }, err => {
+            console.log('status' in JSON.parse(err))
+        })
         props.navigation.navigate('ConfirmCode')
-    }, err => {
-        console.log('status' in JSON.parse(err))
-    })
-    props.navigation.navigate('ConfirmCode')
+    }
 }
 export default Page;

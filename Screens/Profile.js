@@ -7,7 +7,6 @@ import users from '../TestData/DB.json'
 const Page = ({navigation}) => {
     const {userDict} = useContext(userContext)
     const userInfo = users[userDict.phone];
-
     return (
         <View name={"body"} style={styleProfilePage.body}>
             <View name={"details"} style={styleProfilePage.AllDetails}>
