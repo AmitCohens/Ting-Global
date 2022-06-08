@@ -21,6 +21,11 @@ import {useNavigation} from "@react-navigation/native";
 function App() {
     const navigation = useNavigation();
 
+    const limitText = (text) => {
+        const LIMIT = 50
+        return (text.length > LIMIT) ? text.slice(0,LIMIT) + "..." : text
+    }
+
     return (
         <View style={styles.body}>
             <View style={styles.viewBox}>
@@ -37,9 +42,9 @@ function App() {
                                 <TextSection>
                                     <UserInfoText>
                                         <UserName>{item[1].name}</UserName>
-                                        <PostTime>{"4 min ago"}</PostTime>
+                                        <PostTime>{"Challenge Day " + item[1].day}</PostTime>
                                     </UserInfoText>
-                                    <MessageText>{item[1].msg_history[0].text}</MessageText>
+                                    <MessageText>{limitText(item[1].msg_history[0].text)}</MessageText>
                                 </TextSection>
                             </UserInfo>
                         </Card>
