@@ -30,7 +30,7 @@ const Page = ({navigation}) => {
             <Text style={styleHomePage.text}>Welcome, {users[userDict.phone].FullName}</Text>
             <ScrollView style={styleHomePage.content}>
                 <SlidingWindow/>
-                <LastMessages style={{margin: 10}}/>
+                <LastMessages style={{margin: 10,paddingBottom:10}}/>
             </ScrollView>
         </View>
     );
@@ -61,7 +61,7 @@ const styleHomePage = StyleSheet.create({
         flexDirection: 'column',
         height: '85%',
         // justifyContent: 'space-between',
-        paddingBottom:"12%",
+        paddingBottom:"10%",
     },
     text: {
         textAlign: 'center',

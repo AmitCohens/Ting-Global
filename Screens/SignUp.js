@@ -91,5 +91,7 @@ function register_(props) {
     //     // console.log('status' in JSON.parse(err))
 
     // })
-    props.navigation.navigate('ConfirmCode')
+    alert("Coming soon!")
+
+    // props.navigation.navigate('ConfirmCode')
 }

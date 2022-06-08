@@ -22,7 +22,7 @@ const Actions = ({navigation}) => {
                     </View>
                     <View style={styles.allButtons}>
                         {admin && <AppButton title={'Create a Challenge'} nav={navigation} dest={1}/>}
-                        <AppButton title={'Available Challenges'} nav={navigation} dest={1}/>
+                        <AppButton title={'Available Challenges'} nav={navigation} url={"https://ting.global/"}/>
                     </View>
                     <Pressable style={styles.logout} onPress={() =>navigation.navigate("LoginPage")}>
                         <Text style={styles.text}>Logout</Text>

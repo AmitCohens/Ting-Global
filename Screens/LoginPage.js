@@ -6,7 +6,7 @@ import AppButton from '../Components/AppButton';
 import LoginButton from '../Components/LoginButton'
 import {singIn} from "../utils/Connect";
 import {userContext} from '../provider/UserProvider'
-
+import data from '../TestData/DB.json'
 
 // const user = React.createContext(({phone: '+33', username: '', token: ''}))
 
@@ -27,7 +27,7 @@ const Page = ({navigation}) => {
                     <Text>
                         {'\n\t\t'}Don't have an account yet?{'\n'}
                     </Text>
-                    <AppButton title={'Sign up'} nav={navigation} dest={'SignUp'}/>
+                    <AppButton title={'Sign up'} nav={navigation} url={"https://ting.global/join"}/>
                 </View>
             </View>
             <View style={styles.viewAndImage}>
@@ -80,7 +80,10 @@ const singInLogin = (props) => {
         })
     }
 
-
+    if(!data[props.userDict.phone]){
+        alert("User not found!\nEnter valid phone number")
+        return;
+    }
     singIn(props.userDict.phone, res => {
         props.navigation.navigate('ConfirmCode')
     }, err => {
